@@ -1,0 +1,107 @@
+---
+title: "Exemples d'exercices pour l'évaluation individuelle N2- Corrigé"
+author: "Frédérique Leblanc"
+date: "2023-02-19"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+On travaille avec les données  mtcars : dataframe disponible dans la librairie de base de R
+
+# question 1 : 
+
+On remplit le tableau à l'aide des résumés numériques produits dans le "chunck" suivant
+
+```{r}
+y<-mtcars$disp #echantillon de disp taille nY=32
+x<-mtcars$cyl  #echantillon de disp taille nX=32
+mean(y); var(y)*31/32; var(y)
+quantile(y); sd(y)
+```
+
+# question 2
+
+Comme ici l'échantillon est de  taille moyenne, il est raisonnable de s'assurer qu'il provient d'une variable $Y$ qui suit une loi normale. Le plus efficace pour apprécier la normalité d'un échantillon est d'utiliser le quantile-quantile plot (avec des quantiles théoriques calculés sur la loi normale) avec la fonction $\texttt{qqnorm}$ auquelle on ajoutera la droite
+qui passe par les deux points $(q_{0.25},\hat{q}_{0.25})$ et $(q_{0.75},\hat{q}_{0.75})$
+avec $\texttt{qqline}$ :
+
+```{r}
+qqnorm(y); qqline(y)
+```
+
+Difficile d'accepter la normalité de $Y$ à cause des points aux deux extremités. Ce n'est pas très grave ici puisque l'échantillon est de taille ($n_Y=32$) suffisante pour pouvoir utiliser les résultats asymptotiques et se passer de la normalité de l'échantillon.
+
+# question 3
+
+Comme l'échantillon n'est pas gaussien (normal) mais de taille suffisante la procédure $\texttt{t.test}$ peut-être utilisée : elle fournira des IC de niveaux asymptotiques : 
+
+```{r}
+mean(y);var(y)
+t.test(y) #pour le niveau asympt 95%
+t.test(y,conf.level=0.8) #pour le niveau asympt 80%
+
+```
+
+# question 4
+
+La variable $X$ (cyl) est discrète. On représentera sa répartition observée avec un diagramme en barres ($\texttt{barplot}$) ou un diagramme en secteurs ($\texttt{pie}$).
+Attention ces fonctions doivent être appliquées sur les données en fréquences ($\texttt{table(x)/length(x)}$) et pas sur les données brutes ($\texttt{x}$) pour $\texttt{barplot}$ et sur les données en effectifs ($\texttt{table(x)}$) pour $\texttt{pie}$ :
+
+```{r}
+barplot(table(x)/32)
+pie(table(x))
+```
+Les bonnes réponses sont donc 2) et 3)
+
+# question 5
+
+ Le graphique proposé qui décrit la répartition observée de $Y$ qui est une variable continue (donc histogramme) s'obtient avec la liste d'instructions suivante : 
+```{r}
+par(mfrow=c(2,1)) #part en2 lignes et une colonne
+hist(y,prob=T,main="répartition observée de disp",xlab="disp")
+curve(dnorm(x,mean(y),sd(y)),add=TRUE,lty=2)
+boxplot(y,horizontal=TRUE)
+
+```
+
+# question 6
+
+Il n'y a pas de procédure automatique dans la librairie de base de R pour faire un test
+sur la variance de l'échantillon. On fait donc les calculs à la main (voir TD) avec
+$$T=\frac{nS^2_Y}{\sigma_0^2}~~~~\mbox{et}~~~pval=min(2\cdot P({\cal X}^2_{n-1}<Tcalc),2\cdot (1-P({\cal X}^2_{n-1}>Tcalc)))$$
+```{r}
+Tcalc<-31*var(y)/15000; pval=min(2*pchisq(Tcalc,31),2*(1-pchisq(Tcalc,31)))
+```
+
+Au niveau $\alpha=5\%$ on ne rejette pas ${\cal H}_0$ puisque $\alpha=5\%<pval$. Donc si on voulait faire un test sur $\mu_Y$
+on pourrait supposer $\sigma^2_Y=15000$ (donc connu).
+
+# question 7 
+
+Vu le résultat précédent on fait un test sur $\mu_Y$ avec $\sigma_Y^2=15000$ ${\bf connu}$ et on calcule la statistique de test et la p-valeur avec
+```{r}
+tcalc<-sqrt(32)*(mean(y)-280)/sd(y); pval=2*pt(tcalc,31)
+```
+On obtient $tcalc=-2.25$ et $pval=3.17\%$.
+
+On peut donc valider $\mu_Y\neq 280$ pour tout risque de se tromper supérieur à $3.17\%$.
+
+# question 8
+
+Un quantile d'ordre $p$ ($p\in[0,1]$) d'une variable normale centrée réduite se calcule avec la fonction de R $\texttt{qnorm}$
+et comme il s'agit d'une densité symétrique on sait aussi que $q_p=-q_{1-p}$. Parmi les solutions proposées on obtient le résultat avec
+1) ou avec 5)
+
+# question 9
+
+La probabilité qu'une variable normale soit inférieure ou égale à x se calcule avec la fonction $\texttt{pnorm}$ et 
+comme $P(X\leq 0)=0.5$ : $$P(X\leq x)=P(X\leq 0)+P(X\in[0,x])=0.5+P(X\in[0,x]), \forall x\geq 0.$$
+Parmi les solutions proposées on obtient le résultat avec 1) et 2)
+

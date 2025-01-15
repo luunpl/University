@@ -1,0 +1,43 @@
+
+INF304 — TP5
+Gestion d'erreurs
+
+Ce TP utilise les mêmes fichiers que le TP4. Copiez votre répertoire TP4 :
+
+cp -r TP4 TP5 
+
+Identification des erreurs
+Exercice 1.
+
+Quelles erreurs peuvent se produire dans un fichier d'entrée du programme calculette ?
+
+Écrivez un jeu de tests faisant apparaître ces différentes erreurs. Quel comportement du programme induisent ces erreurs ?
+Gestion des erreurs
+
+Copiez le fichier /Public/304_INF_Public/TP5/type_pile_erreurs.h dans votre répertoire.
+
+Ce fichier contient la spécification d'un paquetage fournissant un type abstrait PileEntiers, et permettant de gérer les erreurs d'utilisation de ce type abstrait.
+Exercice 2.
+
+Réalisez l'implémentation du paquetage type_pile_erreurs.
+Exercice 3
+
+Modifiez le programme test_type_pile_entiers.c en utilisant le paquetage type_pile_erreurs. Les erreurs doivent être gérées correctement par ce programme de test : l'utilisation erronée du paquetage doit déclencher l'affichage d'un message d'information à destination de l'utilisateur, et ne doit pas provoquer l'arrêt de l'exécution du programme.
+
+NB : pour cet exercice, ainsi que pour l'exercice 5, il faut modifier le Makefile.
+Exercice 4
+
+Écrire un jeu de tests permettant de montrer la gestion correcte des erreurs par le programme test_type_pile_entiers.c.
+Exercice 5
+
+Modifiez le programme calculette.c, en utilisant le paquetage type_pile_erreurs, pour gérer les erreurs décrites à l'exercice 1. Ces erreurs doivent déclencher l'affichage d'un message d'information circonstancié (mentionnant l'erreur rencontrée dans le fichier, et si possible la ligne erronée) à destination de l'utilisateur, et ne doit pas provoquer l'arrêt de l'exécution du programme.
+
+Vérifiez que le programme ainsi modifié répond correctement aux tests écrits à l'exercice 1.
+3. Compte-rendu
+
+À l'issue du TP, déposer sur la page moodle du cours :
+
+    Un compte-rendu d'une page maximum, au format PDF, décrivant la liste des erreurs gérées par le programme calculette, et montrant un des tests écrits pour l'exercice 1.
+    Le fichier type_pile_erreurs.c
+    Le code source modifié de votre programme calculette.c
+

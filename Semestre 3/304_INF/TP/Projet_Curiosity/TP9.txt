@@ -1,0 +1,47 @@
+
+INF304 — TP9
+Curiosity Revolutions (4)
+Observateurs et vérification dynamique
+
+Ce TP est la suite des TP précédents ; placez-vous dans le répertoire de ces TP précédents.
+
+Vous devrez complétez le fichier Makefile en fonction des paquetages et programmes écrits.
+Programmation d'un observateur
+
+On souhaite vérifier qu'à l'exécution d'un programme-robot, la fonction «avancer» de l'environnement soit toujours précédée d'une «mesure» par le robot de la case devant lui.
+Exercice 1.
+
+Spécifier et implémenter un paquetage observateur, pour l'automate permettant de vérifier cette propriété.
+Exercice 2.
+
+Compléter le paquetage environnement, en utilisant le paquetage observateur, pour permettre la vérification à l'exécution de la propriété.
+Exercice 3.
+
+Écrire un programme curiosity-obs, utilisant le paquetage observateur et le paquetage environnement modifié. Ce programme devra prendre en entrée le nom d'un fichier terrain et le nom d'un programme-robot, et afficher un message indiquant si la propriété est valide ou non.
+Exercice 4.
+
+Tester le programme curiosity-obs sur différents terrains et programmes. En particulier, écrire des terrains et programmes pour les catégories d'exemples vus en CTD :
+
+    des programmes-robots corrects, acceptés par l'observateur ;
+    des programmes-robots incorrects, rejetés par l'observateur ;
+    des programmes-robots corrects, rejetés par l'observateur ;
+    des programmes-robots incorrects, acceptés par l'observateur.
+
+Définition d'un observateur
+Exercice 5.
+
+Imaginer une propriété à vérifier sur un programme-robot.
+
+Refaire avec cette nouvelle propriété le travail effectué en CTD et aux exercices 1 à 4 :
+
+    exprimer et rédiger cette propriété en français ;
+    traduire cette propriété sous forme d'automate d'états fini ;
+    implémenter cet automate ;
+    au besoin, compléter ou modifier l'instrumentation du paquetage environnement ;
+    tester sur différents exemples de terrains et de programmes.
+
+NB : il n'y a normalement pas besoin de réécrire le programme curiosity-obs : la spécification de l'observateur et de l'environnement restent les mêmes...
+
+Compte Rendu
+
+Pas de compte-rendu pour ce TP. Il y a un compte-rendu global à rendre pour le mini-projet ; les consignes concernant ce compte-rendu et la soutenance sont disponibles sur caséine.

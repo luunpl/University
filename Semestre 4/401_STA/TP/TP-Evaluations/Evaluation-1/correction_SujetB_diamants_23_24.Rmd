@@ -1,0 +1,82 @@
+---
+title: "Correction Sujet B -- Evaluation 1 -- TPSTA401 --- 2024"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exercice 1 (8pts)
+
+Chargement du jeu de données :
+ 
+```{r chargement donnees, echo=T}
+diam<-read.table("diamantsPurs.csv",header=T,sep=" ")
+```
+
+### question 1 (2pts)
+
+ Extraire de ce data frame l'échantillon des prix pour les diamants pour lesquels la variable \texttt{color} prend la modalité \texttt{D} et l'affecter à \texttt{x} puis affecter à \texttt{y}
+ l'échantillon des prix des diamants pour lesquels la variable \texttt{color} prend la modalité \texttt{I} dans le tronçon d'instructions suivant à compléter :
+ 
+
+ 
+```{r,echo=T}
+x<-diam[diam$color=="D","price"];y<-diam[diam$color=="I","price"]
+```
+ 
+### question 2 (3pts)
+
+Donner les trois quartiles empiriques
+de chaque échantillon :
+
+```{r}
+summary(x);summary(y)
+```
+Pour l'échantillon des prix des diamants de couleur D, la médiane (second quartile) vaut 4208 et pour ceux de couleur I
+elle vaut 6867. Les quantiles d'ordre $25\%$ sont resp. de 3812 pour \texttt{x} et 3734  pour \texttt{y}. Les quantiles d'ordre $75\%$ sont resp. de 3812 pour \texttt{x} et 3734  pour \texttt{y}.
+
+### question 3 (3pts)
+
+Pour comparer ces deux échantillons on peut représenter leurs boxplots sur un même graphique auquel
+sont ajoutées ici les positions des moyennes (points rouges) :
+
+```{r,fig.height=2.2, fig.width=4, fig.align="center",echo=F}
+boxplot(x,y,main="prix d'un diamant selon sa couleur", names=c("couleur D","Couleur I"))
+points(c(mean(x),mean(y)),col=2,pch=20)
+
+```
+Interpréter ce graphique (3 commentaires attendus) :
+
+1) Les positions médianes sont très différentes : beaucoup plus élevée pour les diamants de couleur I que D. Les diamants de couleurs I sont "en médiane" plus chers que ceux de couleur D.
+
+2) La dispersion des prix est beaucoup plus importante pour I que pour D.
+
+3) La répartition observée dans chaque échantillon et, particulièrement pour les diamants de couleur I, est dissymétrique.
+
+4) A noter aussi quelques individus extrêmes dans l'échantillon des diamants de couleur D.
+
+## Exercice 2 (12 pts)
+
+### question 1 (10 pts)
+
+Représenter sur l'intervalle $[-3,3]$ la fonction $f$ valant $x+1$ sur l'intervalle $[-1,0]$, $-x+1$ sur l'intervalle $[0,1]$ et 0 partout ailleurs (on utilisera la fonction \texttt{segments} pour tracer la fonction sur $[-3,-1]$ et sur $[1,3]$ et on tracera son graphe en rouge). Y ajouter en vert  la densité d'une variable de loi ${\cal N}(0,1)$. Indiquer le titre "deux densités ", la légende "densité"  en ordonnée  et ajouter l'axe des ordonnées en noir (pas celui des abscisses). En d'autres termes, reproduire le graphique suivant :
+
+```{r,fig.height=2.2, fig.width=5, fig.align="center",echo=T}
+curve(x+1,xlim=c(-3,3),from=-1,to=0, col=2,main="deux densités",ylab="densité")
+# 4 points : 1,5 pour curve(x+1,) et 0.5 pour chaque option
+curve(-x+1,from=0, to=1,add=T,col=2 ) # 2 points
+abline(v=0) # 0.5 pt
+segments(-3,0,-1,0,col=2) # 1 pt
+segments(1,0,3,0,col=2) # 1 pt
+curve(dnorm(x),col=3,add=T) # 1,5 pts
+```
+
+### question 2 (2 pts)
+
+La fonction tracée en rouge est une densité de probabilité 
+ car c'est une fonction positive ($>=0$) sur $]-\infty,\infty[$ et d'intégrale sur son domaine valant 1.
+
