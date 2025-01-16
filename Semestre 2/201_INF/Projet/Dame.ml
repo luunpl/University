@@ -1,3 +1,4 @@
+(*Not my work*)
 type dimension = int;; (*restreint aux entiers strictement positifs*)
 
 type case = int * int * int;; (*restreint au triplet tels (i,j,k) tels que i+j+k=0*)
