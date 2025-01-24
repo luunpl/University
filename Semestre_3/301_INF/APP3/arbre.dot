@@ -1,0 +1,16 @@
+digraph arbre {
+vertèbres -> coquille [label = "non"]
+coquille -> limace [label = "non"]
+coquille -> escargot [label = "oui"]
+vertèbres -> mâchoire [label = "oui"]
+mâchoire -> lamproie [label = "non"]
+mâchoire -> doigts [label = "oui"]
+doigts -> carpe [label = "non"]
+doigts -> amnios [label = "oui"]
+amnios -> grenouille [label = "non"]
+amnios -> placenta [label = "oui"]
+placenta -> plumes [label = "non"]
+placenta -> chat [label = "oui"]
+plumes -> crocodile [label = "non"]
+plumes -> autruche [label = "oui"]
+}

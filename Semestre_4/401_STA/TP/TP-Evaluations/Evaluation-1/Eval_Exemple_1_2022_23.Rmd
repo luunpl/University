@@ -1,0 +1,79 @@
+---
+title: "Evaluation N1 -Sujet Exemple 1- Corrigé"
+author: "Frédérique Leblanc"
+date: "2023-02-19"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+## Exercice 1 : avec les données  mtcars
+
+On s'intéresse à la variable **disp** pour les véhicules automatiques (**am==0**) d'une part  et pour les véhicules manuels d'autre part.  Extraire les deux échantillons
+et les affecter à **x** et **y**. Calculer ensuite les caratéristiques suivantes :
+
+* tailles affectées à **nx** et **ny**
+* moyennes  affectées à **mx** et **my**
+* variances empiriques  affectées à **vx** et **vy**
+* variances empiriques corrigée affectées à **vex** et **vey**
+* écart-types empiriques corrigé affectés à **sdex** et **sdey**
+
+ *Dans le chunck ("tronçon") d'instructions R, nommé* **extraction** *, suivant on extrait les échantillons*  **x** *et*  **y** :
+
+```{r extraction,echo=TRUE}
+x<-mtcars$disp[mtcars$am==0]
+y<-mtcars$disp[mtcars$am==1]
+```
+
+ *Dans le chunck suivant on calcule les caractéristiques qui permettront de renseigner la table des résumés numériques demandés :*
+ 
+```{r resume, echo=TRUE}
+nx<-length(x);ny=length(y);mx=mean(x);my=mean(y);vex=var(x);vey=var(y)
+vx=(nx-1)/nx*vex;vy=(ny-1)/ny*vey;sdex=sd(x);sdey=sd(y)
+```
+
+*Ensuite on éxécute le chunck "table"  pour renseigner automatiquement la table :*
+
+```{r table,echo=TRUE}
+
+data.frame("boite automatique" =c("taille","moyenne","variance empirique",
+                                  "variance empirique corrigée", "ecart-type emp. corrigé"),
+           valeurs_x=c(nx,mx,vx,vex,sdex),
+           "boite manuelle" =c("taille","moyenne","variance empirique",
+                               "variance empirique corrigée", "ecart-type emp. corrigé"),
+           valeurs_y=c(ny,my,vy,vey,sdey))->d
+print(d,digits=2)
+
+```
+
+2) Commentaire : *la variable* **disp** *est en moyenne presque deux fois plus élevée pour les véhicules automatiques que pour les véhicules manuels. Ces derniers sont donc beaucoup moins puissants en moyenne. Par ailleurs les indices de dispersion étant autour de la centaine et comparables, l'écart observé sur les moyennes est assez significatif.*
+
+## Exercice 2 : avec les données  mtcars
+
+
+
+1) *La variable*  **disp** *est continue. En effet son tableau en effectifs obtenu avec la fonction * **table** *montre très peu de répétitions de mêmes valeurs dans l'échantillon * :
+```{r effectifs}
+table(x) # quasi pas de répétitions de mêmes valeurs  donc disp est continue
+```
+
+*On représente donc sa répartition observée avec un histogramme en densité.*
+
+2) *On utilise la fonction* **hist** *avec l'option* **probability=T** 
+ *pour produire l'histogramme en densité et*  **curve** *pour l'ajout de la densité* :  
+
+```{r repartition,echo=TRUE}
+hist(x,probability = T, main="displacement pour les véhicules automatiques",
+        xlab="disp",ylab="densité")
+curve(dnorm(x,mean(x),sd(x)),add=T,col=2)
+points(mean(x),0,col="green",pch=20)
+```
+
+3) Commentaire : *la répartition de la variable* **disp** *est assez éloignée d'une répartition gaussienne. En effet la courbe rouge ajuste assez mal l'histograme de* **disp**.

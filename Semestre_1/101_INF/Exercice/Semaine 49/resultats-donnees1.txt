@@ -1,0 +1,28 @@
+Liliane 34.14
+Philippe 33.56
+Robert 28.73
+Alexandre 21.61
+Julia 28.76
+Emilie 40.51
+Christophe 23.7
+Marie 21.26
+Charles 43.63
+Georges 33.02
+Michel 12.37
+Patrick 20.5
+Vanessa 32.01
+Isabelle 13.4
+Karine 27.87
+Olivier 30.76
+Lucas 16.92
+Richard 38.63
+Estelle 34.08
+Loic 30.04
+
+IMC Moyen :28.27
+
+Noms des patients en corpulence normale :
+Alexandre
+Christophe
+Marie
+Patrick

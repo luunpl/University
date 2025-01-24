@@ -1,0 +1,10 @@
+arbre-simple.test
+feuille.test
+juste-chat.test
+arbre-droit.test
+arbre-gauche.test
+primates.test
+arbre-non-entier.test
+vide.test
+mammalia.test
+amphibians.test

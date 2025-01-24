@@ -1,0 +1,59 @@
+8
+1
+2
+24
+0 A 0
+1 A 2
+2 A 0
+3 A 5
+4 A 7
+5 A 0
+6 A 0
+7 A 0
+
+0 B 4
+1 B 3
+2 B 0
+3 B 4
+4 B 4
+5 B 4
+6 B 3
+7 B 4
+
+0 R 0
+1 R 0
+2 R 0
+3 R 0
+4 R 0
+5 R 1
+6 R 0
+7 R 6
+
+24
+0 A mauvaise_idee
+1 A BRAVO!!!on_a_lu:BARBARA
+2 A On_recommence_a_zero...
+3 A on_a_lu:BARBA
+4 A on_a_lu:BA
+5 A dommage...retour_au_depart
+6 A dommage...retour_au_depart
+7 A dommage...retour_au_depart
+
+0 B un_bon_debut:B
+1 B on_regresse:BARB
+2 B On_recommence_a_zero...
+3 B on_regresse:B
+4 B on_stagne:B
+5 B on_regresse:B
+6 B on_a_lu:BARB
+7 B on_regresse:B
+
+0 R mauvaise_idee
+1 R dommage_on_etait_presque_arrive_il_faut_tout_recommencer...
+2 R On_recommence_a_zero...
+3 R dommage...retour_au_depart
+4 R dommage...retour_au_depart
+5 R on_y_est_presque!:BARBAR
+6 R dommage...retour_au_depart
+7 R on_a_lu:BAR
+

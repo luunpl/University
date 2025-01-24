@@ -1,0 +1,132 @@
+---
+title: "Solution Exemple1 Statistiques"
+author: "Frédérique Leblanc"
+date: "2023-04-04"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Chargement et Extraction
+
+### question 1
+
+```{r}
+card=read.table("cardiaque.csv",header=T,sep=",");head(card)
+x<-card[card$age<=30,"cardiaque"]
+y<-card$cardiaque[(card$age>30)&(card$age<=50)]
+z<-card$cardiaque[(card$age>50)]
+```
+
+### question 2
+
+Calculs des caractéristiques numériques demandées avec :
+
+```{r}
+nx<-length(x);mx<-mean(x);sx<-sd(x)
+ny<-length(y);my<-mean(y);sy<-sd(y)
+nz<-length(z);mz<-mean(z);sz<-sd(z)
+```
+
+Affichage des résultats en tableau de la forme à remplir 
+
+```{r}
+data.frame ("variable"=c("X","Y","Z"),"n"=c(nx,ny,nz),"esb de mu"=c(mx,my,mz),
+            "esb de sigma"=c(sx,sy,sz))->d
+print(d, digits = 4)
+```
+Commentaires :
+
+* Des estimations de moyennes très différentes qui laissent penser que $\mu_X\neq\mu_Y\neq\mu_Z$ :
+il y a manifestement un effet significatif de l'âge sur le risque d'avoir une pathologie cardiaque.
+On pourrait le valider statistiquement par des tests de comparaisons de moyennes (pas demandé ici).
+En tout cas à partir de 50 ans le risque double.
+
+* Des dispersions observées très différentes aussi : bien moins de variabilité chez les "jeunes" que chez les plus agés ("âge moyen" et "plus de 50") : on pourrait vérifier par un test statistique
+de comparaison de variances que $\sigma_X\neq\sigma_Y$ et $\sigma_X\neq\sigma_Z$.
+
+### question 3
+
+On utilise ici la procédure $\texttt{prop.test}$ de R pour un intervalle de niveau de confiance exact
+$1-\alpha$, sans condition sur les tailles d'échantillons
+et un calcul à la main  pour l'IC de niveau asymptotique $1-\alpha$ vu en cours à condition d'avoir $\hat{p}*n>5$ et $n(1-\hat{p})>5$.  .
+Ici les échantillons sont de grandes tailles donc les deux procédures peuvent ếtre utilisées, mêmes si elles fournissent des intervalles légèrement différents.
+
+#### Intervalles de niveaux exacts (valables pour tout $n$)
+
+```{r intervalle exact, echo=FALSE}
+prop.test(sum(x),length(x),conf.level = 0.98)->prop_ex_98
+
+prop.test(sum(x),length(x),conf.level = 0.80)->prop_ex_80
+rbind(c(prop_ex_98$conf.int[1],prop_ex_98$conf.int[2],prop_ex_98$conf.int[2]-prop_ex_98$conf.int[1]),
+c(prop_ex_80$conf.int[1],prop_ex_80$conf.int[2],prop_ex_80$conf.int[2]-prop_ex_80$conf.int[1]))
+```
+#### Intervalles de niveaux approximatifs (asymptotiques)
+
+```{r intesymptotique, echo=FALSE}
+f<-mean(x)
+binf_98<-f-sqrt(f*(1-f)/length(x))*qnorm(1-0.02/2)
+bsup_98<-f+sqrt(f*(1-f)/length(x))*qnorm(1-0.02/2)
+binf_80<-f-sqrt(f*(1-f)/length(x))*qnorm(1-0.1/2)
+bsup_80<-f+sqrt(f*(1-f)/length(x))*qnorm(1-0.1/2)
+rbind(c(binf_98,bsup_98,bsup_98-binf_98),c(binf_80,bsup_80,bsup_80-binf_80))
+```
+
+### question 4
+
+Avec l'intervalle asymptotique : 
+
+L'intervalle de niveau de confiance approx.  $98\%$ est de longueur supérieure à 0.1 tandis qu'au niveau de confiance approx de $80\%$ sa longueur est inférieure à 0.1, donc le niveau de confiance cherché se trouve entre $80\%$ et $98\%$. En descendant de proche en proche de $10^{-2}$ le niveau depuis $98\%$ on peut trouver la solution de façon numérique. On peut aussi chercher $\alpha_0$ de façon exacte en résolvant l'équation
+$2\sqrt{\hat{p}(1-\hat{p})/n}*u_{1-\alpha_0/2}=0.1$
+qui donne la solution
+$1-\alpha_0=2\Phi(0.05\sqrt{n/(\hat{p}(1-\hat{p})})-1$
+```{r}
+niv=2*pnorm(0.05*sqrt(nx/(f*(1-f))))-1; niv
+
+```
+Avec l'intervalle exact, on essaie des valeurs de niveaux allant de $98\%$ à $80\%$ par pas de $10^{-2}$ et on s'arrête dès qu'on a atteint la longueur 0.1
+```{r}
+alpha=0.077
+prop.test(sum(x),length(x),conf.level = 1-alpha)->prop_ex
+c(prop_ex$conf.int[1],prop_ex$conf.int[2],prop_ex$conf.int[2]-prop_ex$conf.int[1])
+```
+
+On obtient un niveau de confiance de $92\%$ pour un intervalle d'amplitude $10\%$.
+
+### question 5
+
+* a) avec $\texttt{prop.test}$ pas de conditions requises et avec le test asymptotique du cours il faut s'assurer que l'échantillon est suffisamment grand avec : $\hat{p}*n>5$ et $n(1-\hat{p})>5$. Ici ç'est limite mais ça passe puisque $n=108$ et $\hat{p}=0.07$.
+
+* b) ${\cal H}_0 : p\geq p_0$ et ${\cal H}_1 : p < p_0$
+
+* c) avec $\texttt{prop.test}$ on exécute :
+```{r}
+prop.test(sum(x),length(x),p=0.35,alternative="less")
+```
+Et on relève :
+
+* d) $t_{calc}=34.941$ et $p_{val}=1,7\cdot 10^{-9}$.
+
+Rappelons que 
+la loi sous l'hypothèse nulle de la statistique de test \texttt{X.squared} est un chi-deux à 1 degré de liberté. C'est la loi utilisée pour le calcul de la $p$-valeur.
+
+* e) On peut conclure, avec tout risque de se tromper $>1,7\cdot 10^{-9}$, que les "jeunes" ont un risque  de pathologie cardiaque inférieur à celui connu tous âges confondus. Il est donc statistiquement significatif que la "jeunesse" est bien moins exposée au risque cardiaque que la population totale.
+
+
+* c) et d) avec le test asymptotique :  on peut répondre  avec 
+```{r}
+p_0=0.35
+t<-(f-p_0)/sqrt(p_0*(1-p_0)/nx);c(t,t^2)
+pval<-pnorm(t);pval
+```
+On obtient donc $t_{calc}=-6.01$ et $p_{val}=9.2\cdot 10^{-10}$. Rappelons que la p-valeur est dans ce cas calculée avec la loi de la statistique sous l'hypothèse nulle qui est une normale centrée réduite.
+
+
+La statistique de test usuelle $T=\sqrt{n}(\hat{p}-p_0)/\sqrt{p_0(1-p_0)}$ prend la valeur
+-6.01 et son carré vaut environ 36 (valeur comparable à la statistique de test fournie par \texttt{prop.test} qui vaut 34.9. 
+
+*   e) On peut conclure, avec tout risque de se tromper $>9.2\cdot 10^{-10}$, que les "jeunes" ont un risque  de pathologie cardiaque inférieur à celui connu tous âges confondus. Il est donc statistiquement significatif que la "jeunesse" est bien moins exposée au risque cardiaque que la population totale.

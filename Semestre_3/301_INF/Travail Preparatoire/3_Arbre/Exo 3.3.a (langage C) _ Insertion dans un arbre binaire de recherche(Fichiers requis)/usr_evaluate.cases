@@ -1,0 +1,79 @@
+Case = Exemple de test utilisateur vide
+input =-1 
+2
+output =Résultat : 2
+
+Case = Exemple de test utilisateur singleton
+input =2 -1 
+3
+output =Résultat : 2 3
+
+Case = Exemple de test utilisateur singleton_bis
+input =2 -1 
+0
+output =Résultat : 0 2
+
+Case = Exemple de test utilisateur couple
+input =1 2 -1 
+3
+output =Résultat : 1 2 3
+
+Case = Exemple de test utilisateur couple_bis
+input =2 3 -1 
+1
+output =Résultat : 1 2 3
+
+Case = Exemple de test utilisateur couple_ter
+input =1 4 -1 
+3
+output =Résultat : 1 3 4
+
+Case = Exemple de test utilisateur couple_tetra
+input =2 4 -1 
+3
+output =Résultat : 2 3 4
+
+Case = Exemple de test utilisateur 3a
+input =11 21 31 -1
+0
+output =Résultat : 0 11 21 31
+
+Case = Exemple de test utilisateur 3b
+input =11 21 31 -1
+15
+output =Résultat : 11 15 21 31
+
+Case = Exemple de test utilisateur 3c
+input =11 21 31 -1
+25
+output =Résultat : 11 21 25 31
+
+Case = Exemple de test utilisateur 3d
+input =11 21 31 -1
+35
+output =Résultat : 11 21 31 35
+
+Case = Exemple de test utilisateur 5
+input =16 22 23 24 25 -1 
+20
+output =Résultat : 16 20 22 23 24 25
+
+Case = Exemple de test utilisateur 7a
+input =1 3 4 7 8 9 10 -1 
+5
+output =Résultat : 1 3 4 5 7 8 9 10
+
+Case = Exemple de test utilisateur 7b
+input =1 3 4 7 8 9 10 -1 
+7
+output =Résultat : 1 3 4 7 8 9 10
+
+Case = Exemple de test utilisateur 7c
+input =1 3 4 7 8 9 10 -1 
+9
+output =Résultat : 1 3 4 7 8 9 10
+
+Case = Exemple de test utilisateur 7d
+input =1 3 4 7 8 9 10 -1 
+4
+output =Résultat : 1 3 4 7 8 9 10
