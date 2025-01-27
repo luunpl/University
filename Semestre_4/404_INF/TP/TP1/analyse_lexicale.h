@@ -10,10 +10,10 @@
 ------------------------------------------------------------------------ */
 
    typedef enum {
-	  ERREUR_CAR,   // caractere incorrect
-	  CHIFFRE,			// chiffre 
-	  SYMBOLE,			// symbole,
-     C_FIN_SEQUENCE   // caractere de fin de sequence     
+      ERREUR_CAR,   // caractere incorrect
+      CHIFFRE,			// chiffre 
+      SYMBOLE,			// symbole,
+      C_FIN_SEQUENCE   // caractere de fin de sequence     
    } Nature_Caractere ;
 
    typedef enum { 

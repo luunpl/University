@@ -129,11 +129,11 @@
                		  case '*':
                			lexeme_en_cours.nature = MUL;
                			etat = E_FIN;
-                     break;
+			   			break;
                         case '/':
-               		      lexeme_en_cours.nature = DIV;
-               			   etat = E_FIN;
-                     break;
+               			lexeme_en_cours.nature = DIV;
+               			etat = E_FIN;
+			   			break;
 		       		  default:
 						printf("Erreur_Lexicale") ;
 				 		exit(0) ;
@@ -207,13 +207,13 @@
    // vaut vrai ssi c designe un caractere correspondant a un symbole arithmetique
    int est_symbole(char c)  {
       switch (c) {
-      case '+':  
-	 	case '-':  
-	 	case '*':
-	 	case '/':
+         case '+':  
+         case '-':  
+         case '*':
+         case '/':
             return 1;
 
-        default:
+         default:
             return 0;
       } 
    }
@@ -225,11 +225,12 @@
 	switch (nature) {
 		case ENTIER: return "ENTIER" ;
 		case PLUS: return "PLUS" ;
-      		case MOINS: return "MOINS" ;            
-      		case MUL: return "MUL" ;              
-      		case FIN_SEQUENCE: return "FIN_SEQUENCE" ;     
-      		default: return "ERREUR" ;       
-      case DIV: return "DIV";     
+      case MOINS: return "MOINS" ;            
+      case MUL: return "MUL" ;
+      case DIV: return "DIV" ;              
+      case FIN_SEQUENCE: return "FIN_SEQUENCE" ;     
+      default: return "ERREUR" ;
+                  
 	} ;
    } 
 

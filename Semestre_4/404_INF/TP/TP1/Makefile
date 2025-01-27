@@ -8,10 +8,7 @@ analyse_lexicale.o: analyse_lexicale.c analyse_lexicale.h lecture_caracteres.h
 lecture_caracteres.o: lecture_caracteres.h lecture_caracteres.c
 	gcc -g -Wall -c lecture_caracteres.c
 
-analyse_syntaxique.o: analyse_syntaxique.c analyse_syntaxique.h lecture_caracteres.h analyse_lexicale.h
-	gcc -g -Wall -c analyse_syntaxique.c
-	
-test_lexeme.o: analyse_lexicale.h 
+test_lexeme.o: analyse_lexicale.h
 	gcc -g -Wall -c test_lexeme.c
 
 clean:
