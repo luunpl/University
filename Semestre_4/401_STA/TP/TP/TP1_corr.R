@@ -152,3 +152,4 @@ head(her) #les premières lignes du data.frame : titre de col., séparateurs et 
 her[2,3]  #obervation de la variable de la colonne 3 (sex), pour l'ind. ligne 2(I0003)
 her[2,] #valeurs de toutes les variables pour indiv ligne 2
 her[,3] #variable colonne 3 pour tous les individus
+
