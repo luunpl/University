@@ -57,16 +57,15 @@ premier; il est ajouté à la liste Premiers et ses multiples ( i + p) sont posi
 # Comparaison des temps d’exécution
 def comparer(lim):
     time1 = time.time()
-    li1 = genererPremiers(lim)
+    genererPremiers(lim)
     basique = time.time() - time1
     time3 = time.time()
-    li2 = criblerPremiers(lim)
+    criblerPremiers(lim)
     crible = time.time() - time3
     return basique, crible
 
 
-if __name__ == "__main__":
-    time_basique, time_crible = comparer(20000)
-    print("generation des nombres premiers jusqu'a 20000")
-    print("basique:", time_basique, "secondes")
-    print("crible:", time_crible, "secondes")
+time_basique, time_crible = comparer(20000)
+print("Generation des nombres premiers jusqu'a 20000")
+print("Basique:", time_basique, "secondes")
+print("Crible:", time_crible, "secondes")
