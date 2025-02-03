@@ -1,0 +1,39 @@
+---
+title: "TP3"
+author: "luunpl"
+date: "2025-02-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, out.width="50%")
+```                                                                       
+
+## R Markdown
+
+# Charger les donnees
+```{r}
+setwd("~/Personal/University/Semestre_4/401_STA/TP/Donnees")
+read.table("cardiaque.csv",header=T,sep=",",dec=".")->cardiaque
+head(cardiaque)
+summary(cardiaque)
+```
+
+# Exercice Preliminaire
+```{r}
+help("segments")
+curve(dnorm(x,0,1),from=-6,to=6)
+curve(dnorm(x,0,0.5),from=-6,to=6,col=2,add=T)
+curve(dnorm(x,0,2),from=-6,to=6,col=3,add=T)
+curve(dnorm(x,3,1),from=-6,to=6,col=4,add=T)
+abline(h=0) # ajoute l'axe des abscisses
+abline(v=0) # ajoute l'axe des ordonnées
+segments(-1,0,1,0,col='red')
+abline(v=c(-1,1),col='red')
+
+```
+# Exercice 1
+```{r}
+curve(pnorm(x,0,1),ylim=c(0,1),xlim=c(-3,3),from=2-3,to=2+3)
+```
+
