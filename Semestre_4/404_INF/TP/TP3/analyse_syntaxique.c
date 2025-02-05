@@ -26,8 +26,8 @@ int Evaluer(int vald, char op, int valg) {
             return vald / valg;
 
         default:
-            exit(0);
-            break;  
+            erreur_syntaxique("Operateur inconnu");
+            return 0; 
     }
 }
 
@@ -57,7 +57,6 @@ void Rec_op(char *op){
 
         default:
             erreur_syntaxique("Un operateur est attendu");
-            exit(0);
             break;
     }
 }
@@ -80,7 +79,6 @@ void Rec_eaep(int *sous_resultat) {
             Rec_eaep(&valg);
             Rec_op(&op);
             Rec_eaep(&vald);
-            printf("valg = %d, op = %c, vald = %d\n", valg, op, vald);
             *sous_resultat = Evaluer(valg, op, vald);
 
             if (lc.nature == PARF){
@@ -88,17 +86,21 @@ void Rec_eaep(int *sous_resultat) {
                 avancer();
             } else {
                 erreur_syntaxique("Parenthese fermante attendue");
-                exit(0);
             }
             break;
 
         default:
             erreur_syntaxique("Expression attendue");
-            exit(0);
             break;
     }
 }
 
+// TP3
+void Rec_exp();
+void Rec_eag();
+void Rec_seq_terme();
+
+// Fonction Analyser a modifier chaque TP
 void analyser(char *fichier, int *resultat){
     demarrer(fichier);
     while (!fin_de_sequence())

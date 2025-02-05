@@ -11,7 +11,7 @@ void erreur_syntaxique(char *message){
     exit(1);
 }
 
-void analyser (char *fichier, int *resultat){
+void analyser(char *fichier, int *resultat){
     Etat ec; // Etat courant
     ec = Q0; // Initialisation de l'etat courant
     int temp_result = 0;
