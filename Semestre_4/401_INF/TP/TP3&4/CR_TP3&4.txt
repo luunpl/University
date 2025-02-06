@@ -1,0 +1,17 @@
+Contents of section .data:
+ 0000 00000041 0000000f 626f6e6a 6f757200  ...A....bonjour.
+ 0010 00000042 00000003 11223456 fafd0000  ...B...."4V....
+ 0020 00000041                             ...A
+
+Explication
+0x00000041 : 65 en 32 bits
+0x0000000f : 15 en 32 bits
+0x626f6e6a 6f757200 : "bonjour" en ASCII
+0x00000042 : 66 en 32 bits
+0x00000003 : 3 en 32 bits
+0x11223456 : 0x1122 et 0x3456 combinés en 32 bits
+0xfafd0000 : 0xfafd en 32 bits (les deux octets de poids faible sont 0x00)
+0x00000041 : 65 en 32 bits
+En suivant ces étapes, vous pouvez modifier, 
+compiler et inspecter le fichier donnees2.s pour voir la représentation 
+des entiers sur 32 bits dans la section .data.
