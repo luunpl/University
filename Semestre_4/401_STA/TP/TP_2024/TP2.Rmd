@@ -1,0 +1,132 @@
+---
+title: "TP2"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, out.width="50%")
+```
+
+## Exercice 1
+
+
+```{r}
+table(mtcars$carb)
+```
+
+-   Variables qualitatives: vs, am (modalités 0 ou 1)
+-   Variables quantitatives discrètes: cyl (4,6,8), gear (3,4,5), carb (1,2,3,4,6,8)
+-   Variables quantitatives continues: mpg, disp, hp, drat, wt, qsec
+
+```{r}
+summary(mtcars)
+```
+
+la moyenne de mpg est 20.09, la valeur max de disp est 472, 
+la proportion de manuelles est la moyenne de am (car 1 si manuelle et 0 sinon) soit 40,62% donc 59,38% d'automatiques.
+
+
+## Exercice 2
+
+```{r}
+mpg <- mtcars$mpg # indicateur de consommation
+cyl <- mtcars$cyl # nb cylindres
+am <- mtcars$am # transmission 1 si manuelle
+disp <- mtcars$disp # vol de carb déplacé dans les pistons du moteur (gde va = gros moteur)
+vs <- mtcars$vs
+```
+
+```{r}
+par(mfrow=c(1,2),cex=0.8)
+boxplot(mpg,main="consommation",ylab="mpg")
+boxplot(mtcars[am==0,"mpg"],mtcars[am==1,"mpg"],ylab="mpg",names=c("automatique","manuelle"),main="mpg selon la transmission")
+```
+
+boxplot montre : min, max, quartiles et médiane.
+
+## Exercice 3
+
+```{r}
+table(am)
+```
+
+```{r}
+freqtab <- prop.table(table(am)); # table(am)/length(am) 
+```
+
+```{r}
+par(mfrow=c(1,2))
+pie(freqtab,labels=c("automatique","manuelle"), main="transmission")
+barplot(freqtab, main="transmission",names=c("automatique","manuelle"),ylab="fréquences")
+```
+
+Dès que plus de 5 modalités le diagramme en barres est préférable. Il permet de plus de représenter côte à côte deux distributions.
+
+
+Tableau des effectifs croisés : nbre d'individus par couple de modalités:
+```{r}
+table(am,vs); 
+```
+Tableau des fréquences croisées:
+```{r}
+prop.table(table(am,vs))
+```
+
+```{r}
+prop.table(table(am,vs),1) # fréquence des vs pour chaque am
+prop.table(table(am,vs),2) # fréquence des am pour chaque vs
+barplot(prop.table(table(am,vs),2),beside=T,xlab="vs")
+```
+
+la proportion de voiture automatique (am=0) est en gris foncé pour les voitures manuelles (am=1) en gris clair : elles sont différentes en fonction de vs, il y a donc un lien entre vs et am.
+
+
+## Exercice 4 
+
+```{r}
+sum(cyl) # somme 
+sum(cyl^2) # somme des carrés
+mean(cyl) # moyenne: sum(cyl)/length(cyl)
+sum((cyl-mean(cyl))^2)/length(cyl) # variance empirique
+var(cyl) # variance empirique corrigée
+sd(cyl) # ecart-type corrigé
+```
+
+```{r}
+quantile(cyl)
+```
+donne par défault les quartiles. 
+
+```{r}
+mean(mpg) # moyenne
+sd(mpg) # écart-type corrigé 
+```
+
+## Exercice 5
+
+```{r}
+par(mfrow=c(1,2))
+freqtabcyl <- table(cyl)/length(cyl)
+pie(freqtabcyl, main="répartition du nombre de cylindre")
+barplot(freqtabcyl, main="répartition observée de cyl", names=c("4","6","8"),ylab="fréquences")
+```
+
+La somme des hauteurs, sum(freqtabcyl), est 1, ce sont des fréquences.
+
+```{r}
+hist(disp,prob=T,main="distribution observée de disp", ylab="densité",xlab="disp")
+curve(dnorm(x,m=mean(disp),sd=sd(disp)),add=T,col=2)
+```
+
+La distribution de disp ne semble pas suivre une loi normale.
+
+## Exercice 6
+
+```{r}
+cumsum(freqtabcyl) # cumsum(table(cyl)/length(cyl)) 
+par(mfrow=c(1,2))
+cumfreqcyl <- c(0,cumsum(freqtabcyl),1) 
+plot(c(2,4,6,8,10),cumfreqcyl,type="s",xlab="cyl",ylab="fréquences cumulées",main="FdR empirique de cyl")
+plot(ecdf(cyl),xlab="cyl")
+```
+

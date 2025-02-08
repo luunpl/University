@@ -1,0 +1,139 @@
+---
+title: "TP3"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, out.width="50%")
+```
+
+## Extraction de données
+
+```{r}
+cardiaque <- read.table("~/mypathtosta401data/cardiaque.csv",sep=",",dec=".",header=T)
+systolique <- cardiaque$systolique
+length(systolique) # taille
+mean(systolique) # moyenne
+sd(systolique) # ecart-type empirique corrigé
+quantile(systolique) # quartiles, visibles aussi avec summary(systolique)
+```
+
+## Exercice préliminaire
+
+```{r}
+curve(dnorm(x,0,1),from=-6,to=6,n=1000,col=1, lwd=2, ylim=c(0,0.8),ylab="dnorm",main="densité normale")
+curve(dnorm(x,0,0.5),n=100,col=3,lwd=2,add=T)
+curve(dnorm(x,0,2),n=100,col=4,lwd=2,add=T)
+curve(dnorm(x,3,1),n=100,col=5,lwd=2,add=T)
+segments(-1,0,1,0,col=2,lwd=5) # segment [-1,1] 
+abline(v=c(-1,1),col=2,lty=2) # verticales 
+legend("topleft",legend=1:4,col=c(1,3:5), lwd=2)
+```
+
+Comparer visuellement les intégrales des courbes entre les lignes pointillés : 
+p4<p3<p1<p2
+
+```{r}
+mu <- 0; sig <- 1
+curve(dnorm(x,mu,sig),ylim=c(0,1),from=mu-3*sig,to=mu+3*sig,n=100)
+curve(pnorm(x,mu,sig), add=T, col="green")
+```
+
+Changer $\mu$ décalle les courbes, augmenter $\sigma$ les étale.
+
+## Exercice 1
+
+```{r}
+mu <- 2; sig <- 3;
+pnorm(4,mu,sig)-pnorm(-2,mu,sig) # pnorm((4-mu)/sig)-pnorm((-2-mu)/sig)
+```
+
+```{r}
+mu<-c(0,1,2)
+sigma<-c(1,2,3)
+pnorm(mu+sigma,mu,sigma)-pnorm(mu-sigma,mu,sigma) 
+```
+
+Quelle que soit sa moyenne et sa variance, une variable gaussienne a 68,27% de chances
+de tomber entre sa moyenne - son ecart-type et sa moyenne + son ecart type.
+
+```{r}
+pnorm(2)-pnorm(-2) 
+pnorm(3)-pnorm(-3) 
+```
+
+```{r}
+n <- 9
+p =(1:n)/(n+1)
+qnorm(p) # deciles
+```
+
+```{r}
+curve(pnorm(x),from=-3,to=3)
+points(qnorm(p),rep(0,n),pch=20,col="red")
+segments(qnorm(p),0,qnorm(p),pnorm(qnorm(p)),lty=2)
+segments(qnorm(p),pnorm(qnorm(p)),-4,pnorm(qnorm(p)),lty=2)
+```
+
+```{r}
+plot(qnorm(p),qnorm(p,-1,5))
+abline(-1,5,col="green")
+```
+
+Si X suit une loi normale N(mu, sigma^2), le quantile d'ordre alpha de X est égal à sigma * le quantile d'ordre alpha de U + mu. 
+
+## Exercice 2
+
+```{r}
+mu <- 2; sig <- 3
+pA <- pnorm(5,mu,sig)-pnorm(1,mu,sig) # P(A)
+pB <- pnorm(2,mu,sig)-pnorm(0,mu,sig) # P(B)
+pC <- 1-pnorm(2,mu,sig) # P(C)
+pD <- pnorm(0,mu,sig) # P(D)
+```
+
+```{r}
+pAsB <- (pnorm(2,mu,sig)-pnorm(1,mu,sig))/pB # P(A|B) = P(A,B)/P(B)
+pAsC <- (pnorm(5,mu,sig)-pnorm(2,mu,sig))/pC # P(A|C) = P(A,C)/P(C) 
+```
+P(A|D) = P(A,D)/P(D) = 0
+
+```{r}
+pAsB*pB+pAsC*pC # P(A)=P(A,D)+P(A,B)+P(A,C)
+pA
+```
+
+## Exercice 3 
+
+1.
+```{r}
+n <- 10; p <- 0.3
+pA <- pbinom(5,n,p)-pbinom(0,n,p) # P(A)
+pB <- pbinom(1,n,p) # P(B)
+pC <- 1-pbinom(1,n,p) # P(C) 
+```
+
+2.
+```{r}
+pAsB <- dbinom(1,n,p)/pB # P(A|B) = P(A,B)/P(B)
+pAsC <- (pbinom(5,n,p)-pbinom(1,n,p))/pC # P(A|C) = P(A,C)/P(C) = sum(dbinom(2:5,n,p))/P(C)
+```
+
+3.
+```{r}
+pAsB*pB+pAsC*pC  # P(A) = P(A,B)+P(A,C) 
+```
+
+4.5.6.
+```{r, out.width="70%"}
+par(mfrow=c(1,2))
+x <- c(-1,0:n,n+1)
+plot(x,pbinom(x,n,p),type="s",main="FdR d'une Binomiale (n,p) n=10",xlab="nbre succès", ylab="P(X<=x)=F(x)")
+curve(pnorm(x,n*p,sqrt(n*p*(1-p))),col="green",add=T)
+n <- 1000
+x <- c(-1,0:n,n+1)
+plot(x,pbinom(x,n,p),type="s",main=paste0("FdR de B(n,p) n=",n),xlab="nbre succès", ylab="P(X<=x)=F(x)")
+curve(pnorm(x,n*p,sqrt(n*p*(1-p))),col="green",add=T)
+```
+
+On illustre ici l'approximation d'une loi binomiale par une loi normale qui est une conséquence du théorème central limite.
