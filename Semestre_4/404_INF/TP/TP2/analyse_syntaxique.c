@@ -3,12 +3,9 @@
 #include "analyse_syntaxique.h"
 #include "analyse_lexicale.h"
 
-typedef enum {Q0, Q1, Q2} Etat;
-Lexeme lc;
-
-void erreur_syntaxique(char *message){
-    fprintf(stderr, "Erreur syntaxique : %s\n", message);
-    exit(1);
+void erreur_syntaxique(char *message) {
+    fprintf(stderr, "Erreur syntaxique: %s\n", message);
+    exit(EXIT_FAILURE);
 }
 
 int Evaluer(int vald, char op, int valg) {
@@ -21,61 +18,57 @@ int Evaluer(int vald, char op, int valg) {
             return vald * valg;
         case '/':
             if (valg == 0) {
-                erreur_syntaxique("Division par zero");
+                printf("Division par zero\n");
+                exit(1);
             }
             return vald / valg;
-
         default:
             exit(0);
-            break;  
     }
 }
 
 void Rec_op(char *op){
-    lc = lexeme_courant();
-    switch (lc.nature){
+    switch (lexeme_courant().nature){
         case PLUS:
             *op = '+';
-            printf("%s\n", lc.chaine);
+            printf("%s\n", lexeme_courant().chaine);
             avancer();
             break;
         case MOINS:
             *op = '-';
-            printf("%s\n", lc.chaine);
+            printf("%s\n", lexeme_courant().chaine);
             avancer();
             break;
         case MUL:
             *op = '*';
-            printf("%s\n", lc.chaine);
+            printf("%s\n", lexeme_courant().chaine);
             avancer();
             break;
         case DIV:
             *op = '/';
-            printf("%s\n", lc.chaine);
+            printf("%s\n", lexeme_courant().chaine);
             avancer();
             break;
 
         default:
             erreur_syntaxique("Un operateur est attendu");
             exit(0);
-            break;
     }
 }
 
 void Rec_eaep(int *sous_resultat) {
-    lc = lexeme_courant();
     int valg, vald;
     char op;
 
-    switch (lc.nature) {
+    switch (lexeme_courant().nature) {
         case ENTIER:
-            printf("%s\n", lc.chaine);
-            *sous_resultat = lc.valeur;
+            printf("%s\n", lexeme_courant().chaine);
+            *sous_resultat = lexeme_courant().valeur;
             avancer();
             break;
 
         case PARO:
-            printf("%s\n", lc.chaine);
+            printf("%s\n", lexeme_courant().chaine);
             avancer();
             Rec_eaep(&valg);
             Rec_op(&op);
@@ -83,8 +76,8 @@ void Rec_eaep(int *sous_resultat) {
             printf("valg = %d, op = %c, vald = %d\n", valg, op, vald);
             *sous_resultat = Evaluer(valg, op, vald);
 
-            if (lc.nature == PARF){
-                printf("%s\n", lc.chaine);
+            if (lexeme_courant().nature == PARF){
+                printf("%s\n", lexeme_courant().chaine);
                 avancer();
             } else {
                 erreur_syntaxique("Parenthese fermante attendue");
@@ -95,7 +88,6 @@ void Rec_eaep(int *sous_resultat) {
         default:
             erreur_syntaxique("Expression attendue");
             exit(0);
-            break;
     }
 }
 
