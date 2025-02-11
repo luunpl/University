@@ -12,16 +12,12 @@ int main (int argc, char *argv[]) {
                         break ;
                 case 2:
                         // demarre l'analyse lexicale sur le fichier transmis en argument
-                        demarrer (argv[1]) ; 
+                        analyser(argv[1], &resultat);
+                        printf("Resultat: %d\n", resultat);
                         break ;
                 default:
                         printf("nombre d'arguments incorrects !\n");
                         exit(1) ;
         } ;
-        while (! fin_de_sequence()) { 
-                analyser(argv[1], &resultat);
-                printf("Resultat: %d\n", resultat);
-        } ;
-        arreter() ; 
         return 0 ;
 }
