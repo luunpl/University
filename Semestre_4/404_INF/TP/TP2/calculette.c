@@ -11,7 +11,7 @@ int main (int argc, char *argv[]) {
                         demarrer ("") ; 
                         break ;
                 case 2:
-                        // demarre l'analyse lexicale sur le fichier transmis en argument
+                        // demarre l'analyse sur le fichier transmis en argument
                         analyser(argv[1], &resultat);
                         printf("Resultat: %d\n", resultat);
                         break ;
