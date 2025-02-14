@@ -106,3 +106,7 @@ Nouvelle valeur à l'adresse DB :
 
 Valeur : 0000000c (hexadécimal)
 Valeur : 12 (décimal)
+
+4.1 Un premier programme en langage d’assemblag
+4.2 Alignements et ”petits bouts”
+On ne peut pas afficher l,entier a
