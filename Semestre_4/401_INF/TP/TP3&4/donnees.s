@@ -1,5 +1,5 @@
     .data
-aa: .byte 65    @ .byte 0x41
+aa: .byte 65   @ .byte 0x41
 oo: .byte 15   @ .byte  0x0f
 cc: .asciz "bonjour"
 rr: .byte 66   @ .byte 0x42
