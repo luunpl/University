@@ -19,10 +19,11 @@ main:
       LDR r1, [r0]
       BL EcrHexa32
       BL EcrZdecimal32
-
+    
+    @ === Manipulation du mot de 16 bits (DH) ===
       LDR r0, LD_DH
       LDRH r1, [r0]
-      BL EcrHexa16
+      BL EcrHexa32
       BL EcrZdecimal16
 
       MOV r4, #-10
@@ -31,12 +32,13 @@ main:
 
       LDR r0, LD_DH
       LDRH r1, [r0]
-      BL EcrHexa16
+      BL EcrHexa32
       BL EcrZdecimal16
 
+    @ === Manipulation du mot de 8 bits (DB) ===
       LDR r0, LD_DB
       LDRB r1, [r0]
-      BL EcrHexa8
+      BL EcrHexa32
       BL EcrZdecimal8
 
       MOV r4, #-10
@@ -45,7 +47,7 @@ main:
 
       LDR r0, LD_DB
       LDRB r1, [r0]
-      BL EcrHexa8
+      BL EcrHexa32
       BL EcrZdecimal8
 
 fin:  B exit  @ terminaison immédiate du processus (plus tard on saura faire mieux)
