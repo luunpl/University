@@ -1,0 +1,131 @@
+---
+title: "TP4"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, out.width="50%")
+```
+
+## Extraction de données
+
+```{r}
+cardiaque <- read.table("~/mypathtosta401data/cardiaque.csv",sep=",",dec=".",header=T)
+sysC <- cardiaque[cardiaque$cardiaque==1,"systolique"]
+length(sysC) # taille
+sd(sysC) # ecart-type corrigé
+mean(sysC) # moyenne
+quantile(sysC) # quartiles
+```
+
+## Exercice 1
+
+1.
+```{r}
+n <- 50
+mu <- 2
+sigma <- 2
+x <- rnorm(n,mean=mu,sd=sigma)
+```
+
+2.
+```{r}
+demp <- quantile(x, probs=seq(0,1,0.1),type=1)
+```
+
+3.
+```{r}
+dtheo <- qnorm(seq(0,1,0.1),mean=mu,sd=sigma)
+```
+
+4.
+```{r}
+plot(dtheo,demp,main="les déciles",xlab="déciles théoriques", ylab="déciles empiriques") 
+abline(0,1,col="green")
+```
+
+le décile empirique approche le décile théorique
+
+5.
+```{r}
+hist(x,probability=TRUE)
+curve(dnorm(x,mean=mu,sd=sigma),add=TRUE,col="green")
+```
+
+l'histogramme est assez proche de la densité qui est la répartition théorique de X
+
+6.
+```{r}
+qemp <- quantile(x, probs=(1:n)/(n+1),type=1)
+summary(qemp-sort(x))
+```
+
+7.
+```{r}
+qtheo <- qnorm((1:n)/(n+1),mean=mu,sd=sigma)
+plot(qtheo,qemp,xlab="quantiles théoriques ",ylab="quantiles empiriques")
+abline(0,1,col="green")
+```
+
+8.
+```{r}
+qtheoU <- qnorm((1:n)/(n+1)) # quantiles théoriques pour la loi normale centrée réduite
+plot(qtheoU,qemp)
+abline(mu,sigma,col="green")
+```
+
+9.
+```{r}
+qqnorm(x)
+abline(mu,sigma,col="green")
+qqline(x,col="blue")
+points(qnorm(c(0.25,0.75)),quantile(x,probs=c(0.25,0.75)),pch=20,col="blue")
+legend("topleft",legend=c("2+2x","qqline"),col=c("green","blue"),lwd=2)
+```
+
+qqline ne donne pas tout à fait la droite d'équation y=mu+sigma*x (dite droite de Henry) qui à priori n'est pas connue.
+La droite produite par qqline passe en fait par les points d'abscisses premier et troisième quartile et
+ordonnées premier et troisième quartile estimés sur les n tirages. 
+
+## Exercice 2 
+
+1.
+```{r}
+n <- 120
+```
+
+2.
+```{r}
+x <- runif(n,min=-1,max=1) # E(X)=0 et Var(X)=1/3
+qqnorm(x)
+qqline(x,col="blue")
+```
+
+Queues de distribution plus légères que celles de la normale.
+
+3.
+```{r,out.width="70%"}
+par(mfrow=c(1,2))
+x <- rt(n,3)
+qqnorm(x)
+qqline(x,col="blue")
+curve(dnorm(x),from=-5,to=5)
+curve(dt(x,3),add=TRUE,col="red")
+legend("topleft",legend=c("norm","student(3)"),col=c("black","red"),lwd=2)
+```
+
+Le S est dans l'autre sens car la student a des queues de distribution plus lourdes que la loi normale.
+
+4.
+```{r,out.width="70%"}
+par(mfrow=c(1,2))
+x <- rchisq(n,2)
+qqnorm(x)
+qqline(x,col="blue")
+curve(dnorm(x),from=-3,to=10, ylim=c(0,0.6))
+curve(dchisq(x,2),add=TRUE,col="red")
+legend("topright",legend=c("norm","chi2(2)"),col=c("black","red"),lwd=2)
+```
+
+Une queue de distribution moins lourde d'un coté (vers 0) et plus lourde de l'autre (vers +infini)
+et surtout une disymmétrie indiquée par l'absence de symétrie centrale entre les points.
