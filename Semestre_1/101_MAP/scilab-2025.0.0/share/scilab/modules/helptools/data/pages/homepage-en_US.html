@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Scilab Help Homepage</title>
+    <style type="text/css" media="all">
+        @import url("scilab_code.css");
+        @import url("xml_code.css");
+        @import url("c_code.css");
+        @import url("style.css");
+    </style>
+</head>
+
+<body>
+    <div class="manualnavbar" align="left">
+        <a href="https://www.scilab.org/" class="ulink">Scilab Website</a> |
+        <a href="https://help.scilab.org/" class="ulink">Online Help</a> |
+        <a href="https://gitlab.com/scilab/scilab">Contribute to GitLab</a> |
+        <a href="https://gitlab.com/scilab/scilab/-/wikis/home" class="ulink">Wiki</a> |
+        <a href="https://gitlab.com/scilab/scilab/-/issues" class="ulink">Issues</a> |
+        <a href="https://gitlab.com/scilab/forge/" class="ulink">Forge</a> |
+        <a href="https://scilab.discourse.group/" class="ulink">Discourse</a> |
+        <a href="https://www.scilab.org/about/community/mailing-lists" class="ulink">Mailing Lists Archives</a> |
+        <a href="https://atoms.scilab.org/" class="ulink">ATOMS</a> |
+        <a href="https://fileexchange.scilab.org/" class="ulink">File Exchange</a>
+        <hr/>
+    </div>
+    <span class="path"><a href="index.html">Scilab help</a> &gt;&gt; Homepage</span>
+    <br/>
+    <br/>
+    <div class="refsection">
+        <h2 class="title">Welcome to Scilab 2025.0.0</h2>
+        <p class="para">
+            Scilab 2025.0.0 is a new stable release of Scilab, the open-source
+            platform for numerical computation.
+        </p>
+        <p class="para">
+            Here is a tour of the changes since Scilab 2024.1.0.
+        </p>
+        <p class="para">
+            To view it in the help browser, enter <code>doc("2025.0.0")</code>
+            in the console, and browse related pages.
+        </p>
+        <h3 class="title">Feature changes and additions</h3>
+        <ul>
+            <li>New functions:
+                <ul>
+                    <li><code>frank</code>: Computes Frank matrix.</li>
+                    <li><code>getdeprecated</code>: Gets names of deprecated functions and replacement function names.</li>
+                    <li><code>hilbm</code>: Computes Hilbert matrix.</li>
+                    <li><code>invhilb</code>: Computes inverse of Hilbert matrix.</li>
+                    <li><code>kmeans</code>: K-means clustering function.</li>
+                    <li><code>magic</code>: Computes magic square matrix.</li>
+                    <li><code>polyfit</code>: Fits a curve with a polynomial.</li>
+                    <li><code>polyval</code>: Evaluates a polynomial for some given values.</li>
+                    <li><code>vander</code>: Computes Vandermonde matrix.</li>
+                </ul>
+            </li>
+            <li>Language changes:
+                <ul>
+                    <li>Anonymous/Lambda functions are now available in Scilab using a dedicated syntax <code>#(x) -> (x+1)</code>.</li>
+                    <li>New simplified syntax to declare complex numbers: <code>1i</code> and <code>1j</code> (equivalent to <code>1*%i</code>).</li>
+                </ul>
+            </li>
+            <li>Web Tools:
+                <ul>
+                    <li><code>timeout</code> optional parameter has been added to <code>http_*</code> functions.</li>
+                    <li><code>http_upload</code> can be used to upload a remote file with a different name as local one.</li>
+                </ul>
+            </li>
+            <li>Graphics:
+                <ul>
+                    <li>New property <code>"TooltipString"</code> added for <code>uimenu</code> handles.</li>
+                    <li>New properties <code>"cdata_bounds"</code> &amp; <code>"color_range"</code> added for <code>Fac3d</code> handles.</li>
+                    <li><code>"anti_aliasing"</code> property value is now <code>"8x"</code> by default for graphic figures (Anti-aliasing was deactivated by default in previous versions).</li>
+                    <li><code>"fractional_font"</code> property value is now <code>"on"</code> by default for text handles (is was <code>"off"</code> by default in previous versions).</li>
+                    <li>Graphics functions now return the handles they created: <code>h = plot()</code>, <code>h = surf()</code>, ... This feature can be used to replace <code>h = gce()</code> in some cases.</li>
+                    <li>New way to manage rendering (raw text, LaTeX, MathML) of strings in graphics figures with:
+                        <ul>
+                            <li><code>"interpreter"</code> property added for <code>Text</code>, <code>Datatip</code>, <code>Label</code> and <code>Legend</code> handles,</li>
+                            <li><code>"tics_interpreters"</code> property added for <code>Axis</code> handles,</li>
+                            <li><code>"interpreters"</code> property added for <code>x_ticks</code>, <code>y_ticks</code> and <code>z_ticks</code> for <code>Axes</code> handles.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Other Improvements:
+                <ul>
+                    <li>Some Scilab modules (`CACSD`, `Linear Algebra`, ...) have been updated to use the `arguments` block hence enhancing their performances.</li>
+                    <li><code>pca()</code> function now manages more input/output arguments.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p class="para">
+            In this version, extra effort has been expanded on fixing issues and stabilization.
+            Detailed information about those improvements can be found in the <a href="CHANGES.html">CHANGES</a> file.
+        </p>
+    </div>
+    <hr/>
+    <div class="refsection">
+        <h3 class="title">Documentation and help</h3>
+        <p class="para">If you are new to Scilab, please use
+            the <a href="https://www.scilab.org/sites/default/files/Scilab_beginners_0.pdf">Scilab
+                beginners tutorial</a>
+            and <a href="https://www.scilab.org/sites/default/files/Xcos_beginners_0.pdf">Xcos
+                beginners tutorial</a> provided by the Scilab Team.</p>
+        <p class="para">The Scilab Team provides also
+            some <a href="https://www.scilab.org/tutorials">documentation
+                and tutorials</a>.</p>
+    </div>
+    <hr/>
+    <div class="refsection">
+        <h3 class="title">Other resources</h3>
+        <p class="para"><a href="https://www.scilab.org/" class="ulink">Scilab Website</a> - Consult Scilab official
+            website</p>
+        <p class="para"><a href="https://gitlab.com/scilab/scilab/-/wikis/home" class="ulink">Wiki</a> - Consult documentations, tricks, etc.
+        </p>
+        <p class="para"><a href="https://gitlab.com/scilab/scilab/-/issues" class="ulink">Issues</a> - Report bugs and wishes
+            about Scilab</p>
+        <p class="para"><a href="https://gitlab.com/scilab/forge/" class="ulink">Forge</a> - Browse and publish Scilab modules
+        </p>
+        <p class="para"><a href="https://scilab.discourse.group/" class="ulink">Discourse</a> -
+            Communicate and exchange with the community</p>
+        <p class="para"><a href="https://www.scilab.org/about/community/mailing-lists" class="ulink">Mailing Lists Archives</a> -
+            Consult mailing-lists archives</p>
+        <p class="para"><a href="https://atoms.scilab.org/" class="ulink">ATOMS</a> - Browse Scilab packaged modules</p>
+        <p class="para"><a href="https://fileexchange.scilab.org/" class="ulink">File Exchange</a> - Exchange your
+            scripts, results and files.</p>
+        <br/>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<scilablib name="functionslib">
+  <macro name="%f_n_f" file="%f_n_f.bin" md5="689770fc639e8270e4e2f53b3f6630b5"/>
+  <macro name="%f_o_f" file="%f_o_f.bin" md5="00ebb11b1a29c0ee1f2c10e6c41a2eaa"/>
+  <macro name="cat_code" file="cat_code.bin" md5="e54db2c5039428784de9a0c5e0a96f82"/>
+  <macro name="check_gateways" file="check_gateways.bin" md5="09a60e1229dba6d9ceccb319823d7f80"/>
+  <macro name="createfun" file="createfun.bin" md5="144266580dd34dca73962561e3e756fe"/>
+  <macro name="deff" file="deff.bin" md5="4baa914a964609fafb8b0459fe6aaced"/>
+  <macro name="expression2code" file="expression2code.bin" md5="c7748d911922b5a65b10974d0ed24433"/>
+  <macro name="format_txt" file="format_txt.bin" md5="af88ba9572b0bcf490486533d0dcf41b"/>
+  <macro name="get_function_path" file="get_function_path.bin" md5="f991dbe359eaed8ebcdadbf27b404c92"/>
+  <macro name="getd" file="getd.bin" md5="e21ac2b777e3c94b67194b7d4914c8dd"/>
+  <macro name="instruction2code" file="instruction2code.bin" md5="8399940eb9a2646e9eb88a3389804476"/>
+  <macro name="rhs2code" file="rhs2code.bin" md5="ef869c460275da951a90afc520e9012c"/>
+  <macro name="threadInspector" file="threadInspector.bin" md5="4a96ba103b19f066db7992b6a1b005ae"/>
+  <macro name="tree2code" file="tree2code.bin" md5="1a2606811e6e2d2ef414605aef6bb88e"/>
+  <macro name="warnobsolete" file="warnobsolete.bin" md5="fdd96f0da9e305871dac4e09cec477b6"/>
+</scilablib>

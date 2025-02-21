@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<scilablib name="helptoolslib">
+  <macro name="add_help_chapter" file="add_help_chapter.bin" md5="24604d5d34ebd2e61f3b5305222a3f39"/>
+  <macro name="add_module_help_chapter" file="add_module_help_chapter.bin" md5="a45b28c3eb6e19c5e6a9debaa74553d8"/>
+  <macro name="apropos" file="apropos.bin" md5="b0c73ff11a1cbcbf9dcd5a7a2beca483"/>
+  <macro name="clean_help" file="clean_help.bin" md5="2cf5595d8576d4d0f57455ea1c8ed0ae"/>
+  <macro name="del_help_chapter" file="del_help_chapter.bin" md5="90996cf4c05176d6800a43d51bc0a789"/>
+  <macro name="del_module_help_chapter" file="del_module_help_chapter.bin" md5="1ccc40f66917b851d043797291ab97c0"/>
+  <macro name="doc" file="doc.bin" md5="ace4723f69e095cbeee949252c32c673"/>
+  <macro name="find_links" file="find_links.bin" md5="516bfdfd5d4d65a2ea77a55730b26f1e"/>
+  <macro name="getHelpPage" file="getHelpPage.bin" md5="7e7c708295b85f1da3482c4d512dbe57"/>
+  <macro name="head_comments" file="head_comments.bin" md5="e5e20194802ec61fda7e8af53e6e7a07"/>
+  <macro name="help" file="help.bin" md5="fb9a4ec4e70c471416aa0b765a64a588"/>
+  <macro name="help_from_sci" file="help_from_sci.bin" md5="c2e444d3e996ac1a93e90636002871d7"/>
+  <macro name="help_skeleton" file="help_skeleton.bin" md5="92c4a5ea4d098ae17a0b014f0535486c"/>
+  <macro name="helpbrowser_menus_cb" file="helpbrowser_menus_cb.bin" md5="64cd3d59f90c5dd92880792c3caefac4"/>
+  <macro name="helpbrowser_update" file="helpbrowser_update.bin" md5="9adeb4711f5f5d24a60ba878d9c04ecb"/>
+  <macro name="loadInlineHelp" file="loadInlineHelp.bin" md5="38bff5795c7c5c456e5b5267aec9890e"/>
+  <macro name="loadToolboxInlineHelp" file="loadToolboxInlineHelp.bin" md5="699b3f132504cb1b65044be06784c83c"/>
+  <macro name="manedit" file="manedit.bin" md5="ea6fb75f9d47f31f5f3639d688d9c2f8"/>
+  <macro name="xmltoformat" file="xmltoformat.bin" md5="0744fbe674cfef2fd0dbf74e1a29f984"/>
+  <macro name="xmltohtml" file="xmltohtml.bin" md5="49c6c7733b4f2e2c2ac568ee1619dfcd"/>
+  <macro name="xmltoinline" file="xmltoinline.bin" md5="def7b40b110e57f0eecdf2dc63b8c5b1"/>
+  <macro name="xmltojar" file="xmltojar.bin" md5="be081d7a7fd286dea9923b786944bdb9"/>
+  <macro name="xmltopdf" file="xmltopdf.bin" md5="00357bbf3b85fc84994f67fcd5eac1ed"/>
+  <macro name="xmltops" file="xmltops.bin" md5="1aad432d1f2a41fb4e76eb0cb7bfb7f5"/>
+  <macro name="xmltoweb" file="xmltoweb.bin" md5="725fe86b3eb9f2777f4fb3441a3f8df8"/>
+</scilablib>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<scilablib name="m2scilib">
+  <macro name="cb_m2sci_gui" file="cb_m2sci_gui.bin" md5="0884c9bb46abccd59d86655379f4abf7"/>
+  <macro name="m2sci_gui" file="m2sci_gui.bin" md5="a92cceb8f2be6f6f591744a622e47512"/>
+  <macro name="mfile2sci" file="mfile2sci.bin" md5="063fe28f365b4737cb145dd269146f11"/>
+  <macro name="translatepaths" file="translatepaths.bin" md5="c8c5d6440d9eaffb8d94a0ca9c6085c3"/>
+</scilablib>

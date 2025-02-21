@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<scilablib name="fileiolib">
+  <macro name="%dir_p" file="%dir_p.bin" md5="a41458df947212044cf2c4e9641be111"/>
+  <macro name="dir" file="dir.bin" md5="c004f0d76bd1726994c6b4250e940210"/>
+  <macro name="dispfiles" file="dispfiles.bin" md5="5821640b7c57ed570f4fc019cf82ae56"/>
+  <macro name="fullfile" file="fullfile.bin" md5="905ad110fff6ff5d11a7210a12155e8c"/>
+  <macro name="get_file_path" file="get_file_path.bin" md5="008604f33da79ad6b0a0afa63a4a8e84"/>
+  <macro name="is_absolute_path" file="is_absolute_path.bin" md5="c73655158773733a69e30cd711a5d7fc"/>
+  <macro name="listfiles" file="listfiles.bin" md5="e836004f765aaea83b02c11841a99049"/>
+  <macro name="ls" file="ls.bin" md5="47fa7bd4c8c5baed95f2a28d269b7d0b"/>
+  <macro name="mdelete" file="mdelete.bin" md5="e2eeecc27f043c52d1697ff0b209f09f"/>
+  <macro name="mkdir" file="mkdir.bin" md5="2438ca3062b91ba514c6c0fb1de94dd7"/>
+  <macro name="rmdir" file="rmdir.bin" md5="26914ac5a76281b84454a04cd0cb9929"/>
+  <macro name="scanf" file="scanf.bin" md5="794c6461bf7323cb581752408f4f89de"/>
+</scilablib>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<scilablib name="atomslib">
+  <macro name="atomsAutoload" file="atomsAutoload.bin" md5="36ae3b2be4d2a49d1b07ac8821df6ddf"/>
+  <macro name="atomsAutoloadAdd" file="atomsAutoloadAdd.bin" md5="29a425e40e0dace3f4b926321b7630f6"/>
+  <macro name="atomsAutoloadDel" file="atomsAutoloadDel.bin" md5="a22e4a352cfb400b1ce922ec930117fd"/>
+  <macro name="atomsAutoloadList" file="atomsAutoloadList.bin" md5="7c8901b77b84e7be1bd7da5b6c96e84e"/>
+  <macro name="atomsCategoryList" file="atomsCategoryList.bin" md5="9eec61948f15f5132878681dc2bfec7f"/>
+  <macro name="atomsCheckModule" file="atomsCheckModule.bin" md5="844c726eac9c0330f66a4df6a0548d08"/>
+  <macro name="atomsDepTreeShow" file="atomsDepTreeShow.bin" md5="9f040f0ec65490d01d03ad817bbec31b"/>
+  <macro name="atomsGetConfig" file="atomsGetConfig.bin" md5="dee85447938cda8531b8bf82e19922a5"/>
+  <macro name="atomsGetInstalled" file="atomsGetInstalled.bin" md5="14107ea6d8108626bcaa732e75e3969a"/>
+  <macro name="atomsGetInstalledPath" file="atomsGetInstalledPath.bin" md5="2aa41111ed48dc5884c81d1993aa5087"/>
+  <macro name="atomsGetLoaded" file="atomsGetLoaded.bin" md5="cbaaf93e2aa7da7e4c93d5e80dbd241b"/>
+  <macro name="atomsGetLoadedPath" file="atomsGetLoadedPath.bin" md5="ae216829cc9758640f4b6d200ad39c42"/>
+  <macro name="atomsInstall" file="atomsInstall.bin" md5="ed1cf7796a6076654db8e99b5146e734"/>
+  <macro name="atomsIsInstalled" file="atomsIsInstalled.bin" md5="f67e3b392416e6143f0b9393975d9c93"/>
+  <macro name="atomsIsLoaded" file="atomsIsLoaded.bin" md5="c2fba5d1f28b330036a2b920ed2c2e63"/>
+  <macro name="atomsList" file="atomsList.bin" md5="3e5ceaa407281ea66658d365fd78473f"/>
+  <macro name="atomsLoad" file="atomsLoad.bin" md5="8dcf048343c3da1e8f7e703b2f99fce3"/>
+  <macro name="atomsQuit" file="atomsQuit.bin" md5="efb6a00676c95f0ea150cd6e5d3db7db"/>
+  <macro name="atomsRemove" file="atomsRemove.bin" md5="d6d289e6d30ee93ec30b4afacbc5f1de"/>
+  <macro name="atomsRepositoryAdd" file="atomsRepositoryAdd.bin" md5="7879fc4d3dd7f681e6e216791a7d2418"/>
+  <macro name="atomsRepositoryDel" file="atomsRepositoryDel.bin" md5="0bb2f360bbe7938dc3e847ceeb52175d"/>
+  <macro name="atomsRepositoryList" file="atomsRepositoryList.bin" md5="7a6487bd3cb11a535b9312ffdb22a51c"/>
+  <macro name="atomsRestoreConfig" file="atomsRestoreConfig.bin" md5="d7c645beaf5893f6c1ea359d98957507"/>
+  <macro name="atomsSaveConfig" file="atomsSaveConfig.bin" md5="e1ce4893b72bd768f1d6d10a4a1e8986"/>
+  <macro name="atomsSearch" file="atomsSearch.bin" md5="145bbc11334ae8788e210dd2bf44db20"/>
+  <macro name="atomsSetConfig" file="atomsSetConfig.bin" md5="2d70995aea9da9b5bea641f2f87ab965"/>
+  <macro name="atomsShow" file="atomsShow.bin" md5="37c589f54c21e0afbf893cf49b99f8d2"/>
+  <macro name="atomsSystemInit" file="atomsSystemInit.bin" md5="d35bfa49d2a16e00abf664692748e66c"/>
+  <macro name="atomsSystemUpdate" file="atomsSystemUpdate.bin" md5="423e8839718ff3c9d7b41de4f7586173"/>
+  <macro name="atomsTest" file="atomsTest.bin" md5="76a8da63282493aa2eb814215a648517"/>
+  <macro name="atomsUpdate" file="atomsUpdate.bin" md5="c7088d3a13f6d45e9228d7034559b648"/>
+  <macro name="atomsVersion" file="atomsVersion.bin" md5="f24d0b630a366988f150b9421fffaac9"/>
+</scilablib>

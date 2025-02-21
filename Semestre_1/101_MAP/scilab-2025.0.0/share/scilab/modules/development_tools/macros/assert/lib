@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<scilablib name="assertlib">
+  <macro name="assert_checkalmostequal" file="assert_checkalmostequal.bin" md5="39c030543462c7b6943579dd60ae0ed3"/>
+  <macro name="assert_checkequal" file="assert_checkequal.bin" md5="faa5029b0f38fd0cb91d1a7e1ed2432c"/>
+  <macro name="assert_checkerror" file="assert_checkerror.bin" md5="5ee7864cb16d6d8e9c76bdb136897850"/>
+  <macro name="assert_checkfalse" file="assert_checkfalse.bin" md5="7a0b702dc882c5b28b4af2e1459a83d7"/>
+  <macro name="assert_checkfilesequal" file="assert_checkfilesequal.bin" md5="a7678cf1c4d74d742c09a82809308518"/>
+  <macro name="assert_checktrue" file="assert_checktrue.bin" md5="5bac1b7a89599b26d6bcc6e7ca2c2788"/>
+  <macro name="assert_comparecomplex" file="assert_comparecomplex.bin" md5="1e289180f1beb5788224d8660b4703df"/>
+  <macro name="assert_computedigits" file="assert_computedigits.bin" md5="a1f81b6e2c121b80906129cf9167edf6"/>
+  <macro name="assert_cond2reltol" file="assert_cond2reltol.bin" md5="24ea959cf6311c6ff3a752b99193116a"/>
+  <macro name="assert_cond2reqdigits" file="assert_cond2reqdigits.bin" md5="5e1ddf200d96d85f03d95bc7d91ba283"/>
+  <macro name="assert_generror" file="assert_generror.bin" md5="a0d534ec6d5fd675b4d1fe9b9a3da059"/>
+</scilablib>

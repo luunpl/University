@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<scilablib name="differential_equationlib">
+  <macro name="%SUN_DormandPrince6" file="%SUN_DormandPrince6.bin" md5="df87100476224d1d6ff073667472924b"/>
+  <macro name="%SUN_DormandPrince8" file="%SUN_DormandPrince8.bin" md5="ef84640283264fea88bdbcf3236ea144"/>
+  <macro name="%SUN_Tsitouras5" file="%SUN_Tsitouras5.bin" md5="c528477af05b224a7adf2de3015d64d3"/>
+  <macro name="%SUN_bruss" file="%SUN_bruss.bin" md5="fc4752ff3dc858e12f936acb3f30c6ed"/>
+  <macro name="%SUN_brussE" file="%SUN_brussE.bin" md5="d0c493b8370a809966ad29faea9e066d"/>
+  <macro name="%SUN_brussI" file="%SUN_brussI.bin" md5="c0f034197094756f6bb30c12205ac2ad"/>
+  <macro name="%SUN_sir" file="%SUN_sir.bin" md5="c4fbdd55ad5a742b21cb9c4e90b3b281"/>
+  <macro name="%SUN_vdp1" file="%SUN_vdp1.bin" md5="4692aa840158cea72ce1a55b592c8587"/>
+  <macro name="SUN_Clink" file="SUN_Clink.bin" md5="7f5d1b201dc5585c008133647e9a2bf3"/>
+  <macro name="dae" file="dae.bin" md5="cbcb5d502eb222e436f3c3f2abfb8b99"/>
+  <macro name="daeoptions" file="daeoptions.bin" md5="88a603b30388876c9da8322785e0e45c"/>
+  <macro name="daskr" file="daskr.bin" md5="bb90710eb68e03a42e66b2a56e74bcb5"/>
+  <macro name="dasrt" file="dasrt.bin" md5="828166bc57bcda6aff871ada27b5df75"/>
+  <macro name="dassl" file="dassl.bin" md5="d850f4391bcbc355eb231f09955e10fe"/>
+  <macro name="impl" file="impl.bin" md5="350b8f172479250111da2cc29686d818"/>
+  <macro name="intc" file="intc.bin" md5="f9dab5de3b0ef442afea80f54a7697ea"/>
+  <macro name="integrate" file="integrate.bin" md5="737ee12a291a2a22d5fa0df8eaf5585d"/>
+  <macro name="intl" file="intl.bin" md5="0de3b0dfc86dbe9c52f69de4c2d77ded"/>
+  <macro name="intsplin" file="intsplin.bin" md5="8fdd5de0b0fce926a3e0630ebaf2899a"/>
+  <macro name="inttrap" file="inttrap.bin" md5="73d94f3347c330fef206a402de53ef08"/>
+  <macro name="numderivative" file="numderivative.bin" md5="5a4b6c4a099392716ed68f855206ea92"/>
+  <macro name="odeoptions" file="odeoptions.bin" md5="f2ef09cbec64f5a5cc599a9ed2ad36ce"/>
+</scilablib>

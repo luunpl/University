@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<scilablib name="dynamic_linkutilslib">
+  <macro name="addPathToEnv" file="addPathToEnv.bin" md5="ce9fa2faf5030ef7c26294d8bfd224cc"/>
+</scilablib>
