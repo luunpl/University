@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<scilablib name="iolib">
-  <macro name="%_sodload" file="%_sodload.bin" md5="979455e5cc96db64815dac19d5434553"/>
-  <macro name="scilab" file="scilab.bin" md5="d12e53fcc4ebab48859e809020416e93"/>
-  <macro name="unix_g" file="unix_g.bin" md5="fd284bfc07dd004bcbeb154255a850ce"/>
-  <macro name="unix_s" file="unix_s.bin" md5="34220cb121415ac19afd5aa296eba911"/>
-  <macro name="unix_w" file="unix_w.bin" md5="a592ed91b4df6b6d3536b9c6733654f3"/>
-  <macro name="unix_x" file="unix_x.bin" md5="b7d736f15780949dfe7c67b175994b2d"/>
-</scilablib>

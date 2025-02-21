@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<scilablib name="jvmlib">
-  <macro name="check_classpath" file="check_classpath.bin" md5="e6f4e5250cb7bfaea9f6e8e521e86796"/>
-  <macro name="check_librarypath" file="check_librarypath.bin" md5="1296525d79aa3a78b5dc434d2da4e31e"/>
-  <macro name="jre_path" file="jre_path.bin" md5="4f16d926e92d46608ba79eb367cf4128"/>
-</scilablib>

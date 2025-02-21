@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<scilablib name="interpolationlib">
-  <macro name="bezier" file="bezier.bin" md5="12f6dd2a660df0aebbd16e7baeaecee0"/>
-  <macro name="interp1" file="interp1.bin" md5="5cf3de0d408f0692888a9611f6ff2fcd"/>
-  <macro name="interpln" file="interpln.bin" md5="d01edaffafa307cd331371253db02650"/>
-  <macro name="mesh2d" file="mesh2d.bin" md5="ab71d2ceae1956232ad7c6704df00afe"/>
-  <macro name="smooth" file="smooth.bin" md5="cb71f6e0f34d565d83e76f51871f71d6"/>
-</scilablib>

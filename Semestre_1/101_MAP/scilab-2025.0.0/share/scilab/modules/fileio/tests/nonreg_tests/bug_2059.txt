@@ -1,4 +1,0 @@
-======== mgetl.txt
-Line 1
-Line 2
-======== END OF mgetl.txt

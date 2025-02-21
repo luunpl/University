@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<scilablib name="consolelib">
-  <macro name="input" file="input.bin" md5="738f7999a9785cf573eba03b97aa49d0"/>
-</scilablib>
