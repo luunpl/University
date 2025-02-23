@@ -129,27 +129,27 @@ curve(cos, add=T,col=1) #ajoute le tracé de la fonction cos en rouge.
 #  2) soit directement avec l'instruction setwd("~/mypathtoSTA401/Data")
 #  3) soit en donnant le fichier complet à read.table: read.table("~/mypathtoSTA401/Data/apnee.csv")
 #--------question 1------------
-apnee <- read.table("apnee.csv")
+apnee <- read.table("~/Personal/University/Semestre_4/401_STA/TP/Donnees/apnee.csv")
 head(apnee)
 #101 observations d'une seule variable ==> separateur de champs incorrect
-apnee  <- read.table("apnee.csv",sep=",")
+apnee  <- read.table("~/Personal/University/Semestre_4/401_STA/TP/Donnees/apnee.csv",sep=",")
 #les séparateurs de champs sont à présent corrects mais pas la première ligne
 #ne l'est pas car elle contient les titres de colonnes et R à nommé
 #par défaut les colonnes V1,V2...V13
-apnee <- read.table("apnee.csv",sep=",",header=T)
+apnee <- read.table("~/Personal/University/Semestre_4/401_STA/TP/Donnees/apnee.csv",sep=",",header=T)
 head(apnee) #le fichier est correctement chargé et les variables correctement intitulées
 
 #On peut utiliser le raccourci read.csv lorsque le séparateur dans le fichier 
 #contenant les données est ","; la décimale "." et la première ligne une ligne de titres
-head(read.csv("apnee.csv"))
+head(read.csv("~/Personal/University/Semestre_4/401_STA/TP/Donnees/cardiaque.csv"))
 
 #--------question 2------------
-cardiaque <- read.table("cardiaque.csv",sep=",",dec=".",header=T)
+cardiaque <- read.table("~/Personal/University/Semestre_4/401_STA/TP/Donnees/cardiaque.csv",sep=",",dec=".",header=T)
 head(cardiaque)
 cardiaque$tabac #extrait l'échantillon donné dans la colonne "tabac" du data.frame "cardiaque"
 
 #--------question 3------------
-her <- read.table("her.txt",sep="\t",dec=".",header=T)
+her <- read.table("~/Personal/University/Semestre_4/401_STA/TP/Donnees/her.txt",sep="\t",dec=".",header=T)
 head(her) #les premières lignes du data.frame : titre de col., séparateurs et ligne 1 OK
 her[2,3]  #obervation de la variable de la colonne 3 (sex), pour l'ind. ligne 2(I0003)
 her[2,] #valeurs de toutes les variables pour indiv ligne 2

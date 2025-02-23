@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE, out.width="50%")
 ## Extraction de données
 
 ```{r}
-cardiaque <- read.table("~/mypathtosta401data/cardiaque.csv",sep=",",dec=".",header=T)
+cardiaque <- read.table("~/Personal/University/Semestre_4/401_STA/TP/Donnees/cardiaque.csv",sep=",",dec=".",header=T)
 sysC <- cardiaque[cardiaque$cardiaque==1,"systolique"]
 length(sysC) # taille
 sd(sysC) # ecart-type corrigé
