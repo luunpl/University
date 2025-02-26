@@ -1,0 +1,172 @@
+---
+title: "TP5"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, out.width="50%")
+library(knitr)
+```
+
+## Extraction des données
+
+```{r}
+cardiaque <- read.table("cardiaque.csv",sep=",",dec=".",header=T)
+sys <- cardiaque[cardiaque$BMI>=23,"systolique"]
+length(sys) # taille
+sd(sys) # écart-type corrigé
+summary(sys) # moyenne et quartiles
+```
+
+## Exercice 1 
+
+1. 
+```{r}
+mu <- 3; sigma <- 1; N <- 1000; n <- 10
+dataG <- matrix(rnorm(N*n,mu,sigma),nrow=N,ncol=n)
+```
+
+2.
+```{r}
+est1 <- rowSums(dataG)/n # N réalisations de xbar
+est2 <- (apply(dataG,1,min)+apply(dataG,1,max))/2
+```
+
+3. 
+```{r}
+moyest1<-mean(est1)
+etest1<-sd(est1)
+moyest2<-mean(est2)
+etest2<-sd(est2)
+kable(data.frame(row.names=c("moy","sd"),est1=c(moyest1, etest1),est2=c(moyest2, etest2)))
+```
+
+4. E(T1) approché par moyest1 vaut bien environ mu=3, T1 est donc sans biais. Idem pour T2. 
+Par contre T1 est moins variable que T2, on choisi donc T1 comme meilleur estimateur.
+
+5. 
+```{r}
+par(mfrow=c(2,1),mar=c(5,4,1,1))
+hist(est1,xlim=c(1.5,4.5),main=""); 
+abline(v=mu,col="red"); abline(v=moyest1,col="green")
+hist(est2,xlim=c(1.5,4.5),main=""); 
+abline(v=mu,col="red"); abline(v=moyest2,col="green")
+```
+
+On confirme visuellement la réponse à la question précédente: les 2 estimateurs sont sans biais (verticale rouge=vert), mais T2 est plus étalé que T1. 
+
+6. 
+```{r}
+n <- 50
+dataG50 <- matrix(rnorm(N*n,mu,sigma),nrow=N,ncol=n)
+est150 <- rowSums(dataG50)/n
+est250 <- (apply(dataG50,1,min)+apply(dataG50,1,max))/2
+kable(data.frame(row.names=c("moy","sd"),est1=c(mean(est150), sd(est150)),est2=c(mean(est250), sd(est250))))
+par(mfrow=c(2,1),mar=c(5,4,1,1))
+hist(est150,xlim=c(1.5,4.5),main=""); abline(v=mu,col="red"); abline(v=mean(est150),col="green")
+hist(est250,xlim=c(1.5,4.5),main=""); abline(v=mu,col="red"); abline(v=mean(est250),col="green")
+```
+
+Oui, la différence est plus nette: l'écart type est 2 fois plus grand pour T2 que pour T1. 
+
+
+## Exercice 2 
+
+1. 
+```{r}
+mu <- 3; sigma <- 1; N <- 1000; n <- 10
+dataG <- matrix(rnorm(N*n,mu,sigma),nrow=N,ncol=n)
+```
+
+2. 
+```{r}
+est2 <- apply(dataG, 1, var) # N réalisations de T2=S'^2
+est1 <- est2*(n-1)/n # N réalisations de T1=S^2
+```
+
+3. 
+```{r}
+par(mfrow=c(1,2))
+hist(est1,prob=T,ylim=c(0,1)); abline(v=sigma^2,col="red"); 
+abline(v=mean(est1),lty=2, col="green")
+curve(n/sigma^2*dchisq(x*n/sigma^2,df=n-1),col="red",add=T)
+abline(v=sigma^2*(n-1)/n,col="green")
+hist(est2,prob=T,ylim=c(0,1)); abline(v=sigma^2,col="red"); 
+abline(v=mean(est2),lty=2, col="green")
+curve((n-1)/sigma^2*dchisq(x*(n-1)/sigma^2,df=n-1),col="red",add=T)
+```
+
+$\frac{n T_1}{\sigma^2}$ suit $\chi_{n-1}$. Si $f$ est la loi de densité du chi2, 
+$f(t) dt = f(\frac{n}{\sigma^2} x) \frac{n}{\sigma^2} dx$. 
+On observe bien que T1 est biaisé et non T2. 
+
+4. 
+```{r}
+par(mfcol=c(2,3))
+for (n in c(10,20,100)) {
+ maxp <- n/sigma^2*dchisq(which(dchisq(1:(2*n),n-1)==max(dchisq(1:(2*n),n-1))),n-1)
+  dataG <- matrix(rnorm(N*n,mu,sigma),nrow=N,ncol=n)
+ est1 <- apply(dataG, 1, var)*(n-1)/n
+ est2 <- apply(dataG, 1, var)
+ hist(est1,prob=T,ylim=c(0,maxp),main=paste("n=",n)); abline(v=sigma^2,col="red"); 
+ abline(v=mean(est1),lty=2, col="green")
+ curve(n/sigma^2*dchisq(x*n/sigma^2,df=n-1),col="red",add=T)
+ abline(v=sigma^2*(n-1)/n,col="green")
+ hist(est2,prob=T,ylim=c(0,maxp),main=paste("n=",n)); abline(v=sigma^2,col="red"); 
+ abline(v=mean(est2),lty=2,  col="green")
+ curve((n-1)/sigma^2*dchisq(x*(n-1)/sigma^2,df=n-1),col="red",add=T)
+}
+```
+
+Si n est grand, le biais de $T_1$ disparait (on dit que $T_1$ est asymptotiquement sans biais)
+et $T_1$ et $T_2$ ont une loi qui ressemble beaucoup à une loi normale.
+
+# Exercice 3
+
+1. 
+```{r}
+p <- 0.5; N <- 1000; n <- 4 
+dataB <- matrix(rbinom(n*N,1,p),nrow=N,ncol=n)
+```
+
+2. 
+```{r}
+est <- rowSums(dataB)/n
+```
+
+3. 
+```{r}
+hist(est,prob=TRUE)
+abline(v=p,col="red")
+abline(v=mean(est),col="green")
+curve(dnorm(x,p,sqrt(p*(1-p)/n)),add=TRUE, col="red")
+```
+
+4. 
+```{r}
+par(mfrow=c(1,3))
+for (n in c(10,50,100)) {
+ hist(rowSums(matrix(rbinom(n*N,1,p),nrow=N,ncol=n))/n,prob=TRUE,main=paste0("n=",n),xlab="est")
+ abline(v=p,col="red")
+ abline(v=mean(est),col="green")
+ curve(dnorm(x,p,sqrt(p*(1-p)/n)),add=TRUE, col="red")
+}
+```
+
+$n>50$ pour avoir une loi normale pour l'estimateur. Oui, l'estimateur est sans biais quelque soit n. 
+
+# Exercice 4 (facultatif)
+
+```{r}
+a <- 2; N <- 1000; n <- 10
+dataU <- matrix(runif(N*n,0,a),nrow=N,ncol=n)
+est1 <- 2*apply(dataU,1,mean)
+est2 <- apply(dataU,1,max)
+cat("ecart type de est1:",sd(est1), "de est2:",sd(est2),"\n")
+par(mfrow=c(1,2))
+hist(est1,prob=T); abline(v=a,col="red"); abline(v=mean(est1),col="green")
+hist(est2,prob=T); abline(v=a,col="red"); abline(v=mean(est2),col="green")
+```
+
+Le second estimateur est plus précis mais il est biaisé et sa distribution n'est
+pas gaussienne mais elle peut se calculer explicitement (cf. TD).

@@ -11,7 +11,7 @@ main:
 tq:  cmp r2, #5                 @ i-5 ??
      beq fintq
         @ i-5 <> 0
-        ldr r0, ptr_debutTAB        @ r0 <- debutTAB
+        ldr r0, ptr_debutTAB    @ r0 <- debutTAB
         add r0, r0, r2, LSL #2  @ r0 <- r0 + r2*4 = debutTAB + i*4
         str r3, [r0]            @ MEM[debutTAB+i*4] <- val
         add r2, r2, #1          @ i <- i + 1
