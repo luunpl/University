@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 Chargement des données avec l'instruction suivante  : 
  
 ```{r chargement donnees, echo=T}
-diam<-read.table("diamantsPurs.csv",header=T,sep=" ")
+diam<-read.table("~/Personal/University/Semestre_4/401_STA/TP/Donnees/diamantsPurs.csv",header=T,sep=" ")
 ```
 
 ### question 1 (2pts)

@@ -11,7 +11,7 @@ library(knitr)
 ## Extraction des données
 
 ```{r}
-cardiaque <- read.table("cardiaque.csv",sep=",",dec=".",header=T)
+cardiaque <- read.table("~/Personal/University/Semestre_4/401_STA/TP/Donnees/cardiaque.csv",sep=",",dec=".",header=T)
 sys <- cardiaque[cardiaque$BMI>=23,"systolique"]
 length(sys) # taille
 sd(sys) # écart-type corrigé
