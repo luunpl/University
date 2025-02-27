@@ -1,6 +1,7 @@
 #ifndef __AST_PARCOURS__
 #define __AST_PARCOURS__
 
+#include "type_ast.h"
 void afficher(Ast expr) ;
 // affiche l'arbre abstrait de l'expression arithmetique expr
 

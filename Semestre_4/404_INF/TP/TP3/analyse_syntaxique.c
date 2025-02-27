@@ -1,101 +1,156 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "analyse_syntaxique.h"
+/* ------------------------------------------------------------------------
+-- module analyse_syntaxique
+--
+-- analyse lexicale d'une expression arithmetique
+--
+-- J-P. Peyrin, G. Serasset (version initiale) : janvier 1999
+-- P.Habraken - 18/01/2010
+--
+-- 10 juin 2006 - PH :
+-- remplacement record a champs variants par record "plat"
+-- remplacement traitement iteratif par automate
+--
+-- Aout 2016 - LM : version C
+------------------------------------------------------------------------ */
+
+#include <stdlib.h> 
+#include <stdio.h> 
+
+#include "type_ast.h"
+#include "ast_construction.h"
 #include "analyse_lexicale.h"
 
-void erreur_syntaxique(char *message) {
-    fprintf(stderr, "Erreur syntaxique: %s\n", message);
-    exit(EXIT_FAILURE);
+// Function declaration
+void afficherA(Ast A);
+void rec_eag(Ast *A1);
+void seq_terme(Ast *A2);
+void suite_seq_terme(Ast A1, Ast *A2);
+void terme(Ast *A1);
+void seq_facteur(Ast *A2);
+void suite_seq_facteur(Ast A1, Ast *A2);
+void facteur(Ast *A1);
+int op1(TypeOperateur *Op);
+int op2(TypeOperateur *Op);
+TypeOperateur Operateur(Nature_Lexeme nature);
+void afficherA(Ast expr);
+
+void rec_eag(Ast *A1) {
+	seq_terme(A1);
 }
 
-int Evaluer(int vald, char op, int valg) {
-    switch (op) {
-        case '+':
-            return vald + valg;
-        case '-':
-            return vald - valg;
-        case '*':
-            return vald * valg;
-        case '/':
-            if (valg == 0) {
-                printf("Division par zero\n");
-                exit(1);
-            }
-            return vald / valg;
-        default:
-            exit(0);
-    }
+void seq_terme(Ast *A2) {
+	Ast A1;
+	terme(&A1);
+	suite_seq_terme(A1, A2);
 }
 
-void Rec_op(char *op){
-    switch (lexeme_courant().nature){
-        case PLUS:
-            *op = '+';
-            printf("%s\n", lexeme_courant().chaine);
-            avancer();
-            break;
-        case MOINS:
-            *op = '-';
-            printf("%s\n", lexeme_courant().chaine);
-            avancer();
-            break;
-        case MUL:
-            *op = '*';
-            printf("%s\n", lexeme_courant().chaine);
-            avancer();
-            break;
-        case DIV:
-            *op = '/';
-            printf("%s\n", lexeme_courant().chaine);
-            avancer();
-            break;
+void suite_seq_terme(Ast A1, Ast *A2) {
+	Ast A3, A4;
+	TypeOperateur op;
 
-        default:
-            erreur_syntaxique("Un operateur est attendu");
-            exit(0);
-    }
+	if (op1(&op)) {
+		terme(&A3);
+		A4 = creer_operation(op, A1, A3);
+		suite_seq_terme(A4, A2);
+	} else {
+		*A2 = A1;
+	}
 }
 
-void Rec_eaep(int *sous_resultat) {
-    int valg, vald;
-    char op;
-
-    switch (lexeme_courant().nature) {
-        case ENTIER:
-            printf("%s\n", lexeme_courant().chaine);
-            *sous_resultat = lexeme_courant().valeur;
-            avancer();
-            break;
-
-        case PARO:
-            printf("%s\n", lexeme_courant().chaine);
-            avancer();
-            Rec_eaep(&valg);
-            Rec_op(&op);
-            Rec_eaep(&vald);
-            printf("valg = %d, op = %c, vald = %d\n", valg, op, vald);
-            *sous_resultat = Evaluer(valg, op, vald);
-
-            if (lexeme_courant().nature == PARF){
-                printf("%s\n", lexeme_courant().chaine);
-                avancer();
-            } else {
-                erreur_syntaxique("Parenthese fermante attendue");
-                exit(0);
-            }
-            break;
-
-        default:
-            erreur_syntaxique("Expression attendue");
-            exit(0);
-    }
+void terme(Ast *A1) {
+	seq_facteur(A1);
 }
 
-void analyser(char *fichier, int *resultat){
-    demarrer(fichier);
-    while (!fin_de_sequence())
-    {
-        Rec_eaep(resultat);
-    }
-    arreter();
+void seq_facteur(Ast *A2) {
+	Ast A1;
+	facteur(&A1);
+	suite_seq_facteur(A1, A2);
+}
+
+void suite_seq_facteur(Ast A1, Ast *A2) {
+	Ast A3, A4;
+	TypeOperateur op;
+	int r = op2(&op);
+	if (r != 0) {
+		facteur(&A3);
+		A4 = creer_operation(op, A1, A3);
+		suite_seq_facteur(A4, A2);
+	} else {
+		*A2 = A1;
+	}
+}
+
+void facteur(Ast *A1) {
+	switch (lexeme_courant().nature) {
+		case ENTIER:
+			*A1 = creer_valeur(lexeme_courant().valeur);
+			avancer();
+			break;
+		case PARO:
+			avancer();
+			rec_eag(A1);
+			if (lexeme_courant().nature == PARF) {
+				avancer();
+			} else {
+				printf("ERREUR : parenthese fermante attendue (ligne %u, colonne %u)\n",
+					   lexeme_courant().ligne, lexeme_courant().colonne);
+				exit(1);
+			}
+			break;
+		default:
+			printf("ERREUR : entier ou parenthese ouvrante attendu (ligne %u, colonne %u)\n",
+				   lexeme_courant().ligne, lexeme_courant().colonne);
+			exit(0);
+	}
+}
+
+int op1(TypeOperateur *Op) {
+	switch (lexeme_courant().nature) {
+		case PLUS:
+		case MOINS:
+			*Op = Operateur(lexeme_courant().nature);
+			avancer();
+			return 1;
+		default:
+			return 0;
+	}
+}
+
+int op2(TypeOperateur *Op) {
+	switch (lexeme_courant().nature) {
+		case MUL:
+		case DIV:
+			*Op = Operateur(lexeme_courant().nature);
+			avancer();
+			return 1;
+		default:
+			return 0;
+	}
+}
+
+TypeOperateur Operateur(Nature_Lexeme nature) {
+	switch (nature) {
+		case PLUS: return N_PLUS;
+		case MOINS: return N_MOINS;
+		case MUL: return N_MUL;
+		//case DIV: return N_DIV;
+		default: printf("Erreur operateur"); exit(1);
+	}
+}
+
+/* ----------------------------------------------------------------------- */
+int analyser(char* nomFichier, Ast *A) {
+	demarrer(nomFichier);
+	rec_eag(A);
+
+	if ((lexeme_courant().nature == FIN_SEQUENCE)) {
+		/* syntaxe correcte */
+		printf("\nSyntaxe correcte\n");
+		afficherA(*A);  // on affiche l'AST
+		printf("\n");
+		return 1;
+	} else {
+		printf("Erreur lors de l'analyse syntaxique ...\n");
+		return 0;
+	}
 }

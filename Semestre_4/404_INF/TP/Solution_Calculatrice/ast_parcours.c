@@ -55,10 +55,11 @@ int evaluation(Ast expr) {
 			case N_DIV:
 			  denominateur = evaluation(expr->droite) ;
 			  if (denominateur != 0)
-			      return evaluation(expr->gauche)/evaluation(expr->droite);
-                          else 
-			      printf("ERREUR : division par 0 !\n");
-			      exit(1);
+				  return evaluation(expr->gauche)/evaluation(expr->droite);
+			  else {
+				  printf("ERREUR : division par 0 !\n");
+				  exit(1);
+			  }
 			
 			default:
 			  exit(1);  // erreur operateur
