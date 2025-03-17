@@ -1,0 +1,41 @@
+---
+title: "TP6"
+author: "luunpl"
+date: "2025-03-17"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Définition des paramètres
+p <- 0.3
+n <- 500
+
+# Génération d'un échantillon de taille n suivant une loi de Bernoulli B(p)
+x <- rbinom(n, size = 1, prob = p)
+
+# Affichage des premières valeurs pour vérification
+head(x)
+
+```
+```{r}
+# Calcul des moyennes cumulées
+moy.taille <- cumsum(x) / (1:n)
+
+# Affichage des premières valeurs pour vérification
+head(moy.taille)
+plot(1:n, moy.taille, type = "l", col = "blue", lwd = 2,
+     xlab = "Taille de l'échantillon k", ylab = "Proportion estimée",
+     main = "Évolution de l'IC à 95%")
+
+lines(1:n, Binf.taille, col = "red", lty = 2)  # Borne inférieure
+lines(1:n, Bsup.taille, col = "red", lty = 2)  # Borne supérieure
+abline(h = p, col = "green", lty = 2)  # Ligne horizontale à p = 0.3
+legend("topright", legend = c("Moyenne", "IC Inf", "IC Sup", "Valeur réelle"),
+       col = c("blue", "red", "red", "green"), lty = c(1, 2, 2, 2), lwd = 2)
+
+```
+
