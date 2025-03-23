@@ -1,41 +1,171 @@
 ---
 title: "TP6"
-author: "luunpl"
-date: "2025-03-17"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, out.width="50%")
 ```
 
+## Exercice 1
+
+1. 
 ```{r}
-# Définition des paramètres
 p <- 0.3
 n <- 500
-
-# Génération d'un échantillon de taille n suivant une loi de Bernoulli B(p)
-x <- rbinom(n, size = 1, prob = p)
-
-# Affichage des premières valeurs pour vérification
-head(x)
-
+x <- rbinom(n,1,p)
 ```
+
+2. 
 ```{r}
-# Calcul des moyennes cumulées
-moy.taille <- cumsum(x) / (1:n)
-
-# Affichage des premières valeurs pour vérification
-head(moy.taille)
-plot(1:n, moy.taille, type = "l", col = "blue", lwd = 2,
-     xlab = "Taille de l'échantillon k", ylab = "Proportion estimée",
-     main = "Évolution de l'IC à 95%")
-
-lines(1:n, Binf.taille, col = "red", lty = 2)  # Borne inférieure
-lines(1:n, Bsup.taille, col = "red", lty = 2)  # Borne supérieure
-abline(h = p, col = "green", lty = 2)  # Ligne horizontale à p = 0.3
-legend("topright", legend = c("Moyenne", "IC Inf", "IC Sup", "Valeur réelle"),
-       col = c("blue", "red", "red", "green"), lty = c(1, 2, 2, 2), lwd = 2)
-
+moy.taille <- cumsum(x)/(1:n)
 ```
+
+3. 
+```{r}
+alpha <- 0.05
+Binf.taille <- moy.taille-sqrt(moy.taille*(1-moy.taille)/(1:n))*qnorm(1-alpha/2)
+Bsup.taille <- moy.taille+sqrt(moy.taille*(1-moy.taille)/(1:n))*qnorm(1-alpha/2)
+```
+
+4. 
+```{r}
+amplitude.taille <- Bsup.taille-Binf.taille
+par(mfrow=c(1,2))
+plot(1:n,amplitude.taille,xlab="k",ylab="Interval de confiance",type="l"); abline(h=0.1)
+plot((34:n),amplitude.taille[34:n],xlab="k",ylab="Interval de confiance", type="l",main="k>34 only"); abline(h=0.1)
+which.min(abs(amplitude.taille-0.1))
+```
+
+Attention, pour que T.C.L. soit valide, il faut n suffisamment grand: np>10 et n(1-p)>10, soit ici n>34.
+
+On lit la taille minimum cherchée: on doit prendre plus de environ 300 valeurs pour garantir une amplitude de 0.1.
+
+5. 
+```{r}
+prop.test(sum(x),length(x)) # par défault, teste si p=0.5 (cf. TPs suivants) et, ce qui nous intéresse ici, donne l'interval de confiance à 95% 
+c(Binf.taille[n],Bsup.taille[n]) # on retrouve à peu près ce que l'on a calculé manuellement
+```
+
+La légère différence entre notre calcul et l'intervalle de confiance de prop.test vient de notre approximation que $\bar{X}_n$ suit une la loi Normale (condition: np>10 et p(1-p)>10) alors que prop.test n'utilise pas cette approximation et n'a donc pas cette condition pour s'appliquer. 
+
+```{r}
+prop.test(sum(x),length(x),conf.level=0.90) # on change le niveau de confiance avec l'option conf.level
+```
+
+
+6.  
+```{r}
+alpha <- seq(0.01,0.30,0.01)
+Binf.niveau <- mean(x)-sqrt(mean(x)*(1-mean(x))/n)*qnorm(1-alpha/2)
+Bsup.niveau <- mean(x)+sqrt(mean(x)*(1-mean(x))/n)*qnorm(1-alpha/2)
+amplitude.niveau <- Bsup.niveau-Binf.niveau
+```
+
+7.
+```{r}
+plot(1-alpha,amplitude.niveau); abline(h=0.1,col="green")
+```
+
+Un niveau de confiance de 98% garanti une amplitude inférieure = 0.1.
+
+8. 
+On donne l'amplitude ampl = $2\sqrt{\frac{\bar{X}_n(1-\bar{X}_n)}{n}} u_{1-\frac{\alpha}{2}}$, et on cherche $1-\alpha$:
+```{r}
+ampl <- 0.1
+u <- ampl/(2*sqrt(mean(x)*(1-mean(x))/n))
+alphaopt <- (1-pnorm(u))*2
+1-alphaopt
+# abline(v=alphaopt,col=2)
+```
+
+# Exercice 2 
+
+1. 2.
+```{r}
+data <- read.csv("~/mypathtosta401data/apnee.csv")
+poidsH <- data[data$sex==0,"poids"]
+```
+
+3. 
+```{r}
+par(mfrow=c(1,2))
+hist(poidsH,prob=TRUE)
+curve(dnorm(x,mean=mean(poidsH),sd = sd(poidsH)),col="green",add=T)
+qqnorm(poidsH)#le quantile-quantile plot pour tester la loi normale
+abline(mean(poidsH),sd(poidsH),col=2)#la droite de Henry
+qqline(poidsH)
+```
+
+La répartition est très proche de la gaussienne, mais n'est pas parfaite et dévie un peu vers la droite. Notons que n étant grand, d'après le théorème central limite (TCL), la moyenne et la variance empirique suivent de toute façon une distribution gaussienne, même si la loi des données n'est pas gaussienne.
+
+4. 
+```{r}
+cat("mu =",mean(poidsH), "sig =",sd(poidsH))
+```
+
+5. 
+```{r}
+sigma <- 19
+n<-length(poidsH)
+u<-qnorm(1-0.05/2)
+Binf<-mean(poidsH)-u*sigma/sqrt(n)
+Bsup<-mean(poidsH)+u*sigma/sqrt(n)
+cat("Bornes avec sigma connnu: [",Binf,";",Bsup,"]\n")
+```
+
+6. 
+```{r}
+t<-qt(1-0.05/2,n-1)
+Binf<-mean(poidsH)-t*sd(poidsH)/sqrt(n)
+Bsup<-mean(poidsH)+t*sd(poidsH)/sqrt(n)
+cat("Bornes avec sigma inconnu : [",Binf,";",Bsup,"]\n")
+```
+
+7. 
+```{r}
+t.test(poidsH)
+```
+t.test donne bien l'intervalle de confiance avec sigma inconnu que l'on a trouvé précédement.
+```{r}
+t.test(poidsH,conf.level=0.99)
+```
+
+
+8. 
+```{r}
+alpha <- 0.1
+S2 <- var(poidsH)*(n-1)/n
+Binf <- n*S2/qchisq(1-alpha/2,n-1)
+Bsup <- n*S2/qchisq(alpha/2,n-1)
+cat("Bornes pour alpha = 0.1: [",Binf,";",Bsup,"]\n")
+```
+
+# Exercice 3 
+
+```{r}
+apnee.fumeurs <- data[data$tabac==1,"apnee"]
+apnee.non.fumeurs <- data[data$tabac==0,"apnee"]
+p1<-mean(apnee.fumeurs)
+p2<-mean(apnee.non.fumeurs)
+```
+
+Calcul à la main avec l'approximation Gaussienne (après avoir vérifié que p1$\times$length(apnee.fumeurs)>10 et p2$\times$length(apnee.non.fumeurs)>10 avec p1 et p2<0.5):
+```{r}
+alpha <- 0.1
+B1inf <- p1-sqrt(p1*(1-p1)/length(apnee.fumeurs))*qnorm(1-0.1/2)
+B1sup <- p1+sqrt(p1*(1-p1)/length(apnee.fumeurs))*qnorm(1-0.1/2)
+B2inf <- p2-sqrt(p2*(1-p2)/length(apnee.non.fumeurs))*qnorm(1-0.1/2)
+B2sup <- p2+sqrt(p2*(1-p2)/length(apnee.non.fumeurs))*qnorm(1-0.1/2)
+cat("Bornes fumeurs: [",B1inf," ; ",B1sup,"]\n")
+cat("Bornes non fumeurs: [",B2inf," ; ",B2sup,"]\n")
+```
+
+Lecture des intervalles de confiance avec prop.test:
+```{r}
+prop.test(sum(apnee.fumeurs),length(apnee.fumeurs),conf.level = 0.9)
+prop.test(sum(apnee.non.fumeurs),length(apnee.non.fumeurs),conf.level = 0.9) 
+```
+
+Les intervalles ont une grande partie commune, ce qui laisse penser que p1=p2 est possible.
 
