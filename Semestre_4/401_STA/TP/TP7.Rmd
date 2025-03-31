@@ -1,0 +1,125 @@
+---
+title: "TP7"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, out.width="50%")
+library(knitr)
+```
+
+## Exercice 1 
+
+1. 
+```{r}
+if (!requireNamespace("data.table", quietly = TRUE)) {
+  install.packages("data.table")  # Installe le package si nécessaire
+}
+library(data.table)  # Charge le package
+
+mu <- 2; sigma <- 1; N <- 1000; n=50
+dataG <- matrix(rnorm(N*n,mu,sigma),ncol=n,nrow=N)
+```
+
+2.
+```{r}
+moys <- rowMeans(dataG)
+```
+
+3.
+```{r}
+par(mfrow=c(1,2))
+hist(moys,probability=TRUE)
+curve(dnorm(x,mu,sigma/sqrt(n)),add=T,col="red")
+qqnorm(moys)
+abline(mu,sigma/sqrt(n),col="red")
+```
+
+
+4. 
+```{r}
+mu0 <- 2
+test1 <- sum(moys>mu0)/N
+test2 <- sum(moys>mu0+2/sqrt(n))/N
+test3 <- sum(moys>mu0+3/sqrt(n))/N
+cat("Risque de première espèce du test1:",test1," test2:",test2," test3:",test3)
+```
+Pour le test 1, la distribution ayant $\mu_0$ comme axe de symétrie, il y a en effet une chance sur deux de refuser $H_0$ alors que $H_0$ est vrai.
+
+Pour le test 2 , on est à 2 $\sigma$ (cf. TP3 Exercice 1 Q3), donc la probabilité de refuser $H_0$ à tort est 1-pnorm(2)=0.023.
+
+De même pour le test 3 on doit obtenir un risque de première espèce de 1-pnorm(3)=0.001.
+
+5.
+```{r}
+Calpha <- qnorm(1-0.05,mu0,sigma/sqrt(n)) # ou mu0+qnorm(1-0.05)*sigma/sqrt(n)
+cat("Calpha = ",Calpha)
+test <- sum(moys>Calpha)/N 
+cat("Risque de première espèce du test",test) # doit être proche de 0.05
+```
+
+6.
+Statistique de test $T=\frac{\bar{x}-\mu}{\sigma/\sqrt{n}}>u_{1-\alpha}$:
+
+```{r}
+tcalc <- (moys-mu0)/(sigma/sqrt(n)) 
+sum(tcalc>qnorm(1-0.05))/N
+```
+
+7.
+```{r}
+pvalue <- 1-pnorm(moys,mu0,sigma/sqrt(n)) # ou 1-pnorm(tcalc)
+hist(pvalue) 
+```
+
+Si $H_0$ est vrai, la p-valeur suit une loi uniforme. 
+Vous pouvez donc voir que la p-valeur ne peut rien vous dire sur la probabilité que H0 soit vraie. 
+Elle ne peut que vous permettre d’évaluer le risque de refuser H0 à tort.
+
+8. 
+```{r}
+sds <- apply(dataG,1,sd) # calcul des écarts types
+sum(moys>mu0+qt(1-0.05,n-1)*sds/sqrt(n))/N # doit être proche de  0.05
+```
+
+
+## Exercice 2 
+
+1. 
+```{r}
+data <- read.table("C:/Users/luung/Downloads/University/Semestre_4/401_STA/TP/Donnees/apnee.csv",header = TRUE, sep = ",")
+
+```
+
+2. 
+```{r}
+poidsH <- data[data$sexe==0,"poids"]
+```
+
+3. 
+```{r}
+moyest <- mean(poidsH)
+varest <- var(poidsH)
+```
+
+4.
+```{r}
+mu0 <- 87
+n <- length(poidsH)
+alpha <- seq(0.01,0.1,0.01)
+kable(data.table(alpha=alpha,test=moyest>mu0+qt(1-alpha,n-1)*(sd(poidsH)/sqrt(n))))
+```
+Le changement de décision est pour $0.04<\alpha<0.05$.
+
+5. 
+```{r}
+tcalc <- (moyest-mu0)/(sd(poidsH)/sqrt(n))
+(pvalue <- 1-pt(tcalc,n-1))
+```
+
+6.
+```{r}
+t.test(poidsH,mu=87,alternative="greater")
+```
+On retrouve bien les valeurs de la statistique de test tcalc et de la p-valeur calculée précédement. 
+
