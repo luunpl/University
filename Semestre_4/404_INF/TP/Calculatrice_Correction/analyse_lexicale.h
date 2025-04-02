@@ -22,8 +22,8 @@
       MOINS,            // -
       MUL,              // *
       DIV,              // /
-      PARO,		// (
-      PARF,		// )
+      PARO,		         // (
+      PARF,		         // )
       FIN_SEQUENCE,     // pseudo lexeme ajoute en fin de sequence
       ERREUR            // erreur lexicale
     } Nature_Lexeme ;
