@@ -1,0 +1,18 @@
+lire(r);
+lire(x);
+si x == 5 alors
+    r:= r*r;
+    si r == 4 alors
+        x := 6;
+        si x!= 6 alors
+            r := r*2;
+        sinon
+            r := r*3;
+        fsi;
+    sinon 
+    fsi;
+sinon
+    r:=r/2;
+fsi
+ecrire(r);
+ecrire(x);

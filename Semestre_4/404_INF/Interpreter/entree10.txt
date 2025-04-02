@@ -1,0 +1,18 @@
+lire(x);
+lire(i);
+w:=0;
+tanque x >>0 faire
+    w := w+1;
+    x := x-1;
+fait;
+ecrire(w);
+tanque i!=10 faire
+    w:= w*2;
+    ecrire(w); 
+    si i<<10 alors
+        i := i+1;
+    sinon 
+        i:=i-1;
+    fsi
+fait;
+ecrire(w);

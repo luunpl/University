@@ -1,0 +1,11 @@
+x := 5;
+lire(a);
+si x>=a/2 alors
+    u := a+10;
+    w :=u*2;
+sinon
+    u := a+20;
+    w :=u/2;
+fsi
+ecrire(u);
+ecrire(w);

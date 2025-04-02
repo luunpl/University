@@ -1,0 +1,9 @@
+lire(r);
+lire(x);
+si x == 5 alors
+    r:= r*r;
+sinon
+    r:=r/2;
+fsi
+ecrire(r);
+ecrire(x);

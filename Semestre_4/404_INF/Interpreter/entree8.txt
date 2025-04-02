@@ -1,0 +1,11 @@
+r := 0 ;
+lire(x);
+tanque x >> 0 faire
+    r := r + 1 ;
+    x := x-1 ;
+fait;
+ecrire(r);
+ecrire(x);
+w := r*4;
+ecrire(w);
+

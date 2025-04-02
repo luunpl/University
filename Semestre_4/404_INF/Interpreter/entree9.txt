@@ -1,0 +1,13 @@
+i := 0;
+lire(y);
+lire(x);
+tanque i<<x faire
+    si i>>x/2 alors
+        y:=y-2;
+    sinon
+        y := y-1;
+    fsi;
+    ecrire(y);
+    i := i+1;
+fait;
+ecrire(y*2);

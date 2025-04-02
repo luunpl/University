@@ -1,0 +1,9 @@
+lire(x);
+i := 5;
+tanque i!=0 faire
+    x := x+1;
+    i:=i-1;
+fait;
+ecrire(x);
+z := 10;
+ecrire(z);

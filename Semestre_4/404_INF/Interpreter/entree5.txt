@@ -1,0 +1,15 @@
+x := 5 ;
+lire (a) ;
+y := x + 1 ;
+si x << a alors
+    y := x*4;
+    u := 6 ;
+    ecrire(u) ;
+sinon
+    u := 7;
+    w := 9 ;
+    ecrire(u);
+    ecrire(w);
+fsi 
+z := u*2 ;
+ecrire(z);

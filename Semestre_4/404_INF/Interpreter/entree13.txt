@@ -1,0 +1,14 @@
+r := 0 ;
+y := 0 ;
+lire(x);
+tanque x >> 0 faire
+    x := x- 1;
+    r := 0;
+    tanque r << 5 faire
+        y := y + 1 ;
+        r := r + 1;
+    fait;
+fait;
+ecrire(r);
+ecrire(y);
+ecrire(x);

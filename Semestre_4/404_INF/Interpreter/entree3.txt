@@ -1,0 +1,9 @@
+x := 5;
+lire(a);
+u:=1
+si x>>a alors
+    u := u+7;
+sinon
+    u := u+14;
+fsi
+ecrire(u);
