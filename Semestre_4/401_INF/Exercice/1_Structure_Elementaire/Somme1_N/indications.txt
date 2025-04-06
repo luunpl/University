@@ -1,0 +1,27 @@
+Exercice : Longueur
+
+Un programme est donné qui fait la saisie d'un nombre et quelques affichages, 
+compléter le programme pour calculer la somme des entiers jusqu'au nombre saisie 
+pour son affichage.
+
+Notion en jeu : Boucle "Tant que ... faire ..."
+Programme visé :
+  n <- Entree
+  somme <- 0
+  tant que n >0 faire
+    |  somme <- somme + n
+    |  n <- n-1
+  Afficher somme
+
+Le travail est à faire dans le fichier prog.s (onglet suivant).
+Pour compiler son travail et lancer l'exécution, la première fois il faut sauvegarder une version des fichiers (icone disquette),
+puis lancer l'exécution de l'activité (icone fusée).
+Pour vérifier que son travail correspond à la demande, lancer la vérification (icone boite à cocher)
+
+En cas de problème (fenêtre figée, timeout, ...) :
+* fermer la fenêtre graphique et/ou relancer le terminal
+* recharger la page web
+
+Bon travail.
+
+

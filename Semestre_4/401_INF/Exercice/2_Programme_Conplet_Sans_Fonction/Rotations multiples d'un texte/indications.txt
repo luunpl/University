@@ -1,0 +1,43 @@
+Suivre le sujet de partiel de Mars 2022
+  https://im2ag-moodle.univ-grenoble-alpes.fr/pluginfile.php/33928/mod_page/intro/partiel2022C.pdf  
+
+Le but est de traduire le programme suivant :
+1. EcrChaine(txt)
+2. ALaLigne
+3. si txt[0]==0 alors
+4.    EcrChaine(''Chaine vide'')
+5.    ALaLigne
+6. sinon si n==0 alors
+7.    EcrChaine(''Pas de rotation'')
+8.    ALaLigne
+9. sinon
+10.   pour j= 1 .. n faire
+11.       c := txt[0]
+12.       i := 1
+13.       tant que txt[i]!=0 faire
+14.           t[i-1] := t[i]
+15.           i := i+1
+16.       fin tant que
+17.       t[i-1] := c
+18.       EcrNdecimal32(j)
+19.       EcrChaine(''=>'')
+20.       EcrChaine(txt)
+21.       ALaLigne
+22.   fin pour
+23.finsi
+
+
+Pour compiler son travail et lancer l'exécution,
+la première fois il faut sauvegarder une version des fichiers (icone disquette), 
+puis lancer le shell de l'activité (icone fusée)
+
+Pour vérifier que son travail corespond à la demande,
+lancer la vérification (icone boite à cocher)
+
+
+En cas de problème (fenêtre figée, timeout, ...) : 
+* fermer la fenêtre graphique et/ou relancer le terminal
+* recharger la page web
+
+Bon travail.
+
