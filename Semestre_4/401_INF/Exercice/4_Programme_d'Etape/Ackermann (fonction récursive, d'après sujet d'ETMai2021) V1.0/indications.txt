@@ -1,0 +1,39 @@
+D'après le sujet d'examen de Mai 2011. (voir sujet original).
+
+À traduire :
+
+fonction Ackermann(m : entier, n : entier) avec résultat entier
+  loc : entier
+1: si m == 0 alors
+2:    |   loc = n+1
+3: sinon
+4:    |   si n == 0 alors
+5:    |      |   loc = Ackermann(m-1,1)
+6:    |   sinon
+7:    |      |   loc = Ackermann(m,n-1)
+8:    |      |   loc = Ackermann(m-1,loc)
+9:    |       --- fin si ligne 4
+10:    --- fin si ligne 1
+11: retourner loc
+
+Programme principal
+21:   EcrChaine("Entrer un nombre")
+22:   x:=Lire32()
+23:   y:=Ackermann(3,x)
+24:   EcrNdecimal32(y
+
+
+Pour compiler son travail et lancer l'exécution,
+la première fois il faut sauvegarder une version des fichiers (icone disquette), 
+puis lancer le shell de l'activité (icone fusée)
+
+Pour vérifier que son travail corespond à la demande,
+lancer la vérification (icone boite à cocher)
+
+
+En cas de problème (fenêtre figée, timeout, ...) : 
+* fermer la fenêtre graphique et/ou relancer le terminal
+* recharger la page web
+
+Bon travail.
+

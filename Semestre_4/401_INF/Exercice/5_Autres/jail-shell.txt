@@ -1,0 +1,11 @@
+sauver (icone de disquette) puis lancer l'activité (icone de fusée) vous donne 
+64 min de shell avec la calculette binaire du TP2.
+
+commandes disponibles (avec un "./" avant !) :
+* ./add nbBits op1 Op2
+* ./addsc nbBits op1 Op2
+* ./sub nbBits op1 Op2
+* ./subsc nbBits op1 Op2
+* ./subc2 nbBits op1 Op2
+* ./subc2sc nbBits op1 Op2
+* ...

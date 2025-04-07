@@ -1,0 +1,31 @@
+Traduire l'algorithme suivant :
+
+Procedure fact(n un entier, adfn l'adresse d'un entier)
+local : fnmoins1 un entier
+Si n = 1 alors
+   |   Mem[adfn]=1
+sinon
+   |   fact(n-1, adresse de fnmoins1)
+   |   Mem[adfn] = n * fnmoins1
+finsi
+
+Programme Principal
+x <- Entrée
+r <- fact(x)
+afficher(r)
+
+
+Pour compiler son travail et lancer l'exécution,
+la première fois il faut sauvegarder une version des fichiers (icone disquette), 
+puis lancer le shell de l'activité (icone fusée)
+
+Pour vérifier que son travail corespond à la demande,
+lancer la vérification (icone boite à cocher)
+
+
+En cas de problème (fenêtre figée, timeout, ...) : 
+* fermer la fenêtre graphique et/ou relancer le terminal
+* recharger la page web
+
+Bon travail.
+

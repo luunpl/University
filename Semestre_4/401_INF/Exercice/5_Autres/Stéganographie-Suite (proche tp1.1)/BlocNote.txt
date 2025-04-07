@@ -1,0 +1,84 @@
+Exercice de stéganographie
+  <<La stéganographie est l'art de la dissimulation :
+      son objet est de faire passer inaperçu un message
+      dans un autre message>>. cf. Wikipédia
+
+  le service du renseignement vous a re-contacté(e) pour vos compétences uniques
+  et vous demande de remplir 3 nouvelles questions (mettre un X pour la bonne réponse) :
+
+Q1 : L'informatique c'est simple comme 1+1=10
+[ ] Vrai
+[ ] Faux
+
+Q2 : En machine, 0 est LE nombre qui prend le moins de place
+[ ] Vrai
+[ ] Faux
+
+Attention, avant de répondre à la 3e question, vous devez lire attentivement ce qui suit :
+IMPORTANT : pour valider ce QCM, globalement, vous devez aussi avoir cocher "Vrai" un nombre pair de fois.
+Maintenant, voici la 3e question (désolé, je n'ai pas réussi à me relire)
+
+Q3 : ####  #######  ##  ###  ####  #####  ###### ?
+[ ] Vrai
+[ ] Faux
+
+
+
+ 
+(une fois vos réponses données, les sauvegarder avec l'icone de disquette)
+[En cas de problème technique, dans la suite, recharger la fenêtre !]
+
+  pour transmetre votre réponse et garder ces réponses secrètes, 
+le services du renseignement vous demande de confectionner une image
+avec une application fournie (accessible via l'icone "insecte").
+
+  pour coder votre réponse dans l'image vous devrez utiliser 3 pixels spécifiques, 
+et quelques pixels de calibrage (# en noir, rien en blanc). Pour les réponses à Q1, Q2, Q3, prendre
+un pixel en blanc pour coder une réponse vraie, un pixel en noir pour coder une réponse fausse. 
+La position des pixels est une information secrete, à ne pas diffuser (explication en dessous) :
+
+Schéma du coin haut-gauche de l'image pour la position des pixels :
+
+  +---------
+  |# ## ###.
+  |.1.......
+  |..23.....
+  |.........
+  
+Explication (si nécessaire) :
+ Calibrage : sur la premier ligne, 1 noir, 1 blanc, 2 noirs, 1 blanc, 3 noirs. 
+ Q1 : pixel de Q1 (noté "1" dans le schéma ci-dessus) à positionner sur la diagonale 
+      de l'image allant du haut-gauche au bas-droit,  à 1 pixel de l'angle du haut. 
+ Q2 : pixel de Q2 (noté "2" dans le schéma ci-dessus) à positionner sur la diagonale 
+      de l'image allant du haut-gauche au bas-droit,  à 2 pixels de l'angle du haut. 
+ Q3 : pixel de Q3 (noté "3" dans le schéma ci-dessus) à droite de 2. 
+
+  le reste de l'image est libre, faites pour le mieux pour que les pixels de vos réponses 
+soient bien intégrés. Une image toute blanche ou avec qlq pixels seulement dans un coin 
+serait suspecte, débrouillez-vous pour faire un dessin qui semble naturel pour le reste de l'image
+(sans oublier de garder les pixels de calibrage et les 3 pixels corrects).
+
+  ATTENTION : pour construire cette image, le service du renseignement ne peut pas 
+mettre à votre disposition l'application de la dernière fois et vous ne devez pas 
+essayer de l'utiliser (l'enemi surveille les sauvegardes effectuées avec cette application). 
+Vous allez devoir produire "à la main" le code de l'image dans l'onglet image.bm ci-contre.
+
+  Une fois l'image produite et sauvegardée, dans l'onglet image.bm ci-contre
+vous pouvez tout de même la controler avec l'application en visualisation seule (icone "insecte")
+Verifiez bien que les 3 pixels du coin sont ceux que vous voulez et que les pixels 
+de calibrages sont bien là.
+
+  Pour vérifier que vos réponses codées dans l'image sont correctes (sans tenir compte 
+de votre réponse textuelle), utiliser l'icone "boite à cocher" (à coté de l'icone "insecte") :
+   vous devez obtenir "Proposed grade 100/100", sinon les commentaires 
+donnent les questions fausses (mais vous ne devriez pas en avoir) ou les pixels 
+de calibrage défaillants.
+
+  Bonne chance.
+
+  En cas de problème, recharger la fenêtre !
+
+Rappel : ne plus utiliser la savegarde de l'image bitmap dans l'application fournie ! 
+(ni dans cet exercice,  ni dans un autre, ni ailleurs)
+
+

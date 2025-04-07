@@ -1,0 +1,37 @@
+Le compte-rendu est dans l'onglet suivant (en consultation seule).
+
+C'est une proposition de trame pour le compte-rendu pour le Tp "Image", 
+vous pouvez reprendre, modifier, compléter, supprimer tout ou partie ; 
+à la fin il faut que cela soit votre compte-rendu, pas seulement 
+parce que vous aurez ajouter votre code, mais aussi parce que 
+vous aurez ajouter des tests et surtout des commentaires, explications, etc.
+À la fin cela doit être un compte-rendu, pas un listing, il faut du textes à lire, 
+pour introduire et accompagner votre code et vos tests
+
+Pour éditer le compte-rendu, utiliser l'icone de DEBUG (coccinelle).
+(ne pas oublier de sauvegarder sous caseine et/ou sous jupyter !)
+
+Conseil : penser au compte-rendu (à la scénarisation/présentation de votre travail) 
+  pendant la partie de programmation. Ne pas commencer le compte-rendu avant d'avoir 
+  suffisament avancer dans votre code (mettre en cohérence un code "vivant" et un 
+  compte-rendu à rendre est parfois douloureux). 
+  (rem. : quand vous serrez à l'aise avec Jupyter et avec votre code, 
+  vous pourrez peut-être travailler code et compte-rendu en parallèle.)
+
+
+Quelques indications pour Jupyter (en vrac) :
+* ne pas oublier de sauvegarder (sous caseine et sous jupyter, clic sur l'icone de disquette)
+* le presse-papier ne communique pas entre jupyter et caseine, mais ce blocNote 
+    peut être partagé (sous jupyter : menu File/Open puis choisir blocNote.txt)
+    vous pouvez alors faire des copier-coller entre le bloc-note et votre compte-rendu
+* attention, après 1h (environ) de travail sous caseine, il y a un timeout bloquant tout
+    (=>sauvegarder avant/relancer)
+* du code "externe" peut être utilisé dans Jupyter (sans devoir l'afficher dans le compte-rendu), 
+    ex. es.s, il faut "juste" le mettre à disposition sous caseine et faire une inclusion
+* ne travaillez pas avec une petite fenêtre, prévoir dès le départ de travailler sous caseine en grand :
+    au bout de la barre d'icone, utilisez l'icone avec des flèches, avant de lancer Jupyter
+    puis sous jupyter maximisez la fenetre jupyter avec un double-clic sur le bandeau du navigateur de jupyter
+* pour récupérer/modifier le source de votre compte-rendu dans le format original (?),
+    télécharger/déposer votre dernière remise 
+* si jupyter vous plait, n'hésitez pas à l'installer en local sur votre ordinateur
+* si vous avez des questions, n'hésitez pas !

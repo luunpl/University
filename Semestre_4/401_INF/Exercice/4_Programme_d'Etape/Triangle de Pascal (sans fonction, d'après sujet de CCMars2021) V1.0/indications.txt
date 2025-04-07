@@ -1,0 +1,37 @@
+Triangle de Pascal (d'après CcMars2021)
+
+Suivre l'adaptation suivante de l'énoncé du Cc de mars 2021 
+
+i.e. : il s'agit de traduire le programme suivant :
+
+1. EcrChaine("Entrez un nombre'')
+2. X:=Lire32()
+3. si X <= 100 alors
+4.   |  pour i de 0 à X-1 faire
+5.   |    |  TAB[i] := 1
+6.   |    |  j:=i
+7.   |    |  tant que j >= 2 faire
+8.   |    |    |  j := j - 1
+9.   |    |    |  TAB[j] := TAB[j] + TAB[j-1]
+10.  |    |     --- fin tant que ligne 7
+11.  |     ---fin pour ligne 4
+11b. | pour i de 0 à X-1 faire
+11c. |    |  afficher(TAB[i])
+11d. |     ---fin pour ligne 11b
+12.   ---fin si ligne 3
+
+
+Pour compiler son travail et lancer l'exécution,
+la première fois il faut sauvegarder une version des fichiers (icone disquette), 
+puis lancer le shell de l'activité (icone fusée)
+
+Pour vérifier que son travail corespond à la demande,
+lancer la vérification (icone boite à cocher)
+
+
+En cas de problème (fenêtre figée, timeout, ...) : 
+* fermer la fenêtre graphique et/ou relancer le terminal
+* recharger la page web
+
+Bon travail.
+

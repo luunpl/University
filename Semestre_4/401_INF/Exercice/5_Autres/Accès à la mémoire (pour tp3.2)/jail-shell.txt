@@ -1,0 +1,10 @@
+sauver (icone de disquette) puis lancer l'activité (icone de fusée) vous donne 
+64 min de shell avec les programmes du TP3.2.
+
+Rem. : les programmes sont (éditables) dans les onglets suivants.
+
+Attention, par rapport au tp3.2, il y a qlq différences :
+* les commandes arm (arm-eabi-...) sont arm-linux-gnueabi-...
+* la dernière compilation (avec édition de lien) arm-... -o ... doit être réalisée 
+    avec l'option arm-... -static -o ...
+* l'exécution du programme avec arm-eabi-run prog doit être réalisée avec qemu-arm prog
