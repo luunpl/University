@@ -7,7 +7,7 @@
 #include "ast_parcours.h"
 
 
- //extern void insererTS(char *idf, int v,Couple TS[], int *NbSymb) ;
+extern void insererTS(char *idf, int v,Couple TS[], int *NbSymb) ;
 
 void aff_operateur(TypeOperateur op){
 	switch (op) {
@@ -28,7 +28,7 @@ void aff_operateur(TypeOperateur op){
 	} 
 }
 
-/*void afficher_ast(Ast expr) {
+void afficher_ast(Ast expr) {
 	if(expr == NULL){
 		printf("fin");
 		return;
@@ -69,7 +69,7 @@ void aff_operateur(TypeOperateur op){
 			afficher_ast(expr->gauche);
 			break;
 	}
-}*/
+}
 
 int evaluation(Ast expr) {
 	int v = 0;

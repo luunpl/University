@@ -57,7 +57,7 @@ Ast creer_seqinst(Ast a1, Ast a2){
 Ast creer_idf(char *idf){
       Ast expr;
       expr = (Ast) malloc (sizeof(NoeudAst));
-      expr->nature = N_IDF ;//
+      expr->nature = N_IDF ;
       strcpy(expr->ident, idf);
       expr->gauche = NULL;
       expr->droite = NULL;
