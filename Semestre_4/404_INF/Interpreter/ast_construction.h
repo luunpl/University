@@ -1,4 +1,3 @@
-
 #ifndef __AST_CONSTRUCTION__
 #define __AST_CONSTRUCTION__
 
@@ -32,6 +31,7 @@ Ast creer_ecrire(Ast a);
 
 Ast creer_if(Ast a, Ast b, Ast c);
 // creer un noeud N_IF de fils a, b, c
+
 Ast creer_cond(TypeCond c,Ast ag,Ast ad);
 
 Ast creer_while(Ast ag, Ast ad);

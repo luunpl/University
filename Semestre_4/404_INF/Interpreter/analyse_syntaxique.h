@@ -1,3 +1,6 @@
+#ifndef __ANALYSE_SYNTAXIQUE__
+#define __ANALYSE_SYNTAXIQUE__
+
 #include "analyse_lexicale.h"
 #include "lecture_caracteres.h"
 #include "type_ast.h"
@@ -26,8 +29,7 @@ void Rec_seq_aff(Ast *resultat);
 
 void Rec_condition(Ast *resultat);
 void type_cond(TypeCond *cond);
-// azuezae
 
-/* - si elle ne contient pas d'erreur de syntaxe un message est affiche
-   - sinon le pgm termine sur un message d'erreur */
-void analyser(char *fichier, Ast *arbre);
+void analyser(char *nomFichier, Ast *arbre);
+
+#endif

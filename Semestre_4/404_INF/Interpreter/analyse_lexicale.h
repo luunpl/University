@@ -29,15 +29,15 @@ typedef enum {
    FIN_SEQUENCE,     // pseudo lexeme ajoute en fin de sequence
    // Les mots cles
    AFF,              // opérateur d'affectation (:= ) 
-   SEPAFF,           // fin de ligne ;
-   IDF,              // identificateur: seq de lettre/chiffre)  
+   SEPAFF,           // fin de ligne 
+   IDF,              // identificateur: seq de lettre/chiffre
    LIRE,             // lire
    ECRIRE,           // ecrire
    OPCOMP,           // opérateur de comparaison (<=, >=, ==, !=, <<, >>)
    SI,               // si
    ALORS,            // alors
    SINON,            // sinon
-   FSI,              // fsi
+   FSI,              // fin si
    TANQUE,           // tant que
    FAIRE,            // faire
    FAIT              // fait

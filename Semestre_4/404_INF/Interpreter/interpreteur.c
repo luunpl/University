@@ -6,25 +6,18 @@
 #include "table_symbole.h"
 
 int main(int argc, char *argv[]) {
-  int resultat;
-  if (argc != 2) {
+  if (argc != 2) {  // Vérifie le nombre d'arguments
     printf("Erreur : Nombre d'arguments incorrect\n");
     return 1;
   }
 
-  Ast arbre = NULL; // Pas besoin d'allouer de la mémoire ici, la création se fera dans la fonction analyser
+  Ast arbre = NULL; // Initialisation de l'arbre
   analyser(argv[1], &arbre);
 
   if (arbre != NULL) {
-    // Utilisez la fonction d'évaluation ici si nécessaire
-    evaluation(arbre);
-    printf("Résultat : %d\n", resultat);
-
-    // Affiche l'arbre
-    afficher_ast(arbre);
-    interpreter(arbre);
-    afficheTS(TS, NbSymb);
-    printf("fin!\n");
+    printf("Affichage des variables dans l'arbre syntaxique :\n");
+    afficheTS(TS, NbSymb); // Affiche les variables à la fin de l'analyse
+    printf("Analyse syntaxique réussie !\n");
   }
 
   return 0;

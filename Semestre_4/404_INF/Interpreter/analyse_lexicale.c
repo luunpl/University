@@ -268,7 +268,7 @@ void reconnaitre_lexeme() {
                   break;
             }
             break;
-         case E_COMP_EGAL: /******  ETAT COMP = ! INTERMEDIARE ******/
+         case E_COMP_EGAL: /******  ETAT COMP =  INTERMEDIARE ******/
             if (nature_caractere(caractere_courant()) == SYMBOLE) {
                if (caractere_courant() == '=') {
                   ajouter_caractere(lexeme_en_cours.chaine, caractere_courant());
@@ -319,7 +319,7 @@ void reconnaitre_lexeme() {
          case E_FIN: /******  ETAT FINAL ******/
             break;
       }; // fin du switch(etat)
-   };     // fin du while (etat != fin)
+   };    // fin du while (etat != fin)
 }
 
 /* --------------------------------------------------------------------- */
@@ -395,6 +395,7 @@ int est_symbole(char c) {
 // renvoie la chaine de caracteres correspondant a la nature du lexeme
 char *Nature_vers_Chaine(Nature_Lexeme nature) {
    switch (nature) {
+      // les symboles arithmetiques
       case ENTIER:
          return "ENTIER";
       case PLUS:
@@ -411,6 +412,7 @@ char *Nature_vers_Chaine(Nature_Lexeme nature) {
          return "PARF";
       case FIN_SEQUENCE:
          return "FIN_SEQUENCE";
+      // les symboles de contrôle
       case IDF:
          return "IDF";
       case AFF:
@@ -437,6 +439,7 @@ char *Nature_vers_Chaine(Nature_Lexeme nature) {
          return "FAIRE";
       case FAIT:
          return "FAIT";
+      // Defaut
       default:
          return "ERREUR";
    };

@@ -376,8 +376,8 @@ void Rec_seq_aff(Ast *resultat) {
     }
 }
 
-void analyser(char *fichier, Ast *arbre) {
-    demarrer(fichier);
+void analyser(char *nomFichier, Ast *arbre) {
+    demarrer(nomFichier);
     while (!fin_de_sequence()) {
         Rec_pgm(arbre);
     }  

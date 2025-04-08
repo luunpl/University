@@ -1,4 +1,3 @@
-
 #ifndef __TYPE_AST__
 #define __TYPE_AST__ 
 
