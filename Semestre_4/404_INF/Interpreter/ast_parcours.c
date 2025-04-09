@@ -128,7 +128,7 @@ void interpreter(Ast A) {
 			break;
 		case N_WHILE:
 			interpreter_while(A);
-			break;	
+			break;
 		default:
 			printf("Nature inconnue dans l'interprétation\n");
 			break;

@@ -24,8 +24,8 @@ make
 -entree10.txt
 -entree11.txt
 
-# Test erreur lexicale:
--entreeel.txt
+# Test erreur lexicale: 
+-entreeel1.txt 
 -entreeel2.txt
 
 # Test erreur syntaxique:

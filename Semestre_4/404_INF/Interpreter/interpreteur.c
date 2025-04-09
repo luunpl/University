@@ -6,7 +6,7 @@
 #include "table_symbole.h"
 
 int main(int argc, char *argv[]) {
-  if (argc != 2) {  // Vérifie le nombre d'arguments
+  if (argc != 2) { // Vérifie le nombre d'arguments
     printf("Erreur : Nombre d'arguments incorrect\n");
     return 1;
   }

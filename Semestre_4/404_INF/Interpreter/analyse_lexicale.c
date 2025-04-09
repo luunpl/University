@@ -65,35 +65,26 @@ void arreter() {
 
 /* --------------------------------------------------------------------- */
 
-// reconnaissance d'un nouveau lexeme
-// etat initial : le caractere courant est soit separateur
-//                soit le 1er caractere d'un lexeme
-// etat final :
-//       - un nouveau lexeme est reconnu dans lexeme_en_cours
-//       - le caractere courant est soit la fin de fichier,
-//		soit un separateur,  soit le 1er caractere d'un lexeme
 char motCle[9][20] = {"lire", "ecrire", "si", "alors", "sinon", "fsi", "tanque", "faire", "fait"};
 
 void reconnaitre_lexeme() {
    typedef enum { E_INIT, E_AFF, E_IDF, E_ENTIER, E_FIN, E_COMP_EGAL, E_COMP_SUP, E_COMP_INF } Etat_Automate;
    Etat_Automate etat = E_INIT;
 
-   // on commence par lire et ignorer les separateurs
    while (est_separateur(caractere_courant())) {
       avancer_car();
    };
    lexeme_en_cours.chaine[0] = '\0';
 
-   // on utilise ensuite un automate pour reconnaitre et construire le prochain lexeme
    while (etat != E_FIN) {
       switch (etat) {
-         case E_INIT: /******  ETAT INITIAL  ******/
+         case E_INIT:
             switch (nature_caractere(caractere_courant())) {
-               case C_FIN_SEQUENCE: // si la caractère est la fin de séq
+               case C_FIN_SEQUENCE:
                   lexeme_en_cours.nature = FIN_SEQUENCE;
                   etat = E_FIN;
                   break;
-               case CHIFFRE: // si la carac est un chiffre
+               case CHIFFRE:
                   lexeme_en_cours.nature = ENTIER;
                   lexeme_en_cours.ligne = numero_ligne();
                   lexeme_en_cours.colonne = numero_colonne();
@@ -102,7 +93,7 @@ void reconnaitre_lexeme() {
                   etat = E_ENTIER;
                   avancer_car();
                   break;
-               case SYMBOLE: // si la carac est un symbole
+               case SYMBOLE:
                   lexeme_en_cours.ligne = numero_ligne();
                   lexeme_en_cours.colonne = numero_colonne();
                   switch (caractere_courant()) {
@@ -169,7 +160,7 @@ void reconnaitre_lexeme() {
                   }
                   avancer_car();
                   break;
-               case LETTRE: // si la caractère est une lettre
+               case LETTRE:
                   lexeme_en_cours.ligne = numero_ligne();
                   lexeme_en_cours.colonne = numero_colonne();
                   ajouter_caractere(lexeme_en_cours.chaine, caractere_courant());
@@ -184,7 +175,7 @@ void reconnaitre_lexeme() {
             };
             break;
 
-         case E_AFF: /******  ETAT AFF INTERMEDIARE ******/
+         case E_AFF:
             if (nature_caractere(caractere_courant()) == SYMBOLE) {
                switch (caractere_courant()) {
                   case '=':
@@ -204,7 +195,7 @@ void reconnaitre_lexeme() {
             }
             break;
 
-         case E_ENTIER: /******  ETAT ENTIER INTERMEDIARE ******/
+         case E_ENTIER:
             switch (nature_caractere(caractere_courant())) {
                case CHIFFRE:
                   ajouter_caractere(lexeme_en_cours.chaine, caractere_courant());
@@ -221,7 +212,8 @@ void reconnaitre_lexeme() {
                   break;
             };
             break;
-         case E_IDF: /******  ETAT IDF INTERMEDIARE ******/
+
+         case E_IDF:
             switch (nature_caractere(caractere_courant())) {
                case CHIFFRE:
                case LETTRE:
@@ -268,7 +260,8 @@ void reconnaitre_lexeme() {
                   break;
             }
             break;
-         case E_COMP_EGAL: /******  ETAT COMP =  INTERMEDIARE ******/
+
+         case E_COMP_EGAL:
             if (nature_caractere(caractere_courant()) == SYMBOLE) {
                if (caractere_courant() == '=') {
                   ajouter_caractere(lexeme_en_cours.chaine, caractere_courant());
@@ -284,7 +277,8 @@ void reconnaitre_lexeme() {
                exit(0);
             }
             break;
-         case E_COMP_SUP: /******  ETAT COMP > INTERMEDIARE ******/
+
+         case E_COMP_SUP:
             if (nature_caractere(caractere_courant()) == SYMBOLE) {
                if (caractere_courant() == '=' || caractere_courant() == '>') {
                   ajouter_caractere(lexeme_en_cours.chaine, caractere_courant());
@@ -300,7 +294,8 @@ void reconnaitre_lexeme() {
                exit(0);
             }
             break;
-         case E_COMP_INF: /******  ETAT COMP < INTERMEDIARE ******/
+
+         case E_COMP_INF:
             if (nature_caractere(caractere_courant()) == SYMBOLE) {
                if (caractere_courant() == '=' || caractere_courant() == '<') {
                   ajouter_caractere(lexeme_en_cours.chaine, caractere_courant());
@@ -316,16 +311,14 @@ void reconnaitre_lexeme() {
                exit(0);
             }
             break;
-         case E_FIN: /******  ETAT FINAL ******/
+
+         case E_FIN:
             break;
-      }; // fin du switch(etat)
-   };    // fin du while (etat != fin)
+      };
+   };
 }
 
 /* --------------------------------------------------------------------- */
-
-// cette fonction ajoute le caractere c a la fin de la chaine s
-// (la chaine s est donc modifiee)
 
 void ajouter_caractere(char *s, char c) {
    int l;
@@ -348,28 +341,27 @@ Nature_Caractere nature_caractere(char c) {
       return LETTRE;
    return ERREUR_CAR;
 }
+
 /* --------------------------------------------------------------------- */
 
-// vaut vrai ssi c designe un caractere separateur
 int est_separateur(char c) {
    return c == ' ' || c == '\t' || c == '\n';
 }
 
 /* --------------------------------------------------------------------- */
 
-// vaut vrai ssi c designe un caractere chiffre
 int est_chiffre(char c) {
    return c >= '0' && c <= '9';
 }
 
 /* --------------------------------------------------------------------- */
 
-// vaut vrai ssi c designe une lettre majuscule ou minuscule
 int est_lettre(char c) {
    return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
 }
 
-// vaut vrai ssi c designe un caractere correspondant a un symbole arithmetique
+/* --------------------------------------------------------------------- */
+
 int est_symbole(char c) {
    switch (c) {
       case '+':
@@ -392,10 +384,8 @@ int est_symbole(char c) {
 
 /* --------------------------------------------------------------------- */
 
-// renvoie la chaine de caracteres correspondant a la nature du lexeme
 char *Nature_vers_Chaine(Nature_Lexeme nature) {
    switch (nature) {
-      // les symboles arithmetiques
       case ENTIER:
          return "ENTIER";
       case PLUS:
@@ -412,7 +402,6 @@ char *Nature_vers_Chaine(Nature_Lexeme nature) {
          return "PARF";
       case FIN_SEQUENCE:
          return "FIN_SEQUENCE";
-      // les symboles de contrôle
       case IDF:
          return "IDF";
       case AFF:
@@ -439,7 +428,6 @@ char *Nature_vers_Chaine(Nature_Lexeme nature) {
          return "FAIRE";
       case FAIT:
          return "FAIT";
-      // Defaut
       default:
          return "ERREUR";
    };
@@ -447,7 +435,6 @@ char *Nature_vers_Chaine(Nature_Lexeme nature) {
 
 /* --------------------------------------------------------------------- */
 
-// affiche a l'ecran le lexeme l
 void afficher(Lexeme l) {
    switch (l.nature) {
       case FIN_SEQUENCE:
