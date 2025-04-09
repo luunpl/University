@@ -102,7 +102,7 @@ int evaluation(Ast expr) {
 				return evaluation(expr->droite);
 			}
 		default:
-			printf("Nature inconnue dans l'évaluation\n");
+			//printf("Nature inconnue dans l'évaluation\n");
 			exit(1);
 	}
 	return -1;
@@ -130,7 +130,7 @@ void interpreter(Ast A) {
 			interpreter_while(A);
 			break;
 		default:
-			printf("Nature inconnue dans l'interprétation\n");
+			//printf("Nature inconnue dans l'interprétation\n");
 			break;
 	}
 }
