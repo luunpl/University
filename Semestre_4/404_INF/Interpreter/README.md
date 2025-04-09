@@ -2,7 +2,7 @@
 make
 
 # Pour lancer l'interpreteur:
-./interpreteur nomfichier.txt
+./interpreteur entree[nomfichier].txt
 
 # Tests TP5(variables):
 -entree0.txt
@@ -16,7 +16,7 @@ make
 -entree4.txt
 -entree5.txt
 -entree6.txt
--entree7.txt
+
 
 # Tests TP8(boucle):
 -entree8.txt
@@ -25,11 +25,11 @@ make
 -entree11.txt
 
 # Test erreur lexicale:
--entreefl.txt
--entreefl2.txt
+-entreeel.txt
+-entreeel2.txt
 
 # Test erreur syntaxique:
--entreefsynt.txt
+-entreees.txt
 
 # Test erreur sémantique:
--entreefsem.txt
+-entreess.txt

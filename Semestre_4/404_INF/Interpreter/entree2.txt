@@ -4,4 +4,3 @@ lire (z) ;
 y := a +z ;
 ecrire(y-4);
 
-
