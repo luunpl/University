@@ -1,0 +1,105 @@
+---
+title: "TP8"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, out.width="50%")
+library(knitr)
+```
+
+## Exercice 1: test sur la moyenne 
+
+1. 2. 3. 
+```{r}
+data <- read.table("~/mypathtosta401data/apnee.csv",header=TRUE,sep=",")
+tailleH <- data[data$sexe==0,"taille"]
+moyest <- mean(tailleH)
+varest <- var(tailleH)
+```
+
+4. 
+```{r}
+par(mfrow=c(1,2))
+hist(tailleH,probability=TRUE)
+curve(dnorm(x,moyest,sqrt(varest)),add=T,col="red")
+qqnorm(tailleH)
+qqline(tailleH)
+```
+
+L'échantillon ne semble pas suivre une loi normale. 
+
+5.
+n étant grand, d'après le Théorème Central Limite (TCL), les conditions sont remplies, même si tailleH ne suit pas une loi normale.
+```{r}
+mu0 <- 184
+n <- length(tailleH)
+tcalc <- (moyest-mu0)/(sd(tailleH)/sqrt(n))
+(pvalue <- pt(tcalc,n-1))
+```
+
+Mêmes résultats en utilisant directement t.test:
+```{r}
+t.test(tailleH,mu=184,alternative="less")
+```
+Pour tout risque choisi supérieur à 4.3%, on pourra refuser H0 et conclure que $\mu$ est inférieur à 184. Si on choisit le seuil classique de 5%, on refuse donc H0 et on conclu que $\mu$ est inférieur à 184.
+
+6.
+```{r}
+t.test(tailleH,mu=184,alternative="two.sided")
+```
+Pour tout risque choisi supérieur à 8.6%, on pourra refuser H0 et conclure que $\mu$ est différent de 184. Le seuil classiquement utilisé de 5% ne permet donc pas de conclure que $\mu$ est différent de 184: on est dans le cas d'une faible présomption contre l'hypothèse nulle.
+
+## Exercice 2: test sur la variance 
+
+1.
+```{r}
+var0 <- 200
+tcalc <- (n-1)*var(tailleH)/var0
+alpha <- seq(0.01,0.1,0.01)
+rejected <- tcalc<qchisq(alpha/2,n-1) | tcalc>qchisq(1-alpha/2,n-1)
+kable(data.table(alpha=alpha,rejected=rejected))
+```
+Pour tous les risques testés ici, on ne peut pas rejeter l'hypothèse H0. 
+
+2.
+```{r}
+(pvalue <- 2*min(pchisq(tcalc,n-1,lower.tail=TRUE),pchisq(tcalc,n-1,lower.tail=FALSE)))
+```
+La p-valeur est grande, il n'existe pas de risque raisonable pour lequel on peut rejeter l'hypothèse H0. 
+
+##  Exercice 3: test sur une proportion
+
+1.
+```{r}
+nbsucess <- sum(data$taille>180)
+n <- nrow(data)
+(p <- nbsucess/n)
+```
+
+2.
+```{r}
+p*n>10 & (1-p)*n>10
+```
+
+3.
+```{r}
+alpha <- 0.1
+Binf <- p-sqrt(p*(1-p)/n)*qnorm(1-alpha/2)
+Bsup <- p+sqrt(p*(1-p)/n)*qnorm(1-alpha/2)
+cat("Intervalle de confiance: [",Binf," ; ",Bsup,"]\n")
+
+p0 <- 0.5
+tcalc <- (p-p0)/sqrt((p0*(1-p0)/n))
+pvalue <- 2*(1-pnorm(abs(tcalc)))
+cat("p-valeur:",pvalue,"\n")
+
+
+```
+$p_0$=0.5 est dans l'intervalle de confiance de niveau 90%, la p-valeur est grande, il n'existe donc pas de risque raisonable permettant de rejeter l'hypothèse H0. 
+
+4.
+```{r}
+prop.test(nbsucess,n,p=0.5,conf.level=0.90,alternative="two.sided")
+```
+Rappel: prop.test n'utilise pas l'approximation du cours, il est valable sans condition. 
