@@ -2,6 +2,9 @@
 Pour compiler l'interpréteur, utilisez la commande suivante :
 ```bash
 make 
+```
+ou 
+```bash
 make interpreteur
 ```
 
