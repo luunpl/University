@@ -1,7 +1,8 @@
 # Compilation de l'interpréteur
 Pour compiler l'interpréteur, utilisez la commande suivante :
 ```bash
-make
+make 
+make interpreteur
 ```
 
 # Exécution de l'interpréteur
