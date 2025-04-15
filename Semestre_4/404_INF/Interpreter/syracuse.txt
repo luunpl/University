@@ -1,4 +1,17 @@
 lire(n);
-tantque n != 1 faire
+
+tanque n != 1 faire
+    temp := n;
+    
+    tanque temp >= 2 faire
+        temp := temp - 2;
+    fait;
+
+    si temp << 0 alors  
+        n := (n - (n - 1));  
+    sinon
+        n := (3 *(n + 1));
+    fsi;
+
     ecrire(n);
-    si n //
+fait;
