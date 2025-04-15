@@ -1,35 +1,40 @@
-# Pour compiler l'interpreteur:
+# Compilation de l'interpréteur
+Pour compiler l'interpréteur, utilisez la commande suivante :
+```bash
 make
+```
 
-# Pour lancer l'interpreteur:
+# Exécution de l'interpréteur
+Pour lancer l'interpréteur, utilisez la commande suivante :
+```bash
 ./interpreteur entree[nomfichier].txt
+```
 
-# Tests TP5(variables):
--entree0.txt
--entree1.txt
+# Tests TP5 : Variables
+- `entree0.txt`
+- `entree1.txt`
 
-# Tests TP6(lire/écrire):
--entree2.txt
+# Tests TP6 : Lire/Écrire
+- `entree2.txt`
 
-# Tests TP7(inst conditionnelle):
--entree3.txt
--entree4.txt
--entree5.txt
--entree6.txt
+# Tests TP7 : Instruction conditionnelle
+- `entree3.txt`
+- `entree4.txt`
 
+# Tests TP8 : Boucle
+- `entree5.txt`
+- `entree6.txt`
 
-# Tests TP8(boucle):
--entree8.txt
--entree9.txt
--entree10.txt
--entree11.txt
+# Algorithmes
+- `fibonacci.txt`
+- `factorielle.txt`
 
-# Test erreur lexicale: 
--entreeel1.txt 
--entreeel2.txt
+# Tests d'erreurs lexicales
+- `erreur_lexicale1.txt`
+- `erreur_lexicale2.txt`
 
-# Test erreur syntaxique:
--entreees.txt
+# Tests d'erreurs syntaxiques
+- `erreur_syntaxique.txt`
 
-# Test erreur sémantique:
--entreess.txt
+# Tests d'erreurs sémantiques
+- `erreur_semantique.txt`

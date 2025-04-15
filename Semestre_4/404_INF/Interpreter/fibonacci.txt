@@ -1,0 +1,10 @@
+lire(n);
+a := 0;
+b := 1;
+compteur := 0;
+tanque compteur << n faire
+    ecrire(a);
+    a := b;
+    b := a + b;
+    compteur := compteur + 1;
+fait;

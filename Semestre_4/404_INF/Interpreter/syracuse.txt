@@ -1,0 +1,4 @@
+lire(n);
+tantque n != 1 faire
+    ecrire(n);
+    si n //
