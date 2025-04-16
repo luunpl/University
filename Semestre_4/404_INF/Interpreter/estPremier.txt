@@ -8,7 +8,7 @@ fait;
 i := 2;
 tanque i << n faire
     temp := n;
-    temp := temp - i;  s
+    temp := temp - i;  
     si temp << 1 alors  
         estPremier := 1;
     sinon
