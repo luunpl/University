@@ -6,7 +6,7 @@ tanque x >> 0 faire
     si x >> 100 alors
         x := x + 1;
     sinon
-        x := x - 2;
+        x := x - 1;
     fsi;
     ecrire(x);
     ecrire(r);
