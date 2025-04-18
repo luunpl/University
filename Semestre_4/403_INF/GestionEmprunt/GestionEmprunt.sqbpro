@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/home/luunpl/Personal/University/Semestre_4/403_INF/GestionEmprunt/BaseDonneesResa.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="129"/><column_width id="3" width="4457"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,12:mainReservations"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Categories" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="117"/><column index="2" value="185"/><column index="3" value="161"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Employes" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="3" mode="0"/></sort><column_widths><column index="1" value="109"/><column index="2" value="131"/><column index="3" value="227"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Employes_base" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="109"/><column index="2" value="131"/><column index="3" value="177"/><column index="4" value="122"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Exemplaires" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="131"/><column index="2" value="109"/><column index="3" value="158"/><column index="4" value="97"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Indisponibilites" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="158"/><column index="2" value="238"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Materiels" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="109"/><column index="2" value="144"/><column index="3" value="207"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Materiels_base" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="109"/><column index="2" value="117"/><column index="3" value="300"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Resa" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="117"/><column index="2" value="109"/><column index="3" value="158"/><column index="4" value="131"/><column index="5" value="109"/><column index="6" value="109"/><column index="7" value="96"/><column index="8" value="134"/><column index="9" value="113"/><column index="10" value="131"/><column index="11" value="122"/><column index="12" value="177"/><column index="13" value="97"/><column index="14" value="238"/><column index="15" value="300"/><column index="16" value="185"/><column index="17" value="161"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Reservations" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="4" mode="1"/></sort><column_widths><column index="1" value="134"/><column index="2" value="109"/><column index="3" value="131"/><column index="4" value="109"/><column index="5" value="96"/><column index="6" value="134"/><column index="7" value="113"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="SousCategories" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="163"/><column index="2" value="117"/><column index="3" value="220"/><column index="4" value="226"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Sous_Categories" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="163"/><column index="2" value="117"/><column index="3" value="198"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="sqlite_sequence" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="110"/><column index="2" value="56"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="GestionEmprunt">--Suppression des tables si elles existent deja
+DROP TABLE IF EXISTS Reservations;
+DROP TABLE IF EXISTS Exemplaires;
+DROP TABLE IF EXISTS Indisponibilites;
+DROP TABLE IF EXISTS Employes_base;
+DROP TABLE IF EXISTS Materiels_base;
+DROP TABLE IF EXISTS SousCategories;
+DROP TABLE IF EXISTS Categories;
+
+--Suppression des vues si elles existent deja
+DROP VIEW IF EXISTS Employes;
+DROP VIEW IF EXISTS Materiels;
+
+-- Pour activer les FKs
+PRAGMA FOREIGN_KEYS=ON;
+
+--Question 2 (Script de création de la BD)
+--Creation des tables
+--Types SQLite vs ORACLE (TEXT = VARCHAR; REAL &amp; INTEGER = NUMBER)
+CREATE TABLE Materiels_base (
+   id_materiel INTEGER PRIMARY KEY,
+   id_categorie INTEGER NOT NULL,
+   libelle_materiel TEXT NOT NULL,
+   FOREIGN KEY (id_categorie) REFERENCES Categories(id_categorie)
+);
+
+CREATE TABLE Indisponibilites (
+   id_indisponibilite INTEGER PRIMARY KEY,
+   description_indisponibilite TEXT NOT NULL CHECK (description_indisponibilite IN ('panne', 'maintenance', 'perdu'))
+);
+
+CREATE TABLE Employes_base (
+   id_employe INTEGER PRIMARY KEY,
+   nom_employe TEXT NOT NULL,
+   mail TEXT,
+   tel TEXT
+);
+
+CREATE TABLE Reservations (
+   id_reservation INTEGER PRIMARY KEY AUTOINCREMENT,
+   id_employe INTEGER NOT NULL,
+   id_exemplaire INTEGER NOT NULL,
+   date_debut date NOT NULL,
+   date_fin date NOT NULL,
+   date_emprunt date,
+   date_retour date,
+   FOREIGN KEY (id_employe) REFERENCES Employes_base(id_employe),
+   FOREIGN KEY (id_exemplaire) REFERENCES Exemplaires(id_exemplaire),
+   CHECK (date_emprunt IS NULL OR date_emprunt &gt;= date_debut),
+   CHECK (date_emprunt IS NULL OR date_fin &gt;= date_emprunt),
+   CHECK (date_retour IS NULL OR date_retour &gt;= date_emprunt)
+);
+
+
+CREATE TABLE Exemplaires (
+   id_exemplaire INTEGER PRIMARY KEY,
+   id_materiel INTEGER NOT NULL,
+   id_indisponibilite INTEGER,
+   etat TEXT NOT NULL CHECK (etat IN ('neuf', 'bon', 'moyen', 'defectueux')),
+   FOREIGN KEY (id_materiel) REFERENCES Materiels_base(id_materiel),
+   FOREIGN KEY (id_indisponibilite) REFERENCES Indisponibilites(id_indisponibilite)
+);
+
+CREATE TABLE Categories (
+   id_categorie INTEGER PRIMARY KEY,
+   libelle_categorie TEXT NOT NULL UNIQUE,
+   nb_emprunt_max INTEGER NOT NULL
+);
+
+CREATE TABLE SousCategories (
+   id_sous_categorie INTEGER PRIMARY KEY,
+   id_categorie INTEGER NOT NULL,
+   libelle_sous_categorie TEXT NOT NULL UNIQUE,
+   id_parent_sous_categorie INTEGER,
+   FOREIGN KEY (id_categorie) REFERENCES Categories(id_categorie),
+   FOREIGN KEY (id_parent_sous_categorie) REFERENCES SousCategories(id_sous_categorie)
+);
+
+--Question 3 (Transfert de données existantes et sous-catégories) 
+--Charger des donnees
+INSERT INTO Indisponibilites
+SELECT id_indisponibilite, description_indisponibilite
+FROM Resa
+WHERE id_indisponibilite != '';
+	
+INSERT INTO Employes_base (id_employe, nom_employe, mail, tel)
+SELECT DISTINCT id_employe, nom_employe, mail, tel
+FROM Resa
+WHERE id_employe IS NOT NULL AND id_employe != '';
+		
+INSERT INTO Categories
+	SELECT DISTINCT id_categorie, libelle_categorie, nb_emprunt_max
+	FROM Resa
+	WHERE libelle_categorie != '' AND nb_emprunt_max != '';
+
+INSERT INTO Materiels_base
+		SELECT DISTINCT id_materiel, id_categorie, libelle_materiel
+		FROM Resa
+		WHERE id_categorie != '' AND libelle_materiel != '';
+		
+INSERT INTO Exemplaires
+	SELECT DISTINCT id_exemplaire, id_materiel, id_indisponibilite, etat
+	FROM Resa
+	WHERE id_materiel != '' AND etat != '';
+	
+INSERT INTO Reservations (
+  id_employe,
+  id_exemplaire,
+  date_debut,
+  date_fin,
+  date_emprunt,
+  date_retour
+)
+SELECT id_employe, id_exemplaire, date_debut, date_fin, date_emprunt, date_retour
+FROM Resa
+WHERE id_employe IS NOT NULL AND id_employe != ''
+  AND id_exemplaire IS NOT NULL AND id_exemplaire != ''
+  AND date_debut IS NOT NULL AND date_debut != ''
+  AND date_fin IS NOT NULL AND date_fin != ''
+  AND (date_emprunt IS NULL OR date_emprunt &gt;= date_debut)
+  AND (date_emprunt IS NULL OR date_fin &gt;= date_emprunt)
+  AND (date_retour IS NULL OR date_emprunt IS NULL OR date_retour &gt;= date_emprunt);
+
+INSERT INTO SousCategories VALUES (1, 3, 'projecteurs', NULL);
+INSERT INTO SousCategories VALUES (2, 5, 'CD', NULL);
+INSERT INTO SousCategories VALUES (3, 3, 'projecteurs professionnels', 1);
+INSERT INTO SousCategories VALUES (4, 5, 'CD musique', 2);
+--Question 4 (Vues)
+--Creation des Vues;
+--Employes
+CREATE VIEW Employes AS
+SELECT
+	e.id_employe,
+	e.nom_employe,
+	e.mail,
+	e.tel
+	COUNT(r.id_reservation) AS nb_emprunts_en_cours
+FROM Employes_base e
+LEFT JOIN Reservations r ON e.id_employe = r.id_employe
+WHERE r.date_emprunt IS NULL AND r.date_retour IS NULL
+GROUP BY e.id_employe, e.nom_employe;
+
+--Materiels
+CREATE VIEW Materiels AS
+SELECT
+    m.id_materiel,
+    m.libelle_materiel,
+    COUNT(r.id_reservation) AS nb_emprunts_en_cours
+FROM Materiels_base m
+JOIN Exemplaires ex ON m.id_materiel = ex.id_materiel
+LEFT JOIN Reservations r ON ex.id_exemplaire = r.id_exemplaire
+WHERE r.date_emprunt IS NULL AND r.date_retour IS NULL
+GROUP BY m.id_materiel, m.libelle_materiel;
+																								
+																		</sql><sql name="Request">--1. Quelles sont les catégories de matériel réservés par l’employé ’Martin’ ?
+SELECT DISTINCT e.nom_employe, c.libelle_categorie
+FROM Reservations r
+JOIN Employes_base e ON r.id_employe = e.id_employe
+JOIN Exemplaires ex ON r.id_exemplaire = ex.id_exemplaire
+JOIN Materiels_base m ON ex.id_materiel = m.id_materiel
+JOIN Categories c ON m.id_categorie = c.id_categorie
+WHERE e.nom_employe = 'Martin';
+
+--2. Quels employés ont réservé l’appareil photo compact (id materiel=37) et l’appareil photo reflex (id materiel=38) ?
+SELECT e.id_employe, e.nom_employe
+FROM Employes_Base e
+WHERE e.id_employe IN (
+	SELECT r.id_employe
+	FROM Reservations r JOIN Exemplaires ex ON r.id_exemplaire = ex.id_exemplaire
+	WHERE ex.id_materiel = 37)
+	AND e.id_employe IN (
+	SELECT r.id_employe
+	FROM Reservations r JOIN Exemplaires ex ON r.id_exemplaire = ex.id_exemplaire
+	WHERE ex.id_materiel = 38);
+
+--3. Combien d’employés ont réservé l’appareil photo compact (id materiel=37) ou l’appareil photo reflex (id materiel=38) ?
+SELECT COUNT(e.id_employe)
+FROM Employes_Base e
+WHERE e.id_employe IN (
+	SELECT r.id_employe
+	FROM Reservations r JOIN Exemplaires ex ON r.id_exemplaire = ex.id_exemplaire
+	WHERE ex.id_materiel = 37)
+	OR e.id_employe IN (
+	SELECT r.id_employe
+	FROM Reservations r JOIN Exemplaires ex ON r.id_exemplaire = ex.id_exemplaire
+	WHERE ex.id_materiel = 38);
+
+--4. Quels employés n’ont rien réservé ?
+SELECT id_employe, nom_employe
+FROM Employes_base
+WHERE id_employe NOT IN (
+	SELECT DISTINCT id_employe
+	FROM Reservations
+);
+
+--5. Quels employés ont réservé au moins 1 matériel de chaque catégorie (votre résultat doit comprendre 197 employés) ?
+SELECT e.id_employe, e.nom_employe
+FROM Employes_Base e JOIN Reservations r USING (id_employe)
+            	JOIN Exemplaires ex USING (id_exemplaire)
+            	JOIN Materiels_base	m Using (id_materiel)
+            	JOIN Categories c USING (id_categorie)
+GROUP BY e.id_employe, e.nom_employe
+HAVING count(DISTINCT c.id_categorie) = (SELECT count(*) FROM Categories);
+
+--6. Quel est le nombre d’exemplaires de chaque matériel (donner l’id et libellé) ?
+SELECT m.id_materiel, m.libelle_materiel, COUNT(*) AS nb_exemplaires
+FROM Exemplaires ex
+JOIN Materiels_base m ON ex.id_materiel = m.id_materiel
+GROUP BY m.id_materiel, m.libelle_materiel;
+
+--7. Quels employés ont fait au moins 60 réservations ?
+SELECT e.id_employe, e.nom_employe, COUNT(r.id_reservation) AS nombre_reservations
+FROM Employes_base e JOIN Reservations r ON e.id_employe = r.id_employe
+GROUP BY e.id_employe, e.nom_employe
+HAVING COUNT(r.id_reservation) &gt;= 60;
+
+--8. Quels employés ont emprunté au moins 2 fois la perceuse (id materiel=20) ?
+SELECT e.id_employe, e.nom_employe, COUNT(r.id_reservation) AS nombre_emprunts_reels_perceuse
+FROM Employes_base e
+JOIN Reservations r ON e.id_employe = r.id_employe
+JOIN Exemplaires ex ON r.id_exemplaire = ex.id_exemplaire
+WHERE ex.id_materiel = 20 
+GROUP BY e.id_employe, e.nom_employe
+HAVING COUNT(r.id_reservation) &gt;= 2;
+
+--9. Quel matériels ont été réservés le plus longtemps (sur 1 seule réservation) ?
+WITH Durees AS (
+  SELECT
+	ex.id_materiel,
+	m.libelle_materiel,
+	r.id_reservation,
+	CAST(julianday(r.date_fin) - julianday(r.date_debut) AS INTEGER) AS duree
+  FROM Reservations r
+  JOIN Exemplaires ex ON r.id_exemplaire = ex.id_exemplaire
+  JOIN Materiels_base m ON ex.id_materiel = m.id_materiel
+  WHERE r.date_debut IS NOT NULL AND r.date_fin IS NOT NULL
+)
+SELECT id_materiel, libelle_materiel, id_reservation, duree
+FROM Durees
+WHERE duree = (SELECT MAX(duree) FROM Durees);
+
+--10. Quels sont les exemplaires (et le nom du matériel) qui ont été réservés le plus de fois ?
+WITH X AS (
+  SELECT
+	r.id_exemplaire,
+	m.libelle_materiel,
+	COUNT(*) AS count_reservation
+  FROM Reservations r
+  JOIN Exemplaires e ON r.id_exemplaire = e.id_exemplaire
+  JOIN Materiels_base m ON e.id_materiel = m.id_materiel
+  GROUP BY r.id_exemplaire, m.libelle_materiel
+),
+MaxCount AS (
+  SELECT MAX(count_reservation) AS max_resa FROM X
+)
+SELECT x.*
+FROM X x JOIN MaxCount m ON x.count_reservation = m.max_resa;</sql><current_tab id="1"/></tab_sql></sqlb_project>

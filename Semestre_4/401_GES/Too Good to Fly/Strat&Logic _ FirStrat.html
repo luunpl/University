@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" class="t-ff t-ff137 dlabxhliu idc0_350" style="height: auto; min-height: 100%;"><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Strat&amp;Logic | FirStrat</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="Strat&amp;Logic%20_%20FirStrat_files/bootstrap.min.css">
+    <link rel="stylesheet" href="Strat&amp;Logic%20_%20FirStrat_files/select2.min.css">
+    <link rel="stylesheet" href="Strat&amp;Logic%20_%20FirStrat_files/font-awesome.min.css">
+    <link rel="stylesheet" href="Strat&amp;Logic%20_%20FirStrat_files/ionicons.min.css">
+    <link rel="stylesheet" href="Strat&amp;Logic%20_%20FirStrat_files/AdminLTE.min.css">
+    <link rel="stylesheet" href="Strat&amp;Logic%20_%20FirStrat_files/animate.css">
+    <link rel="stylesheet" href="Strat&amp;Logic%20_%20FirStrat_files/skin-red.css">
+    <link rel="stylesheet" href="Strat&amp;Logic%20_%20FirStrat_files/skin-red-light.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>  <![endif]-->
+    <!-- Google Font -->
+    <link rel="stylesheet" href="Strat&amp;Logic%20_%20FirStrat_files/css.css">
+    <link rel="stylesheet" href="Strat&amp;Logic%20_%20FirStrat_files/dotnet.css">
+  </head>
+    
+<body class="fixed skin-red sidebar-mini sidebar-mini-expand-feature" style="height: auto; min-height: 100%;">
+    <form method="post" action="./firstrat_student_page.aspx?Page=PARAM" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="RadScriptManager1_TSM" id="RadScriptManager1_TSM" value=";;System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35:fr-FR:c7c66246-7597-47ee-87ae-ac254004a457:ea597d4b:b25378d2;Telerik.Web.UI:fr-FR:2e526c17-29b2-48b8-905d-11b7bd399312:16e4e7cd:f7645509:24ee1bba:b2e06756:92fe8ea0:fa31b949:33715776:c128760b:19620875:4877f69a:874f8ea2:f46195d3:490a9d4e:bd8f85e4:cda80b3:383e4ce8">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMjA1MzQyNTc5OA9kFgJmD2QWAgIBD2QWKAIBD2QWAmYPFCsAAg8WBB4TY2FjaGVkU2VsZWN0ZWRWYWx1ZWQeB1Zpc2libGVoZBAWFWYCAQICAgMCBAIFAgYCBwIIAgkCCgILAgwCDQIOAg8CEAIRAhICEwIUFhUUKwACDxYGHgRUZXh0BQVCbGFjax4FVmFsdWUFBUJsYWNrHghTZWxlY3RlZGhkZBQrAAIPFgYfAgUPQmxhY2tNZXRyb1RvdWNoHwMFD0JsYWNrTWV0cm9Ub3VjaB8EaGRkFCsAAg8WBh8CBQlCb290c3RyYXAfAwUJQm9vdHN0cmFwHwRoZGQUKwACDxYGHwIFB0RlZmF1bHQfAwUHRGVmYXVsdB8EZ2RkFCsAAg8WBh8CBQRHbG93HwMFBEdsb3cfBGhkZBQrAAIPFgYfAgUITWF0ZXJpYWwfAwUITWF0ZXJpYWwfBGhkZBQrAAIPFgYfAgUFTWV0cm8fAwUFTWV0cm8fBGhkZBQrAAIPFgYfAgUKTWV0cm9Ub3VjaB8DBQpNZXRyb1RvdWNoHwRoZGQUKwACDxYGHwIFCk9mZmljZTIwMDcfAwUKT2ZmaWNlMjAwNx8EaGRkFCsAAg8WBh8CBQ9PZmZpY2UyMDEwQmxhY2sfAwUPT2ZmaWNlMjAxMEJsYWNrHwRoZGQUKwACDxYGHwIFDk9mZmljZTIwMTBCbHVlHwMFDk9mZmljZTIwMTBCbHVlHwRoZGQUKwACDxYGHwIFEE9mZmljZTIwMTBTaWx2ZXIfAwUQT2ZmaWNlMjAxMFNpbHZlch8EaGRkFCsAAg8WBh8CBQdPdXRsb29rHwMFB091dGxvb2sfBGhkZBQrAAIPFgYfAgUEU2lsax8DBQRTaWxrHwRoZGQUKwACDxYGHwIFBlNpbXBsZR8DBQZTaW1wbGUfBGhkZBQrAAIPFgYfAgUGU3Vuc2V0HwMFBlN1bnNldB8EaGRkFCsAAg8WBh8CBQdUZWxlcmlrHwMFB1RlbGVyaWsfBGhkZBQrAAIPFgYfAgUFVmlzdGEfAwUFVmlzdGEfBGhkZBQrAAIPFgYfAgUFV2ViMjAfAwUFV2ViMjAfBGhkZBQrAAIPFgYfAgUHV2ViQmx1ZR8DBQdXZWJCbHVlHwRoZGQUKwACDxYGHwIFCFdpbmRvd3M3HwMFCFdpbmRvd3M3HwRoZGQPFhVmZmZmZmZmZmZmZmZmZmZmZmZmZmYWAQV3VGVsZXJpay5XZWIuVUkuUmFkQ29tYm9Cb3hJdGVtLCBUZWxlcmlrLldlYi5VSSwgVmVyc2lvbj0yMDE5LjIuNTE0LjQ1LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTEyMWZhZTc4MTY1YmEzZDQWLmYPDxYEHghDc3NDbGFzcwUJcmNiSGVhZGVyHgRfIVNCAgJkZAIBDw8WBB8FBQlyY2JGb290ZXIfBgICZGQCAg8PFgYfAgUFQmxhY2sfAwUFQmxhY2sfBGhkZAIDDw8WBh8CBQ9CbGFja01ldHJvVG91Y2gfAwUPQmxhY2tNZXRyb1RvdWNoHwRoZGQCBA8PFgYfAgUJQm9vdHN0cmFwHwMFCUJvb3RzdHJhcB8EaGRkAgUPDxYGHwIFB0RlZmF1bHQfAwUHRGVmYXVsdB8EZ2RkAgYPDxYGHwIFBEdsb3cfAwUER2xvdx8EaGRkAgcPDxYGHwIFCE1hdGVyaWFsHwMFCE1hdGVyaWFsHwRoZGQCCA8PFgYfAgUFTWV0cm8fAwUFTWV0cm8fBGhkZAIJDw8WBh8CBQpNZXRyb1RvdWNoHwMFCk1ldHJvVG91Y2gfBGhkZAIKDw8WBh8CBQpPZmZpY2UyMDA3HwMFCk9mZmljZTIwMDcfBGhkZAILDw8WBh8CBQ9PZmZpY2UyMDEwQmxhY2sfAwUPT2ZmaWNlMjAxMEJsYWNrHwRoZGQCDA8PFgYfAgUOT2ZmaWNlMjAxMEJsdWUfAwUOT2ZmaWNlMjAxMEJsdWUfBGhkZAINDw8WBh8CBRBPZmZpY2UyMDEwU2lsdmVyHwMFEE9mZmljZTIwMTBTaWx2ZXIfBGhkZAIODw8WBh8CBQdPdXRsb29rHwMFB091dGxvb2sfBGhkZAIPDw8WBh8CBQRTaWxrHwMFBFNpbGsfBGhkZAIQDw8WBh8CBQZTaW1wbGUfAwUGU2ltcGxlHwRoZGQCEQ8PFgYfAgUGU3Vuc2V0HwMFBlN1bnNldB8EaGRkAhIPDxYGHwIFB1RlbGVyaWsfAwUHVGVsZXJpax8EaGRkAhMPDxYGHwIFBVZpc3RhHwMFBVZpc3RhHwRoZGQCFA8PFgYfAgUFV2ViMjAfAwUFV2ViMjAfBGhkZAIVDw8WBh8CBQdXZWJCbHVlHwMFB1dlYkJsdWUfBGhkZAIWDw8WBh8CBQhXaW5kb3dzNx8DBQhXaW5kb3dzNx8EaGRkAgIPFCsAAjwrAAQBAA8WCB4SUmVzb2x2ZWRSZW5kZXJNb2RlCylyVGVsZXJpay5XZWIuVUkuUmVuZGVyTW9kZSwgVGVsZXJpay5XZWIuVUksIFZlcnNpb249MjAxOS4yLjUxNC40NSwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0xMjFmYWU3ODE2NWJhM2Q0Ah4VRW5hYmxlRW1iZWRkZWRTY3JpcHRzZx4cRW5hYmxlRW1iZWRkZWRCYXNlU3R5bGVzaGVldGceF0VuYWJsZUFqYXhTa2luUmVuZGVyaW5naGRkZAIDDxQrAAIPFggfCGcfCmgfCWcfBwsrBAFkZGQCBA8PFgIfAgUBMWRkAgUPDxYCHwIFCFRlYW0gKDEpZGQCBw8PFgIfAgURMDQvMDQvMjUgMjE6NTI6NTNkZAIJDw8WAh8CBQ1NSUFHRV9QQVJJU19CZGQCCw8PFgIfAmVkZAINDw8WAh8CBQE1ZGQCDg8PFgIeCEltYWdlVXJsBRRJbWFnZXMvdXNlcl9pY29uLmpwZ2RkAg8PDxYCHwIFCFRlYW0gKDEpZGQCEA8QZGQWAQIBZAIRD2QWAmYPZBYCAgEPDxYCHwsFFn4vSW1hZ2VzL2ZldW9yYW5nZS5wbmdkZAISDw8WAh8BaGQWAgIDDxYCHwIFBiZuYnNwO2QCEw8PFgIfAWhkZAIUDw8WAh8BaGRkAhcPFgIfAgXcBDxsaT48YSBocmVmPSJmaXJzdHJhdF9yZXN1bHRzLmFzcHg/YWN0aW9uPWJGY3dNRFZ2VUZCdVNFUlBkUzl1WTJRclYwUTRhVTV5YmtkaU9XVnNNRGsgIiB0YXJnZXQ9Il9ibGFuayI+PGkgY2xhc3M9ImZhIGZhLWZpbGUtdGV4dCI+PC9pPkN5Y2xlIDQ8L2E+PC9saT48bGk+PGEgaHJlZj0iZmlyc3RyYXRfcmVzdWx0cy5hc3B4P2FjdGlvbj1iRmN3TURWdlVGQnVTRVEyTmpseFJrZDNjVlI1VnpaSk56ZG9jMlpuVDJNICIgdGFyZ2V0PSJfYmxhbmsiPjxpIGNsYXNzPSJmYSBmYS1maWxlLXRleHQiPjwvaT5DeWNsZSAzPC9hPjwvbGk+PGxpPjxhIGhyZWY9ImZpcnN0cmF0X3Jlc3VsdHMuYXNweD9hY3Rpb249YkZjd01EVnZVRkJ1U0VOUGMwRk9NMDloTkUwNWFHbHFXbEp0UkZFemRtSSAiIHRhcmdldD0iX2JsYW5rIj48aSBjbGFzcz0iZmEgZmEtZmlsZS10ZXh0Ij48L2k+Q3ljbGUgMjwvYT48L2xpPjxsaT48YSBocmVmPSJmaXJzdHJhdF9yZXN1bHRzLmFzcHg/YWN0aW9uPWJGY3dNRFZ2VUZCdVNFSjZWR2xaWnpSYVNuYzFkSEpSTDJNNFpYZFdURXcgIiB0YXJnZXQ9Il9ibGFuayI+PGkgY2xhc3M9ImZhIGZhLWZpbGUtdGV4dCI+PC9pPkN5Y2xlIDE8L2E+PC9saT5kAhoPDxYCHwIFBDcyMDBkZAIbDw8WAh8BaGRkAhwPZBYCAgEPZBYCZg9kFo4BAgcPDxYCHwIFDjEwwqAwMDAgJmV1cm87ZGQCCw8PFgIfAgUIOSAmZXVybztkZAIPDw8WAh8CBQgxwqAwMDAgaGRkAhMPDxYCHwIFDjc1wqAwMDAgJmV1cm87ZGQCFw8PFgIfAgUONjDCoDAwMCAmZXVybztkZAIZDw8WAh8BaGQWIAIDDw8WAh8CBQcwIHBhcnQuZGQCBQ8PFgIfAgUKdWx0cmEgY2hhcmRkAgcPDxYCHwIFCDAgIHBhcnQuZGQCCQ8PFgIfAgUKaHlkcm8gYm9hdGRkAgsPDxYCHwIFCDAgIHBhcnQuZGQCDQ8PFgIfAgUKdWx0cmEgY2hhcmRkAg8PDxYCHwIFCDAgIHBhcnQuZGQCEQ8PFgIfAgUKaHlkcm8gYm9hdGRkAhMPDxYCHwIFCDAgIHBhcnQuZGQCFQ8PFgIfAgUHQWx1U3RhcmRkAhcPDxYCHwIFCDAgIHBhcnQuZGQCGQ8PFgIfAgUKRm91cm5pU3R5bGRkAhsPDxYCHwIFCDAgIHBhcnQuZGQCHQ8PFgIfAgUIVG9wbWF0ZWtkZAIfDw8WAh8CBQgwICBwYXJ0LmRkAiEPDxYCHwIFBTEwMCAlZGQCHw8PFgIfAgUNMsKgMDAwICZldXJvO2RkAiMPDxYCHwIFDTTCoDAwMCAmZXVybztkZAInDw8WAh8CBQ4xMMKgMDAwICZldXJvO2RkAisPZBYKAgEPDxYIHgZIZWlnaHQbAAAAAAAAREABAAAAHwsFWmh0dHBzOi8vd3d3LnN0cmF0ZWxvZ2ljLm5ldC9Eb2N1bWVudHMvU2NlbmFyaW9zL0ZpclN0cmF0L0Jhc2VEb2N1L0Ryb25lL2FjY2Vzc29pcmVzXzQwLmpwZx8GAoABHwFnZGQCAw8PFgYfDBsAAAAAAABEQAEAAAAfCwVaaHR0cHM6Ly93d3cuc3RyYXRlbG9naWMubmV0L0RvY3VtZW50cy9TY2VuYXJpb3MvRmlyU3RyYXQvQmFzZURvY3UvRHJvbmUvYWNjZXNzb2lyZXNfNDAuanBnHwYCgAFkZAIFDxYCHwIFC2FjY2Vzc29pcmVzZAIHDw8WBh8MGwAAAAAAAERAAQAAAB8LBVpodHRwczovL3d3dy5zdHJhdGVsb2dpYy5uZXQvRG9jdW1lbnRzL1NjZW5hcmlvcy9GaXJTdHJhdC9CYXNlRG9jdS9Ecm9uZS9hY2Nlc3NvaXJlc180MC5qcGcfBgKAAWRkAgkPDxYGHwwbAAAAAAAAREABAAAAHwsFWmh0dHBzOi8vd3d3LnN0cmF0ZWxvZ2ljLm5ldC9Eb2N1bWVudHMvU2NlbmFyaW9zL0ZpclN0cmF0L0Jhc2VEb2N1L0Ryb25lL2FjY2Vzc29pcmVzXzQwLmpwZx8GAoABZGQCLQ9kFgoCAQ8PFggfDBsAAAAAAABEQAEAAAAfCwVYaHR0cHM6Ly93d3cuc3RyYXRlbG9naWMubmV0L0RvY3VtZW50cy9TY2VuYXJpb3MvRmlyU3RyYXQvQmFzZURvY3UvRHJvbmUvYWx1bWluaXVtXzQwLmpwZx8GAoABHwFnZGQCAw8PFgYfDBsAAAAAAABEQAEAAAAfCwVYaHR0cHM6Ly93d3cuc3RyYXRlbG9naWMubmV0L0RvY3VtZW50cy9TY2VuYXJpb3MvRmlyU3RyYXQvQmFzZURvY3UvRHJvbmUvYWx1bWluaXVtXzQwLmpwZx8GAoABZGQCBQ8WAh8CBQlhbHVtaW5pdW1kAgcPDxYGHwwbAAAAAAAAREABAAAAHwsFWGh0dHBzOi8vd3d3LnN0cmF0ZWxvZ2ljLm5ldC9Eb2N1bWVudHMvU2NlbmFyaW9zL0ZpclN0cmF0L0Jhc2VEb2N1L0Ryb25lL2FsdW1pbml1bV80MC5qcGcfBgKAAWRkAgkPDxYGHwwbAAAAAAAAREABAAAAHwsFWGh0dHBzOi8vd3d3LnN0cmF0ZWxvZ2ljLm5ldC9Eb2N1bWVudHMvU2NlbmFyaW9zL0ZpclN0cmF0L0Jhc2VEb2N1L0Ryb25lL2FsdW1pbml1bV80MC5qcGcfBgKAAWRkAj0PDxYCHwIFB0FsdVN0YXJkZAI/Dw8WAh8CBQwxMCwwMCAmZXVybztkZAJBDw8WAh8CBQY1wqAwMDBkZAJDDw8WAh8CBQIyMGRkAkUPDxYCHwIFCzIsODAgJmV1cm87ZGQCRw8PFgIfAgUHMjDCoDAwMGRkAkkPDxYCHwIFAjIwZGQCSw8PFgIfAgUIQ29tcHRhbnRkZAJNDw8WAh8CBQpGb3VybmlTdHlsZGQCTw8PFgIfAgUMMTEsNTAgJmV1cm87ZGQCUQ8PFgIfAgUGMsKgMDAwZGQCUw8PFgIfAgUCMjBkZAJVDw8WAh8CBQszLDUwICZldXJvO2RkAlcPDxYCHwIFBjXCoDAwMGRkAlkPDxYCHwIFAjIwZGQCWw8PFgIfAgUUMzAgam91cnMgZmluIGRlIG1vaXNkZAJdDw8WAh8CBQhUb3BtYXRla2RkAl8PDxYCHwIFDDEyLDUwICZldXJvO2RkAmEPDxYCHwIFBjHCoDAwMGRkAmMPDxYCHwIFAjIwZGQCZQ8PFgIfAgULNCwwMCAmZXVybztkZAJnDw8WAh8CBQYxwqAwMDBkZAJpDw8WAh8CBQIyMGRkAmsPDxYCHwIFFDYwIGpvdXJzIGZpbiBkZSBtb2lzZGQCbw8PFgIfAgUFMCwwICVkZAJxDw8WAh8CBQUwLDAgJWRkAnkPDxYCHwIFC2FjY2Vzc29pcmVzZGQCfQ8PFgIfAgUJYWx1bWluaXVtZGQCgwEPZBYMAgEPZBYKAgEPDxYIHwwbAAAAAAAAREABAAAAHwsFWGh0dHBzOi8vd3d3LnN0cmF0ZWxvZ2ljLm5ldC9Eb2N1bWVudHMvU2NlbmFyaW9zL0ZpclN0cmF0L0Jhc2VEb2N1L0Ryb25lL3VsdHJhY2hhcl80MC5qcGcfBgKAAR8BZ2RkAgMPDxYGHwwbAAAAAAAAREABAAAAHwsFWGh0dHBzOi8vd3d3LnN0cmF0ZWxvZ2ljLm5ldC9Eb2N1bWVudHMvU2NlbmFyaW9zL0ZpclN0cmF0L0Jhc2VEb2N1L0Ryb25lL3VsdHJhY2hhcl80MC5qcGcfBgKAAWRkAgUPFgIfAgUKdWx0cmEgY2hhcmQCBw8PFgYfDBsAAAAAAABEQAEAAAAfCwVYaHR0cHM6Ly93d3cuc3RyYXRlbG9naWMubmV0L0RvY3VtZW50cy9TY2VuYXJpb3MvRmlyU3RyYXQvQmFzZURvY3UvRHJvbmUvdWx0cmFjaGFyXzQwLmpwZx8GAoABZGQCCQ8PFgYfDBsAAAAAAABEQAEAAAAfCwVYaHR0cHM6Ly93d3cuc3RyYXRlbG9naWMubmV0L0RvY3VtZW50cy9TY2VuYXJpb3MvRmlyU3RyYXQvQmFzZURvY3UvRHJvbmUvdWx0cmFjaGFyXzQwLmpwZx8GAoABZGQCAw8PFgIfAgUIMCw1MDAwIGhkZAIFDw8WAh8CBQYxLDAga2dkZAIHDw8WAh8CBQYyLDAga2dkZAIJDw8WAh8CBQo1LDAgJmV1cm87ZGQCCw8PFgIfAgUFMCwwICVkZAKFAQ9kFgwCAQ9kFgoCAQ8PFggfDBsAAAAAAABEQAEAAAAfCwVYaHR0cHM6Ly93d3cuc3RyYXRlbG9naWMubmV0L0RvY3VtZW50cy9TY2VuYXJpb3MvRmlyU3RyYXQvQmFzZURvY3UvRHJvbmUvaHlkcm9ib2F0XzQwLmpwZx8GAoABHwFnZGQCAw8PFgYfDBsAAAAAAABEQAEAAAAfCwVYaHR0cHM6Ly93d3cuc3RyYXRlbG9naWMubmV0L0RvY3VtZW50cy9TY2VuYXJpb3MvRmlyU3RyYXQvQmFzZURvY3UvRHJvbmUvaHlkcm9ib2F0XzQwLmpwZx8GAoABZGQCBQ8WAh8CBQpoeWRybyBib2F0ZAIHDw8WBh8MGwAAAAAAAERAAQAAAB8LBVhodHRwczovL3d3dy5zdHJhdGVsb2dpYy5uZXQvRG9jdW1lbnRzL1NjZW5hcmlvcy9GaXJTdHJhdC9CYXNlRG9jdS9Ecm9uZS9oeWRyb2JvYXRfNDAuanBnHwYCgAFkZAIJDw8WBh8MGwAAAAAAAERAAQAAAB8LBVhodHRwczovL3d3dy5zdHJhdGVsb2dpYy5uZXQvRG9jdW1lbnRzL1NjZW5hcmlvcy9GaXJTdHJhdC9CYXNlRG9jdS9Ecm9uZS9oeWRyb2JvYXRfNDAuanBnHwYCgAFkZAIDDw8WAh8CBQkxMCwwMDAwIGhkZAIFDw8WAh8CBQY2LDAga2dkZAIHDw8WAh8CBQcxOCwwIGtnZGQCCQ8PFgIfAgULNDUsMCAmZXVybztkZAILDw8WAh8CBQUwLDAgJWRkAosBDw8WAh8CBQ0xwqAwMDAgJmV1cm87ZGQCjwEPDxYCHwIFCDAgJmV1cm87ZGQCkwEPDxYCHwIFDTPCoDAwMCAmZXVybztkZAKXAQ8PFgIfAgUNMcKgMDAwICZldXJvO2RkApsBDw8WAh8CBQ0xwqAwMDAgJmV1cm87ZGQCnwEPDxYCHwIFDTPCoDAwMCAmZXVybztkZAKjAQ8PFgIfAgUNMcKgMDAwICZldXJvO2RkAqcBDw8WAh8CBQ0xwqAwMDAgJmV1cm87ZGQCqwEPDxYCHwIFCDAgJmV1cm87ZGQCswEPDxYCHwIFAzUgJWRkArcBDw8WAh8CBQM1ICVkZAK7AQ8PFgIfAgUEMjAgJWRkAr8BDw8WAh8CBQQxNSAlZGQCxQEPDxYCHwIFDjE1wqAwMDAgJmV1cm87ZGQCyQEPDxYCHwIFBjMzLDMgJWRkAs0BDw8WAh8CBQYxNywwICVkZALRAQ8PFgIfAgUIMCAmZXVybztkZALVAQ8PFgIfAgUFMSwwICVkZALZAQ8PFgIfAgUFMCwwICVkZALdAQ8PFgIfAgUFMCwwICVkZALjAQ8PFgIfAgUGMjAsMCAlZGQC5wEPDxYCHwIFBjIwLDAgJWRkAusBDw8WAh8CBQYyMCwwICVkZALvAQ8PFgIfAgUGMjAsMCAlZGQC9wEPDxYCHwIFATFkZAL7AQ8PFgIfAgUBM2RkAoECDw8WAh8CBQEwZGQChQIPDxYCHwIFATFkZAKLAg8PFgIfAgUBMWRkAo8CDw8WAh8CBQEzZGQYAgUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgMFF2N0bDAwJFJhZFdpbmRvd01hbmFnZXIxBRFjdGwwMCRUb290dGlwTWdyMQUMY3RsMDAkSW1nRmV1BRFjdGwwMCRTa2luQ2hvb3Nlcg8UKwACZQUHRGVmYXVsdGQDgSo+O28mjRsvnL7Dx/H1hmMZHCDav4JjLVeuEfU0Xw==">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="Strat&amp;Logic%20_%20FirStrat_files/WebResource.js" type="text/javascript"></script>
+
+<link class="Telerik_stylesheet" type="text/css" rel="stylesheet" href="Strat&amp;Logic%20_%20FirStrat_files/WebResource.css"><link class="Telerik_stylesheet" type="text/css" rel="stylesheet" href="Strat&amp;Logic%20_%20FirStrat_files/WebResource_006.css"><link class="Telerik_stylesheet" type="text/css" rel="stylesheet" href="Strat&amp;Logic%20_%20FirStrat_files/WebResource_004.css"><link class="Telerik_stylesheet" type="text/css" rel="stylesheet" href="Strat&amp;Logic%20_%20FirStrat_files/WebResource_003.css"><link class="Telerik_stylesheet" type="text/css" rel="stylesheet" href="Strat&amp;Logic%20_%20FirStrat_files/WebResource_002.css"><link class="Telerik_stylesheet" type="text/css" rel="stylesheet" href="Strat&amp;Logic%20_%20FirStrat_files/WebResource_005.css">
+<script src="Strat&amp;Logic%20_%20FirStrat_files/Telerik.Web.UI.WebResource.js" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="23D6A867">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAjt5Y5T0byapzdBVHxruNIYVaXo+5TrcGdKz71PYRz9GwxiJ1OXB5F7H0HedIpr9Wlifm4+G8pizGDo+81WNtcGpfmzaEdmMy0cyzeJnSJQq655jUlu3vMlzMn6X//Buuvl7HsLttaOz0TiU+smY/0lGJCc0Qijh+Dp538n7FMlVjLffsN2N9fTRr1/x+7WHWM9GLVxiikQXELKu0ImNmt2">
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$RadScriptManager1', 'form1', ['tctl00$ToottipMgr1RTMPanel','','tctl00$panFeu','panFeu'], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+        
+        <div id="ctl00_RadWindowManager1" style="display:none;">
+	<!-- 2019.2.514.45 --><div id="ctl00_RadWindowManager1_alerttemplate" style="display:none;">
+		<div class="rwDialog rwAlertDialog">
+			<div class="rwDialogContent">
+				<div class="rwDialogMessage">{1}</div>
+			</div>
+			<div class="rwDialogButtons">
+				<button type="button" class="rwOkBtn" onclick="$find('{0}').close(true); return false;">##LOC[OK]##</button>
+			</div>
+		</div>
+		</div><div id="ctl00_RadWindowManager1_prompttemplate" style="display:none;">
+		<div class="rwDialog rwPromptDialog">
+			<div class="rwDialogContent">
+				<div class="rwDialogMessage">{1}</div>
+				<div class="rwPromptInputContainer">
+					<script type="text/javascript">
+						function RadWindowprompt_detectenter(id, ev, input) {
+							if (!ev) ev = window.event;
+							if (ev.keyCode == 13) {
+								var but = input.parentNode.parentNode.parentNode.getElementsByTagName("button")[0];
+								if (but) {
+									if (but.click) {
+										but.click();
+									}
+									else if (but.onclick) {
+										but.focus();
+										var click = but.onclick;
+										but.onclick = null;
+										if (click) click.call(but);
+									}
+								}
+								return false;
+							}
+							else return true;
+						}
+					</script>
+					<input onkeydown="return RadWindowprompt_detectenter('{0}', event, this);" type="text" class="rwPromptInput radPreventDecorate" value="{2}">
+				</div>
+			</div>
+			<div class="rwDialogButtons">
+				<button type="button" class="rwOkBtn" onclick="$find('{0}').close(this.parentNode.parentNode.getElementsByTagName('input')[0].value); return false;">##LOC[OK]##</button>
+				<button type="button" class="rwCancelBtn" onclick="$find('{0}').close(null); return false;">##LOC[Cancel]##</button>
+			</div>
+		</div>
+		</div><div id="ctl00_RadWindowManager1_confirmtemplate" style="display:none;">
+		<div class="rwDialog rwConfirmDialog">
+			<div class="rwDialogContent">
+				<div class="rwDialogMessage">{1}</div>
+			</div>
+			<div class="rwDialogButtons">
+				<button type="button" class="rwOkBtn" onclick="$find('{0}').close(true); return false;">##LOC[OK]##</button>
+				<button type="button" class="rwCancelBtn" onclick="$find('{0}').close(false); return false;">##LOC[Cancel]##</button>
+			</div>
+		</div>
+		</div><input id="ctl00_RadWindowManager1_ClientState" name="ctl00_RadWindowManager1_ClientState" type="hidden">
+</div>
+        <div id="ctl00_ToottipMgr1" style="display:none;position:absolute;">
+	<div id="ctl00_ToottipMgr1RTMPanel">
+
+	</div><input id="ctl00_ToottipMgr1_ClientState" name="ctl00_ToottipMgr1_ClientState" type="hidden">
+<span id="ctl00_ToottipMgr11011744662090528" style="visibility: hidden; display: none;"></span><span id="ctl00_ToottipMgr11021744662090529" style="visibility: hidden; display: none;"></span></div>
+<!-- A PARTIR D'ICI ON MET EN PLACE LE NOUVEAU THEME -->
+
+
+<!-- DEBUT DU CONTENU DU SITE -->
+
+
+ <div class="wrapper" style="height: auto; min-height: 100%;"> <!-- Main Header -->
+      <header class="main-header">
+        <!-- Logo --> <a href="#" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels --> <span class="logo-mini"><img src="Strat&amp;Logic%20_%20FirStrat_files/logo_mini_50x50.png"><b>.net</b></span>
+          <!-- logo for regular state and mobile devices --> <span class="logo-lg">FirStrat</span></a>
+        <!-- Header Navbar -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <!-- Sidebar toggle button--> <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"> <span class="sr-only">Toggle navigation</span> </a>
+          <!-- Navbar Right Menu -->
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <li style="padding-top: 3px;">
+              
+              </li>
+              <li class="sectionshield">
+                <i class="fa fa-shield shield" aria-hidden="true" style="color:#0033FF"></i>
+              </li>
+              <li class="nomeq hidden-xs"><span id="NumE">1</span> - <span id="ENom">Team (1)</span></li>
+              <li class="hidden-xs hidden-sm"> 
+                <a class="" data-toggle="collapse" data-target="#collapseExample"> 
+                  <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>           
+              </li>
+
+               <li class="hidden-xs hidden-sm" style="padding-top:5px;  ">
+                <div class="collapse in width" id="collapseExample" style="width:450px; height: 45px; overflow: hidden;">
+                  <table cellpadding="0px" cellspacing="0px">
+                  <tbody><tr>
+                    <td style="width: 80px;">Sauvegarde : </td>
+                    <td style="width: 150px; color:#fff;"><span id="lastSave">04/04/25 21:52:53</span></td>
+                    <td style="width: 70px;">Jeu :</td>
+                    <td style="width: 160px; color:#fff;"><span id="JeuNom">MIAGE_PARIS_B</span></td>
+                  </tr>
+                  <tr>
+                    <td>Animateur :</td>
+                    <td style="color:#fff;"> <span id="JeuResp"></span></td>
+                    <td>Mois :</td>
+                    <td style="color:#fff;"><span id="JeuAnnee">5</span>   </td>
+                  </tr>
+                  </tbody></table>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 661px;"><section class="sidebar" style="overflow: hidden; width: auto; height: 661px;">
+          <!-- Sidebar user panel (optional) -->
+          <div class="user-panel">
+            <div class="pull-left image"><img id="ImgEq" class="img-circle" src="Strat&amp;Logic%20_%20FirStrat_files/user_icon.jpg"> </div>
+            <div class="pull-left info"><p><span id="ENom2">Team (1)</span></p>
+             <a href="#"> 
+             <span class="fa-stack fa-lg">
+                <i class="fa fa-circle text-success fa-stack-1x"></i> 
+                <i class="fa fa-ban fa-stack-2x text-danger" id="expired" style="display:none;"></i>
+              </span>
+                Online
+             </a> 
+
+            </div>
+          </div>
+          <!-- Sidebar Menu -->
+          <ul class="sidebar-menu tree" data-widget="tree">
+            <li class="header">DASHBOARD</li>
+            <li class="chooselang"><span><i class="fa fa-flag" aria-hidden="true"></i>
+             <select name="ctl00$ddlLanguages" onchange="javascript:setTimeout('WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ddlLanguages&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))', 0)" id="ddlLanguages" class="select">
+	<option value="en-us">Anglais</option>
+	<option selected="selected" value="fr-FR">Français</option>
+
+</select>
+             </span>
+             </li>
+             <li class="header">
+            <div id="panFeu">
+	
+            <div style="margin:auto; width:100%;text-align: center;">
+            <input type="image" name="ctl00$ImgFeu" id="ImgFeu" src="Strat&amp;Logic%20_%20FirStrat_files/feuorange.png" style="padding-top:3px;">
+            </div>
+            
+</div>
+            </li>
+            
+            <li class="active"></li>
+            <li></li>
+            <li class="header">MAIN</li>
+            <li class="" style="display:block"><a id="lb1" href="javascript:__doPostBack('ctl00$lb1','')"><i class="fa fa-comments-o"></i> <span>Décisions</span></a></li>
+
+
+            <li class="treeview"> 
+                <a href="#"><i class="fa fa-university" aria-hidden="true"></i>  <span>Résultats</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i></span> </a>
+              <ul class="treeview-menu">
+                  <li><a href="http://firstrat.stratelogic.net/firstrat_results.aspx?action=bFcwMDVvUFBuSERPdS9uY2QrV0Q4aU5ybkdiOWVsMDk" target="_blank"><i class="fa fa-file-text"></i>Cycle 4</a></li><li><a href="http://firstrat.stratelogic.net/firstrat_results.aspx?action=bFcwMDVvUFBuSEQ2NjlxRkd3cVR5VzZJNzdoc2ZnT2M" target="_blank"><i class="fa fa-file-text"></i>Cycle 3</a></li><li><a href="http://firstrat.stratelogic.net/firstrat_results.aspx?action=bFcwMDVvUFBuSENPc0FOM09hNE05aGlqWlJtRFEzdmI" target="_blank"><i class="fa fa-file-text"></i>Cycle 2</a></li><li><a href="http://firstrat.stratelogic.net/firstrat_results.aspx?action=bFcwMDVvUFBuSEJ6VGlZZzRaSnc1dHJRL2M4ZXdWTEw" target="_blank"><i class="fa fa-file-text"></i>Cycle 1</a></li>
+              </ul>
+            </li>         
+
+            <li><a id="lb3" href="javascript:__doPostBack('ctl00$lb3','')"><i class="fa fa-cogs"></i> <span>Paramètres</span></a></li>
+            <li><a id="lb5" href="javascript:__doPostBack('ctl00$lb5','')"><i class="fa fa-pencil-square-o"></i> <span> Journal</span></a></li>
+         
+
+          </ul>
+          <!-- /.sidebar-menu --> </section><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 661px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+        <!-- /.sidebar --> </aside>
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper" style="min-height: 660.233px;">
+        <!-- Main content -->
+
+          <!-------------------------- | Your Page Content Here |        -------------------------->
+          <div align="center" style="display:none;">Votre session se terminera dans <span id="timeOut">7200</span> secondes.</div>
+          
+        
+
+    <div id="Body_ContenuIci">
+	
+
+<section class="content-header">
+          <h1> <span id="Body_ctl00_L382">Production</span> </h1>
+        </section>
+
+
+<section class="content">
+
+<div class="row">
+
+
+            <section class="col-lg-3">
+              <div class="box  box-danger wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+                <div class="box-header">
+                  <h3 class="box-title text-default"><i class="fa fa-cubes" aria-hidden="true"></i>&nbsp;<b><span id="Body_ctl00_L3">Ligne de production</span></b></h3>
+                </div>
+                <div class="box-body">
+
+             <table class="table">
+             <tbody><tr>
+               <td><span id="Body_ctl00_L4">Coût fixe par machine / Salaire prod.</span> </td>
+               <td class="text-center"><span id="Body_ctl00_CFMach">10&nbsp;000 €</span></td>
+             </tr>
+             
+             <tr>
+               <td><span id="Body_ctl00_L5">Coût variable par heure</span></td>
+               <td class="text-center"><span id="Body_ctl00_cVUT">9 €</span></td>
+             </tr>
+             
+             <tr>
+               <td><span id="Body_ctl00_L6">Nb d'heures par machine et par mois</span> </td>
+               <td class="text-center"><span id="Body_ctl00_UTMach">1&nbsp;000 h</span></td>
+             </tr>
+             
+             <tr>
+               <td><span id="Body_ctl00_L7">Prix d'une nouvelle machine</span></td>
+               <td class="text-center"><span id="Body_ctl00_CoutMach">75&nbsp;000 €</span></td>
+             </tr>
+             
+             <tr>
+               <td><span id="Body_ctl00_L8">Montant de cession d'une machine</span></td>
+               <td class="text-center"><span id="Body_ctl00_CessionMach">60&nbsp;000 €</span></td>
+             </tr>
+             
+          </tbody></table>
+
+                </div>
+              </div>
+            </section>
+
+
+            <section class="col-lg-3">
+              <div class="box  box-danger wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+                <div class="box-header">
+                  <h3 class="box-title text-default"><i class="fa fa-car" aria-hidden="true"></i>&nbsp;<b><span id="Body_ctl00_L23">Commerciaux</span></b></h3>
+                </div>
+                <div class="box-body">
+
+                  <table class="table">    
+   
+       <tbody><tr>
+           <td class="text-right"><span id="Body_ctl00_L24">Salaire mensuel</span> </td>
+           <td class="text-center"><span id="Body_ctl00_CFComm">2&nbsp;000 €</span></td>
+       </tr>
+       
+       <tr>
+           <td class="text-right"><span id="Body_ctl00_L25">Coût de recrutement</span></td>
+           <td class="text-center"><span id="Body_ctl00_Recrut">4&nbsp;000 €</span></td>
+       </tr>
+       
+       <tr>
+           <td class="text-right"><span id="Body_ctl00_L26">Coût de licenciement</span></td>
+           <td class="text-center"><span id="Body_ctl00_Lic">10&nbsp;000 €</span></td>
+       </tr>                
+  </tbody></table>
+
+                </div>
+              </div>
+            </section>
+            <section class="col-lg-6 connectedSortable">
+              <div class="box  box-danger wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+                <div class="box-header">
+                  <h3 class="box-title text-default"><i class="fa fa-cubes" aria-hidden="true"></i>&nbsp;<b><span id="Body_ctl00_L10">Fournisseurs</span></b></h3>
+                </div>
+                <div class="box-body">
+
+             <table class="table">
+             <tbody><tr>
+               <td rowspan="2">&nbsp;</td>
+               <td colspan="3" class="text-center">
+
+<table cellspacing="0" style="align-content:center; width:100%; padding:2px;">
+<tbody><tr><td style="text-align:center; vertical-align:middle"></td><td style="text-align:center; vertical-align:middle"><img id="Body_ctl00_VisuelProduit2_ImageProdh" src="Strat&amp;Logic%20_%20FirStrat_files/accessoires_40.jpg" style="height:40px;"></td><td style="text-align:center; vertical-align:middle"></td></tr>
+<tr><td style="text-align:center; vertical-align:middle"></td><td style="text-align:center; vertical-align:middle"><b>accessoires</b></td><td style="text-align:center; vertical-align:middle"></td></tr>
+<tr><td style="text-align:center; vertical-align:middle"></td><td style="text-align:center; vertical-align:middle"></td><td style="text-align:center; vertical-align:middle"></td></tr>
+</tbody></table></td>
+               <td colspan="3" class="text-center">
+
+<table cellspacing="0" style="align-content:center; width:100%; padding:2px;">
+<tbody><tr><td style="text-align:center; vertical-align:middle"></td><td style="text-align:center; vertical-align:middle"><img id="Body_ctl00_VisuelProduit3_ImageProdh" src="Strat&amp;Logic%20_%20FirStrat_files/aluminium_40.jpg" style="height:40px;"></td><td style="text-align:center; vertical-align:middle"></td></tr>
+<tr><td style="text-align:center; vertical-align:middle"></td><td style="text-align:center; vertical-align:middle"><b>aluminium</b></td><td style="text-align:center; vertical-align:middle"></td></tr>
+<tr><td style="text-align:center; vertical-align:middle"></td><td style="text-align:center; vertical-align:middle"></td><td style="text-align:center; vertical-align:middle"></td></tr>
+</tbody></table></td>
+               <td>&nbsp;</td>
+             </tr>
+             
+             <tr>
+               <th class="text-center"><span id="Body_ctl00_Label1">Prix</span></th>
+               <th class="text-center"><span id="Body_ctl00_Label2">Taille de lot</span></th>
+               <th class="text-center"><span id="Body_ctl00_Label5">Nb max lots</span></th>
+               <th class="text-center"><span id="Body_ctl00_Label3">Prix</span></th>
+               <th class="text-center"><span id="Body_ctl00_L12">Taille de lot</span></th>
+               <th class="text-center"><span id="Body_ctl00_Label6">Nb max lots</span></th>
+               <th class="text-center"><span id="Body_ctl00_L13">Délai de paiement</span></th>
+             </tr>
+             
+             <tr>
+               <td class="text-right bold"><span id="Body_ctl00_Fourn1">AluStar</span></td>
+               <td class="text-center"><span id="Body_ctl00_AluF1">10,00 €</span></td>
+               <td class="text-center"><span id="Body_ctl00_AluF1Lt">5&nbsp;000</span></td>
+               <td class="text-center"><span id="Body_ctl00_FOUR1_MP1_NB_LOT_MAX">20</span></td>
+               <td class="text-center"><span id="Body_ctl00_BosF1">2,80 €</span></td>
+               <td class="text-center"><span id="Body_ctl00_BosF1Lt">20&nbsp;000</span></td>
+               <td class="text-center"><span id="Body_ctl00_FOUR1_MP2_NB_LOT_MAX">20</span></td>
+               <td class="text-center"><span id="Body_ctl00_DPF1">Comptant</span></td>
+             </tr>
+             
+             <tr>
+               <td class="text-right  bold"><span id="Body_ctl00_Fourn2">FourniStyl</span></td>
+               <td class="text-center"><span id="Body_ctl00_AluF2">11,50 €</span></td>
+               <td class="text-center"><span id="Body_ctl00_AluF2Lt">2&nbsp;000</span></td>
+               <td class="text-center">
+                   <span id="Body_ctl00_FOUR2_MP1_NB_LOT_MAX">20</span></td>
+               <td class="text-center"><span id="Body_ctl00_BosF2">3,50 €</span></td>
+               <td class="text-center"><span id="Body_ctl00_BosF2Lt">5&nbsp;000</span></td>
+               <td class="text-center">
+                   <span id="Body_ctl00_FOUR2_MP2_NB_LOT_MAX">20</span></td>
+               <td class="text-center"><span id="Body_ctl00_DPF2">30 jours fin de mois</span></td>
+             </tr>
+             
+             <tr>
+               <td class="text-right  bold"><span id="Body_ctl00_Fourn3">Topmatek</span></td>
+               <td class="text-center"><span id="Body_ctl00_AluF3">12,50 €</span></td>
+               <td class="text-center"><span id="Body_ctl00_AluF3Lt">1&nbsp;000</span></td>
+               <td class="text-center">
+                   <span id="Body_ctl00_FOUR3_MP1_NB_LOT_MAX">20</span></td>
+               <td class="text-center"><span id="Body_ctl00_BosF3">4,00 €</span></td>
+               <td class="text-center"><span id="Body_ctl00_BosF3Lt">1&nbsp;000</span></td>
+               <td class="text-center">
+                   <span id="Body_ctl00_FOUR3_MP2_NB_LOT_MAX">20</span></td>
+               <td class="text-center"><span id="Body_ctl00_DPF3">60 jours fin de mois</span></td>
+             </tr>
+             
+             <tr>
+               <td class="text-right  bold"><span id="Body_ctl00_L14">Périssabilité</span></td>
+               <td class="text-center" colspan="2"><span id="Body_ctl00_TxPerAlu">0,0 %</span></td>
+               <td class="text-center">&nbsp;</td>
+               <td class="text-center" colspan="2"><span id="Body_ctl00_TxPerBos">0,0 %</span></td>
+               <td class="text-center">&nbsp;</td>
+               <td class="text-center">&nbsp;</td>
+             </tr>
+             
+           </tbody></table>
+
+
+                </div>
+              </div>
+            </section>            
+            
+            <section class="col-lg-6 connectedSortable">
+              <div class="box  box-danger wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+                <div class="box-header">
+                  <h3 class="box-title text-default"><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;<b><span id="Body_ctl00_L16">Nomenclature</span></b></h3>
+                </div>
+                <div class="box-body">
+                
+<table width="100%">
+<tbody><tr>
+<td style="width:33%; vertical-align:bottom; text-align:center">
+
+<table width="100%" class="table">     
+<tbody><tr>
+   <td class="text-right"><span id="Body_ctl00_L17">Temps de production</span> </td>
+</tr>
+<tr>
+  <td class="text-right"><span id="Body_ctl00_L18">Consommation en</span>&nbsp;<span id="Body_ctl00_LabM11">accessoires</span></td>
+</tr>
+<tr>
+  <td class="text-right"><span id="Body_ctl00_L19">Consommation en</span>&nbsp;<span id="Body_ctl00_LabM21">aluminium</span></td>
+</tr>
+<tr>
+  <td class="text-right"><span id="Body_ctl00_L20">Coût logistique unitaire</span></td>
+</tr>
+<tr>
+  <td class="text-right"><span id="Body_ctl00_L21">Périssabilité</span></td>
+</tr>
+</tbody></table></td>
+<td style="width:33%; vertical-align:bottom; text-align:center">
+<div id="Body_ctl00_PanProd1">
+		
+<table width="100%" class="table">     
+<tbody><tr>
+ <td class="text-center">
+
+<table cellspacing="0" style="align-content:center; width:100%; padding:2px;">
+<tbody><tr><td style="text-align:center; vertical-align:middle"></td><td style="text-align:center; vertical-align:middle"><img id="Body_ctl00_VisuelProduit_ImageProdh" src="Strat&amp;Logic%20_%20FirStrat_files/ultrachar_40.jpg" style="height:40px;"></td><td style="text-align:center; vertical-align:middle"></td></tr>
+<tr><td style="text-align:center; vertical-align:middle"></td><td style="text-align:center; vertical-align:middle"><b>ultra char</b></td><td style="text-align:center; vertical-align:middle"></td></tr>
+<tr><td style="text-align:center; vertical-align:middle"></td><td style="text-align:center; vertical-align:middle"></td><td style="text-align:center; vertical-align:middle"></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+  <td class="text-center"><span id="Body_ctl00_UTmini">0,5000 h</span></td>
+</tr>
+<tr>
+  <td class="text-center"><span id="Body_ctl00_ALumi">1,0 kg</span></td>
+</tr>
+<tr>
+<td class="text-center"><span id="Body_ctl00_bosmi">2,0 kg</span></td>
+</tr>
+<tr>
+<td class="text-center"><span id="Body_ctl00_logimi">5,0 €</span></td>
+</tr>
+<tr>
+<td class="text-center"><span id="Body_ctl00_TxPerMini">0,0 %</span></td>
+</tr>
+</tbody></table>
+
+	</div>
+
+</td>
+<td style="width:33%; vertical-align:bottom; text-align:center">
+<div id="Body_ctl00_PanProd2">
+		
+<table width="100%" class="table">          
+<tbody><tr>
+    <td class="text-center">
+
+<table cellspacing="0" style="align-content:center; width:100%; padding:2px;">
+<tbody><tr><td style="text-align:center; vertical-align:middle"></td><td style="text-align:center; vertical-align:middle"><img id="Body_ctl00_VisuelProduit1_ImageProdh" src="Strat&amp;Logic%20_%20FirStrat_files/hydroboat_40.jpg" style="height:40px;"></td><td style="text-align:center; vertical-align:middle"></td></tr>
+<tr><td style="text-align:center; vertical-align:middle"></td><td style="text-align:center; vertical-align:middle"><b>hydro boat</b></td><td style="text-align:center; vertical-align:middle"></td></tr>
+<tr><td style="text-align:center; vertical-align:middle"></td><td style="text-align:center; vertical-align:middle"></td><td style="text-align:center; vertical-align:middle"></td></tr>
+</tbody></table></td>
+   </tr>
+   <tr>
+     <td class="text-center"><span id="Body_ctl00_UTmaxi">10,0000 h</span></td>
+   </tr>
+   <tr>
+     <td class="text-center"><span id="Body_ctl00_aluma">6,0 kg</span></td>
+   </tr>
+   <tr>
+     <td class="text-center"><span id="Body_ctl00_bosma">18,0 kg</span></td>
+   </tr>
+   <tr>
+     <td class="text-center"><span id="Body_ctl00_logima">45,0 €</span></td>
+   </tr>
+   <tr>
+     <td class="text-center"><span id="Body_ctl00_TxPerMaxi">0,0 %</span></td>
+   </tr>
+</tbody></table>
+
+	</div>
+
+</td>
+</tr>
+</tbody></table>
+                </div>
+              </div>
+            </section>
+
+
+
+
+
+            <section class="col-lg-6 connectedSortable">
+              <div class="box  box-danger wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+                <div class="box-header">
+                  <h3 class="box-title text-default"><i class="fa fa-money" aria-hidden="true"></i>&nbsp;<b><span id="Body_ctl00_L28">Prix des études de marché</span></b></h3>
+                </div>
+                <div class="box-body">
+
+                <table class="table" cellpadding="2" cellspacing="0">
+             <tbody><tr>
+               <td class="text-right"><span id="Body_ctl00_L29">Prix</span></td>
+               <td class="text-center"><span id="Body_ctl00_EMPrix">1&nbsp;000 €</span></td>
+               <td class="text-right"><span id="Body_ctl00_L30">Expert marketing</span></td>
+               <td class="text-center"><span id="Body_ctl00_EMPop">0 €</span></td>
+               <td class="text-right"><span id="Body_ctl00_L31">Volume prévisionnel</span></td>     
+               <td class="text-center"><span id="Body_ctl00_EMVol">3&nbsp;000 €</span></td>
+             </tr>
+             
+             <tr>
+               <td class="text-right"><span id="Body_ctl00_L32">Publicité</span></td>
+               <td class="text-center"><span id="Body_ctl00_EMPub">1&nbsp;000 €</span></td>
+               <td class="text-right"><span id="Body_ctl00_L33">Force de vente</span></td>
+               <td class="text-center"><span id="Body_ctl00_EMFV">1&nbsp;000 €</span></td>
+               <td class="text-right"><span id="Body_ctl00_L34">Sensibilité des clients</span></td>
+               <td class="text-center"><span id="Body_ctl00_EMSC">3&nbsp;000 €</span></td>
+             </tr>
+             
+             <tr>
+               <td class="text-right"><span id="Body_ctl00_L35">Parts de marché</span> </td>
+               <td class="text-center"><span id="Body_ctl00_EMPM">1&nbsp;000 €</span></td>
+               <td class="text-right"><span id="Body_ctl00_L36">Délai de paiement</span></td>
+               <td class="text-center"><span id="Body_ctl00_EMDP">1&nbsp;000 €</span></td>
+               <td class="text-right"><span id="Body_ctl00_L37">Liasse fiscale</span></td>
+               <td class="text-center"><span id="Body_ctl00_EMLiasse">0 €</span></td>
+             </tr>
+             
+           </tbody></table>
+                
+
+                </div>
+              </div>
+            </section>
+</div>
+    </section>
+<section class="content-header">
+          <h1> <span id="Body_ctl00_L38">Finance</span></h1>
+        </section>
+<section class="content">
+<div class="row">
+<!-------- FINANCE A PARTIR D'ICI --------->
+
+            <section class="col-lg-3 connectedSortable">
+              <div class="box  box-default wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+                <div class="box-header">
+                  <h3 class="box-title text-default"><i class="fa fa-percent" aria-hidden="true"></i>&nbsp;<b><span id="Body_ctl00_L40">Amortissements</span></b></h3>
+                </div>
+                <div class="box-body">
+
+                 <table class="table">
+            <tbody><tr>
+               <td class="text-right"><span id="Body_ctl00_L41">Immo. incorporelles</span></td>
+               <td class="text-center"><span id="Body_ctl00_AmII">5 %</span></td>
+            </tr>
+            <tr>
+               <td class="text-right"><span id="Body_ctl00_L42">Constructions</span></td>
+               <td class="text-center"><span id="Body_ctl00_AmCons">5 %</span></td>
+            </tr>
+            <tr>
+               <td class="text-right"><span id="Body_ctl00_L43">Installations techniques</span></td>
+               <td class="text-center"><span id="Body_ctl00_AmIT">20 %</span></td>
+            </tr>
+            <tr>
+               <td class="text-right"><span id="Body_ctl00_L44">Matériel divers</span></td>
+               <td class="text-center"><span id="Body_ctl00_AmMD">15 %</span></td>
+            </tr>
+            </tbody></table>
+
+
+                </div>
+              </div>
+            </section>
+
+            <section class="col-lg-3 connectedSortable">
+              <div class="box  box-default wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+                <div class="box-header">
+                  <h3 class="box-title text-default"><i class="fa fa-percent" aria-hidden="true"></i>&nbsp;<b><span id="Body_ctl00_L46">Environnement</span></b></h3>
+                </div>
+                <div class="box-body">
+
+                	       <table class="table"> 
+             <tbody><tr>
+               <td class="text-right"><span id="Body_ctl00_L47">Coût fixe de structure</span></td>
+               <td class="text-center"><span id="Body_ctl00_CFS">15&nbsp;000 €</span></td>
+             </tr>
+             <tr>
+               <td class="text-right"><span id="Body_ctl00_L48">Impôts sur les sociétés</span></td>
+               <td class="text-center"><span id="Body_ctl00_TIS">33,3 %</span></td>
+             </tr>
+             <tr>
+               <td class="text-right"><span id="Body_ctl00_L49">Taux de découvert</span></td>
+               <td class="text-center"><span id="Body_ctl00_TDB">17,0 %</span></td>
+             </tr>
+             <tr>
+               <td class="text-right"><span id="Body_ctl00_Label4">Découvert autorisé</span></td>
+               <td class="text-center"><span id="Body_ctl00_DCT_AUTORISE">0 €</span></td>
+             </tr>
+             <tr>
+               <td class="text-right"><span id="Body_ctl00_L50">Taux de placement</span></td>
+               <td class="text-center"><span id="Body_ctl00_TVMP">1,0 %</span></td>
+             </tr>
+             <tr>
+               <td class="text-right"><span id="Body_ctl00_L51">Frais financiers sur stocks de produits</span></td>
+               <td class="text-center"><span id="Body_ctl00_FFPF">0,0 %</span></td>
+             </tr>
+             <tr>
+               <td class="text-right"><span id="Body_ctl00_L52">Frais financiers sur stocks de matière</span></td>
+               <td class="text-center"><span id="Body_ctl00_FFMP">0,0 %</span></td>
+             </tr>
+           </tbody></table>
+
+                </div>
+              </div>
+            </section>
+
+            <section class="col-lg-3 connectedSortable">
+              <div class="box  box-default wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+                <div class="box-header">
+                  <h3 class="box-title text-default"><i class="fa fa-university" aria-hidden="true"></i>&nbsp;<b><span id="Body_ctl00_L54">Taxe sur la Valeur Ajoutée (T.V.A.)</span></b></h3>
+                </div>
+                <div class="box-body">
+
+                <table class="table">
+  <tbody><tr>
+    <td class="text-right"><span id="Body_ctl00_L55">sur produits finis</span></td>
+    <td class="text-center"><span id="Body_ctl00_TVAPF">20,0 %</span></td>
+  </tr>
+  
+  <tr>
+    <td class="text-right"><span id="Body_ctl00_L56">sur matières premières</span></td>
+    <td class="text-center"><span id="Body_ctl00_TVAMP">20,0 %</span></td>
+  </tr>
+  
+  <tr>
+    <td class="text-right"><span id="Body_ctl00_L57">sur charges</span></td>
+    <td class="text-center"><span id="Body_ctl00_TVAC">20,0 %</span></td>
+  </tr>
+  
+  <tr>
+    <td class="text-right"><span id="Body_ctl00_L58">sur immobilisations</span></td>
+    <td class="text-center"><span id="Body_ctl00_TVAI">20,0 %</span></td>
+  </tr>
+  
+</tbody></table>
+
+                </div>
+              </div>
+            </section>
+
+            <section class="col-lg-3 connectedSortable" style="display:none;">
+              <div class="box  box-default wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                <div class="box-header">
+                  <h3 class="box-title text-default"><i class="fa fa-random" aria-hidden="true"></i>&nbsp;<b><span id="Body_ctl00_L60">Pondération du score</span></b></h3>
+                </div>
+                <div class="box-body">
+
+                <table class="table">
+         
+         <tbody><tr>
+           <td colspan="3"><span id="Body_ctl00_L61">Résultat sur CA</span></td>
+
+         </tr>
+         
+         <tr>
+           <td>&nbsp;</td>
+           <td class="text-right"><span id="Body_ctl00_L62">3 derniers mois</span></td>
+           <td class="text-center"><span id="Body_ctl00_RESCAExo">1</span>
+           </td>
+         </tr>
+         <tr>
+           <td>&nbsp;</td>
+           <td class="text-right"><span id="Body_ctl00_L63">cumulé</span></td>
+           <td class="text-center"><span id="Body_ctl00_RESCACum">3</span>
+           </td>
+         </tr>
+         
+         <tr>
+           <td colspan="3"><span id="Body_ctl00_L64">Résultat sur capitaux propres</span></td>
+         </tr>
+         
+         <tr>
+           <td>&nbsp;</td>
+           <td class="text-right"><span id="Body_ctl00_L65">3 derniers mois</span></td>
+           <td class="text-center"><span id="Body_ctl00_RESCPExo">0</span></td>
+         </tr>
+         
+         <tr>
+           <td>&nbsp;</td>
+           <td class="text-right"><span id="Body_ctl00_L66">cumulé</span></td>
+           <td class="text-center"><span id="Body_ctl00_RESCPCum">1</span></td>
+         </tr>
+         
+         <tr>
+           <td colspan="3" class="fdblanc Gris gras tdEquipe"><span id="Body_ctl00_L67">Chiffre d'affaires relatif</span></td>
+         </tr>
+         
+         <tr>
+           <td>&nbsp;</td>
+           <td class="text-right"><span id="Body_ctl00_L68">3 derniers mois</span></td>
+           <td class="text-center"><span id="Body_ctl00_CAExo">1</span></td>
+         </tr>
+         
+         <tr>
+           <td>&nbsp;</td>
+           <td class="text-right"><span id="Body_ctl00_L69">cumulé</span></td>
+           <td class="text-center"><span id="Body_ctl00_CACum">3</span></td>
+         </tr>
+         
+       </tbody></table>
+
+                </div>
+              </div>
+            </section>
+
+</div>
+
+    </section>
+
+</div>
+ 
+        
+        <!-- /.content --> </div>
+      <!-- /.content-wrapper -->
+      <!-- Main Footer -->
+      <footer class="main-footer">
+        <!-- To the right -->
+        <div class="pull-right hidden-xs"> Business Game Engineering </div>
+        <!-- Default to the left --> <strong>Copyright © 2022 <a href="http://www.stratelogic.com/">Strat&amp;Logic</a>.</strong>
+        All rights reserved. </footer>
+    </div>
+
+    
+
+<script type="text/javascript">
+//<![CDATA[
+window.__TsmHiddenField = $get('RadScriptManager1_TSM');Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindowManager, {"_renderMode":2,"clientStateFieldID":"ctl00_RadWindowManager1_ClientState","enableShadow":true,"formID":"form1","iconUrl":"","minimizeIconUrl":"","name":"RadWindowManager1","skin":"Default","windowControls":"[]"}, null, null, $get("ctl00_RadWindowManager1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadToolTipManager, {"_cssClass":"","_manualCloseButtonText":"Close","_updatePanelUniqueId":"ctl00$ToottipMgr1RTMPanel","animation":2,"autoTooltipify":true,"clientStateFieldID":"ctl00_ToottipMgr1_ClientState","formID":"form1","isToolTipFactory":true,"loadOnDemand":false,"position":23,"relativeTo":1,"skin":"Default","targetControls":"[]","width":"300px"}, null, null, $get("ctl00_ToottipMgr1"));
+});
+//]]>
+</script>
+</form>
+
+    <!-- DEBUT DES APPELS DES SCRIPTS JS -->
+    
+    <script type="text/javascript">
+            function temps_deco()
+    {
+
+            }
+    </script>
+    <script type="text/javascript">
+        temps_deco();
+    </script>
+
+    <script src="Strat&amp;Logic%20_%20FirStrat_files/jquery.min.js"></script>
+    <script src="Strat&amp;Logic%20_%20FirStrat_files/bootstrap.min.js"></script>
+    <script src="Strat&amp;Logic%20_%20FirStrat_files/adminlte.min.js"></script>
+    <script src="Strat&amp;Logic%20_%20FirStrat_files/jquery.slimscroll.min.js"></script>
+    <script src="Strat&amp;Logic%20_%20FirStrat_files/fastclick.js"></script>
+    <script src="Strat&amp;Logic%20_%20FirStrat_files/wow.js"></script>
+    <script>
+    wow = new WOW(
+      {
+             animateClass: 'animated',
+        offset:       100,
+        callback:     function(box) {
+             console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+         }
+      }
+    );
+    wow.init();
+
+    </script>
+
+
+</body></html>
