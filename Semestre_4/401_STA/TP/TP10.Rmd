@@ -1,0 +1,90 @@
+---
+title: "TP10"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, out.width="50%")
+```
+
+
+```{r}
+her <- read.table("~/mypathtosta401data/her.txt",header=T,sep="\t")
+```
+
+1. 
+```{r}
+cholNoTreat <- her$chol[her$treat==0]
+cholTreat <- her$chol[her$treat==1]
+boxplot(cholNoTreat,cholTreat)
+```
+
+Le traitement semble avoir un impact, diminuant la queue de distribution vers les grandes valeurs du cholestérol. 
+
+2. 
+```{r}
+par(mfrow=c(2,2))
+hist(cholNoTreat,probability=TRUE)
+curve(dnorm(x,mean(cholNoTreat),sd(cholNoTreat)),col="red",add=T)
+qqnorm(cholNoTreat)
+abline(mean(cholNoTreat),sd(cholNoTreat))
+hist(cholTreat,probability=TRUE)
+curve(dnorm(x,mean(cholTreat),sd(cholTreat)),col="red",add=T)
+qqnorm(cholTreat)
+abline(mean(cholTreat),sd(cholTreat))
+```
+
+Les distributions ne semblent pas normales, n1 et n2 sont $<100$, on ne peut donc pas appliquer ce que l'on a vu en cours. 
+
+3. 4.  $H_0: \mu_1-\mu_2=0$, $H_1: \mu_1-\mu_2=50$ 
+```{r}
+sigma <- 250
+n <- 100 
+diffH1 <- 50
+sigmadiff <- sqrt(2*sigma^2/n) # rappel: var(a-b)=var(a)+var(b)
+curve(dnorm(x,mean=0,sd=sigmadiff),from=-5*sigmadiff,to=5*sigmadiff,col="blue",xlab="Distribution attendue de la différence des moyennes",ylab="densité")
+curve(dnorm(x,mean=diffH1,sd=sigmadiff),col="red",add=TRUE)
+legend("topleft",c("H0","H1"),lwd=1,col=c("blue","red"))
+abline(v=25)
+```
+
+4. Les écarts-types étant identiques pour les deux hypothèses, le risque de première espèce est égal au risque de seconde espèce au milieu des deux hypothèses. 
+```{r}
+pnorm(25,mean=0,sd=sigmadiff,lower.tail = FALSE) # alpha
+pnorm(25,mean=diffH1,sd=sigmadiff,lower.tail = TRUE) # beta
+```
+
+5. 
+```{r}
+alpha <- 0.05
+Calpha <- qnorm(1-alpha,mean=0,sd=sigmadiff)
+curve(dnorm(x,mean=0,sd=sigmadiff),from=-5*sigmadiff,to=5*sigmadiff,col="blue",xlab="Diff",ylab="densité")
+curve(dnorm(x,mean=diffH1,sd=sigmadiff),col="red",add=TRUE)
+legend("topleft",c("H0","H1"),lwd=1,col=c("blue","red"))
+abline(v=Calpha)
+beta <- pnorm(Calpha,mean=diffH1,sd=sigmadiff,lower.tail = TRUE)
+puissance <- 1-beta
+cat("Probabilité d'accepter H1 alors que H1 est vrai: ",puissance)
+```
+
+6. 
+```{r}
+n <- seq(100,500,100)
+sigmadiff <- sqrt(2*sigma^2/n)
+Calpha <- qnorm(1-0.05,mean=0,sd=sigmadiff)
+beta <- pnorm(Calpha,mean=diffH1,sd=sigmadiff,lower.tail = TRUE)
+puissance <- 1-beta
+plot(n,puissance)
+```
+
+7.
+```{r}
+n <- 100
+diffH1 <- seq(10,100,10)
+sigmadiff <- sqrt(2*sigma^2/n)
+Calpha <- qnorm(1-0.05,mean=0,sd=sigmadiff)
+beta <- pnorm(Calpha,mean=diffH1,sd=sigmadiff,lower.tail = TRUE)
+puissance <- 1-beta
+plot(diffH1,puissance)
+```
+

@@ -57,3 +57,84 @@ t.test(diff,mu=40,alternative="greater")
 ```
 La p-valeur est de 7e-5 donc oui, la conclusion est très signicafive. 
 
+## Exercice 2 
+
+1. Les échantillons ne sont pas appariés car il ne s'agit pas du même échantillon d'individus. 
+```{r, out.width="50%"}
+wrF <- data[data$sex==1,"wrist"]
+wrH <- data[data$sex==0,"wrist"]
+boxplot(wrF,wrH,names=c("femmes","hommes"),main="wrist")
+```
+
+2. On doit supposer que wrF et wrH suivent des lois normales et que les 2 échantillons sont indépendants. Il faut également savoir si les variances des deux variables peuvent être supposées égales ou non.
+H0 : les largeurs du poignet sont égales. H1: la largeur du poignet des hommes est plus grande. 
+
+3. 
+```{r}
+par(mfrow=c(2,2))
+hist(wrF,probability = TRUE)
+curve(dnorm(x,mean(wrF),sd(wrF)),col="red",add=T)
+qqnorm(wrF,main="sysF Q-Q Plot"); 
+abline(mean(wrF),sd(wrF),col="red")
+hist(wrH,probability = TRUE)
+curve(dnorm(x,mean(wrH),sd(wrH)),col="red",add=T)
+qqnorm(wrH,main="sysH Q-Q Plot"); 
+abline(mean(wrH),sd(wrH),col="red")
+```
+
+wrF et wrH semblent pouvoir suivre des lois normales.
+
+4. 
+H0: les variances sont égales, H1: les variances sont différentes. 
+```{r}
+tcalc <- var(wrH)/var(wrF)
+pvaleur <- 2*(1-pf(tcalc,df1=length(wrH)-1,df2=length(wrF)-1))
+cat("tcalc=",tcalc,"\n")
+cat("pvaleur=",pvaleur,"\n")
+```
+la p-valeur est très grande, donc pour tout risque raisonable, on ne peut pas refuser l'hypothèse H0, donc on peut l'accepter. 
+
+5.
+```{r}
+var.test(wrH,wrF,alternative="two.sided")
+```
+
+6. 
+```{r}
+tcalc = sqrt((length(wrF)+length(wrH)-2)/(1/length(wrF)+1/length(wrH)))*
+  (mean(wrH)-mean(wrF))/sqrt((length(wrF)-1)*var(wrF)+(length(wrH)-1)*var(wrH))
+pvaleur <- 1-pt(tcalc,length(wrF)+length(wrH)-2)
+cat("tcalc=",tcalc,"\n")
+cat("pvaleur=",pvaleur,"\n")
+t.test(wrH,wrF,alternative="greater", paired=F,var.equal=T) 
+```
+
+La p-valeur est minuscule: pour tout risque de se tromper supérieur à cette p-valeur, on peut rejeter l'hypothèse H0 et donc conclure que la largeur du poignée des hommes est significativement plus grande que celle des femmes. 
+
+## Exercice 3 
+
+1. 
+```{r, out.width="50%"}
+cholH <- data[data$sex==0,"chol"]
+cholF <- data[data$sex==1,"chol"]
+boxplot(cholH, cholF, names=c("hommes","femmes"))
+abline(h=350, col="red")
+```
+
+2. Test de comparaison de 2 proportions entre 2 échantillons indépendants. 
+H0 : $p_H=p_F$ H1: $p_H$ différente de $p_F$
+```{r}
+FH = mean(cholH>350) # 0.4
+FF = mean(cholF>350) # 0.175
+```
+
+3. 
+```{r}
+prop.test(c(sum(cholH>350),sum(cholF>350)),c(length(cholH),length(cholF)))
+```
+On peut refuser H0 avec un risque $\alpha$ de se tromper de 5% et, si on accepte ce risque, on peut conclure que les hommes ont plus de chance d'avoir un cholestérol supérieur à 350 que les femmes.
+
+4.
+Pour diminuer le risque de se tromper, il faudrait augmenter la taille de l'échantillon. 
+
+
