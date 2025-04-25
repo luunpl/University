@@ -12,7 +12,7 @@ library(knitr)
 
 1. 2. 3. 
 ```{r}
-data <- read.table("~/mypathtosta401data/apnee.csv",header=TRUE,sep=",")
+data <- read.table("~/Personal/University/Semestre_4/401_STA/TP/Donnees/apnee.csv",header=TRUE,sep=",")
 tailleH <- data[data$sexe==0,"taille"]
 moyest <- mean(tailleH)
 varest <- var(tailleH)

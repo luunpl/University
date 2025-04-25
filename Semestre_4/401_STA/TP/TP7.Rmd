@@ -87,7 +87,7 @@ sum(moys>mu0+qt(1-0.05,n-1)*sds/sqrt(n))/N # doit être proche de  0.05
 
 1. 
 ```{r}
-data <- read.table("C:/Users/luung/Downloads/University/Semestre_4/401_STA/TP/Donnees/apnee.csv",header = TRUE, sep = ",")
+data <- read.table("~/Personal/University/Semestre_4/401_STA/TP/Donnees/apnee.csv",header=TRUE, sep = ",")
 
 ```
 

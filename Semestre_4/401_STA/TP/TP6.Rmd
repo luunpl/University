@@ -83,7 +83,7 @@ alphaopt <- (1-pnorm(u))*2
 
 1. 2.
 ```{r}
-data <- read.csv("~/mypathtosta401data/apnee.csv")
+data <- read.csv("~/Personal/University/Semestre_4/401_STA/TP/Donnees/apnee.csv")
 poidsH <- data[data$sex==0,"poids"]
 ```
 

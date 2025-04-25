@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE, out.width="50%")
 
 1. Les échantillons sont appariés: il s'agit de la pression sanguine du même échantillon d'individus, l'une étant la pression maximale (sys), l'autre la pression minimale (dia).
 ```{r}
-data <- read.table("~/mypathtosta401data/her.txt",header=T, sep="\t")
+data <- read.table("~/Personal/University/Semestre_4/401_STA/TP/Donnees/her.txt",header=T, sep="\t")
 sys <- data$sys
 dia <- data$dia
 diff <- sys - dia
