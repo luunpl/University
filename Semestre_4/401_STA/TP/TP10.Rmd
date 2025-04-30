@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE, out.width="50%")
 
 
 ```{r}
-her <- read.table("~/mypathtosta401data/her.txt",header=T,sep="\t")
+her <- read.table("~/Personal/University/Semestre_4/401_STA/TP/Donnees/her.txt",header=T,sep="\t")
 ```
 
 1. 

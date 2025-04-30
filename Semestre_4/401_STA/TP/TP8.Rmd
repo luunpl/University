@@ -1,11 +1,13 @@
 ---
 title: "TP8"
-output: pdf_document
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, out.width="50%")
 library(knitr)
+library(data.table)
+
 ```
 
 ## Exercice 1: test sur la moyenne 
