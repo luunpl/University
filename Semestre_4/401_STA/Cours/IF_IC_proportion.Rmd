@@ -1,0 +1,120 @@
+---
+title: "Intervalle de fluctuation ou intervalle de Confiance :      
+          Cas de la proportion "
+author: " "
+date: " "
+output:
+  beamer_presentation: default
+  ioslides_presentation: default
+  slidy_presentation: default
+header-includes:
+- \usepackage[utf8]{inputenc}
+- \usepackage[T1]{fontenc}
+fontsize: 10pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Jeu de Pile ou Face
+
+On joue avec une pièce juste, telle que la proba d'obtenir face soit $p=1/2$.
+
+Soit $X_i$ la variable indicatrice de succès "obtenir face" au i-ème lancé.
+$X_i$ suit une loi ${\cal B}(p)$ et les $X_i$ sont indépendantes.
+
+Simulation de $N=100$ échantillons de taille $n=50$ et calcul des moyennes empiriques de chaque échantillon : 
+
+\vspace{1cm}
+
+```{r simulations}
+n<-50; N<-100; p=0.5 # paramètres de simulation
+matrix(rbinom(n*N,1,p),ncol=n)->dataB 
+# un n-ech. par ligne de dataB
+moys<-rowMeans(dataB) # les moyennes de chaque échantillon 
+length(moys) # N nombre de réalisations de sum(x_i)/n
+```
+
+## Intervalle de fluctuation
+
+$\bar{X}_n$ fluctue autour de son espérance $p$ et avec une probabilité valant approximativement $1-\alpha$ dans l'intervalle :
+$$IF(p,\alpha)=\left[p-\sqrt{\frac{p(1-p)}{n}}u_{1-\frac{\alpha}{2}},
+p+\sqrt{\frac{p(1-p)}{n}}u_{1-\frac{\alpha}{2}} \right]$$
+Autrement dit 
+$$P(\bar{X_n} \in IF(p,\alpha))\approx 1-\alpha ~~~~\mbox{si}~~~np>10~\mbox{et}~n(1-p)>10$$
+IF ne dépend pas de l'échantillon. C'est un **intervalle déterministe**.
+
+
+## Illustration avec les N réalisations de $\bar{X}_n$ 
+
+```{r fluctuation, echo=FALSE}
+alp<-0.05
+moysconf<-(moys>p-sqrt(p*(1-p)/n)*qnorm(1-alp/2))&(moys<p+sqrt(p*(1-p)/n)*qnorm(1-alp/2))
+plot(moys,col=moysconf+2,pch=20, ylab="IF de niveau de fluctuation 95%", xlab="N° d'échantillon",
+     main="N réalisations de la moyenne empirique d'un n-échantillon",cex.main=2 )
+abline(h=p)
+abline(h=p-sqrt(p*(1-p)/n)*qnorm(1-alp/2),lty=2)
+abline(h=p+sqrt(p*(1-p)/n)*qnorm(1-alp/2),lty=2)
+segments(x0=(1:N),y0=rep(p-sqrt(p*(1-p)/n)*qnorm(1-alp/2),N),
+         x1=(1:N),y1=rep(p+sqrt(p*(1-p)/n)*qnorm(1-alp/2),N),lwd=0.5)
+```
+Environ $5\%$ des échantillons produisent un $\bar{x}_n$ hors de l'IF donc dits non conformes au niveau de fluctuation 95%
+
+
+
+## Amplitude de l'intervalle de fluctuation
+\begin{itemize}
+\item
+Pour $p$ et $\alpha$ fixés, l'amplitude $2\sqrt{\frac{p(1-p)}{n}}u_{1-\frac{\alpha}{2}}$ décroit avec $n$
+ 
+ On peut trouver une valeur de $n$ minimale $n_{min}$ pour laquelle elle est inférieure à $a$ :
+ $$2\sqrt{\frac{p(1-p)}{n}}u_{1-\frac{\alpha}{2}}\leq a\Longleftrightarrow  n\geq \frac{4p(1-p)u^2_{1-\frac{\alpha}{2}}}{a^2}$$
+En particulier pour le jeu de pile ou face avec une vraie pièce où $p=0.5$ avec $\alpha=0.05$ et $a=0.02$, $n_{min}\geq a^{-2}u^2_{1-\frac{\alpha}{2}}=(1.96)^2(0.25)\cdot 10^4$ soit $n_{min}=9604$. Pour une amplitude de $0.1$ on obtient $n_{min}=77$ et pour une amplitude de $0.3$, $n_{min}=26$.
+\item 
+Pour $p$ et $n$ fixés, lorsque $\alpha$ augmente l'amplitude diminue. Autrement dit
+la précision augmente lorsque le niveau de fluctuation baisse. Et  $\alpha$
+qui garantit une amplitude $\leq a$ satisfait $\alpha \geq 2(1-\Phi(a\sqrt{n/(4p(1-p))}))$.
+Pour $n=50$ et $a=0.02$ (précision $\pm 1\%$) on devrait prendre $\alpha\geq 88,8\%$  soit $1-\alpha\leq 11,2\%$. 
+\end{itemize}
+
+## Intervalle de confiance 
+
+Si $n$ assez grand ($np>10$ et $n(1-p)>10$)
+l'intervalle de confiance pour $p$ de niveau de confiance approximatif $1-\alpha$ est donné par  $$IC(F_n,\alpha)=\left[F_n-\sqrt{\frac{F_n(1-F_n)}{n}}u_{1-\frac{\alpha}{2}},
+F_n+\sqrt{\frac{F_n(1-F_n)}{n}}u_{1-\frac{\alpha}{2}} \right]$$
+Autrement dit 
+$$P(p \in IC(F_n,\alpha))\approx 1-\alpha ~~~~\mbox{si}~~~np>10~\mbox{et}~n(1-p)>10$$
+L'intervalle de confiance est un **intervalle aléatoire** qui dépend de l'échantillon et du niveau de confiance $1-\alpha$.
+
+## Calculs des IC pour  les N réalisations de $\bar{X}_n$ 
+```{r confiance, echo=F}
+plot(moys,col=moysconf+2,pch=20, ylab="IC de niveau de confiance 95%", xlab="N° d'échantillon",
+     main="N réalisations de l'intervalle de confiance pour p avec n=50",cex.main=2 )
+abline(h=p)
+
+segments(x0=(1:N),y0=moys-sqrt(moys*(1-moys)/n)*qnorm(1-alp/2),
+         x1=(1:N),y1=moys+sqrt(moys*(1-moys)/n)*qnorm(1-alp/2),lwd=0.5,col=moysconf+2)
+```
+
+On observe qu'environ 5% des intervalles de confiance calculés **contiennent** la valeur
+du paramètre $p=1/2$.
+
+## Exercice
+
+\begin{itemize}
+
+ \item Refaire tourner le script en modifiant les valeurs de $n$, $N$ et $\alpha$ dans le premier
+ tronçon d'instruction \texttt{simulations} et observer ce qui change (les objets déterministes
+ ) et ce qui ne change pas (les objets aléatoires)
+ \item Faire la même expérience numérique dans le modèle normal avec $\mu=2$ et $\sigma=2$ :
+ \begin{itemize}
+ \item dans le tronçon \texttt{simulations} utiliser le générateur aléaoire de la loi normale \texttt{rnorm()}
+ \item dans le tronçon \texttt{fluctuation} adapter le calcul de l'intervalle de fluctuation
+ au cas du modèle normal
+ \item dans le tronçon \texttt{confiance} adapter le calcul des intervalles de confiance
+ pour $\mu$ dans le cas $\sigma$ inconnu (indication : pour calculer la variance empirique corrigée de chacun des $N$ échantillons de taille $n$ on peut utiliser \texttt{apply(dataG,MARGIN=1,var)} qui calcule les $N$ variances corrigées)
+ \end{itemize}
+ \end{itemize}
+ 
+ 

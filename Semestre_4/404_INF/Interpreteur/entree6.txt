@@ -1,0 +1,17 @@
+lire(a);
+tanque a != 4 faire
+    lire(a);
+fait;
+
+lire(b);
+tanque b != 0 faire
+    lire(b);
+fait;
+
+lire(c);
+tanque c != 4 faire
+    lire(c);
+fait;
+
+inf := 100 * a + 10 * b + c;
+ecrire(inf);

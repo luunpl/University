@@ -1,0 +1,20 @@
+Un début de programme (lecture d'un texte au clavier) est donné, 
+il vous reste à calculer/afficher le nombre de mots de ce texte.
+
+Indication : en première approche, les mots sont définis par des lettres 
+et séparés par des espaces.
+
+Pour compiler son travail et lancer l'exécution,
+la première fois il faut sauvegarder une version des fichiers (icone disquette), 
+puis lancer le shell de l'activité (icone fusée)
+
+Pour vérifier que son travail corespond à la demande,
+lancer la vérification (icone boite à cocher)
+
+
+En cas de problème (fenêtre figée, timeout, ...) : 
+* fermer la fenêtre graphique et/ou relancer le terminal
+* recharger la page web
+
+Bon travail.
+

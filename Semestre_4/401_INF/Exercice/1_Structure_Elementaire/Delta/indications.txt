@@ -1,0 +1,23 @@
+Exercice ARM : delta  
+
+Un début de programme est donné pour afficher quelques messages et saisir un nombre.
+Il reste à compléter le programme principal pour effectuer la calcul (n-1)(1-n) de ce nombre. 
+
+Programme visé :
+  a <- Entree
+  b <- Entree
+  c <- Entree
+  r <- b²-4ac
+  Afficher r
+
+Le travail est à faire dans le fichier prog.s (onglet suivant).
+Pour compiler son travail et lancer l'exécution, la première fois il faut sauvegarder une version des fichiers (icone disquette), 
+puis lancer l'exécution de l'activité (icone fusée)
+
+Pour vérifier que son travail correspond à la demande, lancer la vérification (icone boite à cocher)
+
+En cas de problème (fenêtre figée, timeout, ...) :
+* fermer la fenêtre graphique et/ou relancer le terminal
+* recharger la page web
+
+Bon travail.

@@ -1,0 +1,34 @@
+Suivre le sujet de partiel de Mars 2020
+  https://im2ag-moodle.univ-grenoble-alpes.fr/pluginfile.php/33928/mod_page/intro/partielInf401Mars2020.pdf
+
+Le but est de traduire le programme suivant :
+ 1: EcrChaine(SECRET)
+ 2: i:=0
+ 3: tant que SECRET[i] != 0 faire
+ 4:       c := SECRET[i]
+ 5:       si c >= 'A' et c <= 'Z' alors
+ 6:            c := c - X
+ 7:            si c < 'A' alors
+ 8:                 c := c + 'Z' - 'A' + 1
+ 9:            fin si 
+10:       fin si
+11:       SECRET[i] := c
+12:       i=i+1
+13: fin tant que
+14: EcrChaine(SECRET)
+
+
+Pour compiler son travail et lancer l'exécution,
+la première fois il faut sauvegarder une version des fichiers (icone disquette), 
+puis lancer le shell de l'activité (icone fusée)
+
+Pour vérifier que son travail corespond à la demande,
+lancer la vérification (icone boite à cocher)
+
+
+En cas de problème (fenêtre figée, timeout, ...) : 
+* fermer la fenêtre graphique et/ou relancer le terminal
+* recharger la page web
+
+Bon travail.
+

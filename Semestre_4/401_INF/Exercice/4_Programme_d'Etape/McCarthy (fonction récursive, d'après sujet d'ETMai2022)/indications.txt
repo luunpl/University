@@ -1,0 +1,39 @@
+Exercice ARM : McCarthy
+
+Programme principal visé :
+  x <- Entrée
+  y <- f91(x)
+  Afficher y
+
+Les trois parties de l'algo principal et la fonction F91 de McCarthy sont founies 
+en C dans l'onglet algo.c  Ces codes C peuvent vous servir pour ecrire votre code en assembleur 
+et pour tester vos codes assembleurs
+
+Le travail à faire se trouve dans l'onglet prog.s 
+Un programme assembleur initial à trou est fourni (1 trou = 1 partie assembleur à compléter)
+Il faut compléter le code assembleur dans les trous prévus, i.e. dans les zones entre  
+  @completer ici par votre code ...
+     ici votre code 
+  @fin de votre code ...
+Pour écrire votre code assembleur vous pouvez vous inspirer de l'algo et de la version C
+Pour tester votre code vous pouvez vous utiliser la version C pour remplacer des parties assembleur inexistantes ou incertaines
+Comment ?
+Ce programme comporte des éléments conditionnels choisis à l'exécution (#ifdef #else #endif), 
+  pour chaque partie du programme, à l'exécution, votre code assembleur ou le code C sera choisi
+  le choix se fait en fonction des constantes introduites (ou pas) en début de fichier prog.s par des #define
+  vous pouvez modifier ces #define, en commentant ou dé-commentant ces #define 
+  l'exécution utilisera alors votre code assembleur ou le code C fourni selon votre choix
+Lors des tests d'évaluation automatique, les #define et les constantes sont choisies par le programme d'évaluation
+  cela permet de tester chaque partie du programme indépendamment des autres
+ 
+Ne pas modifier le reste du code
+
+Mode d'emploi succint :
+Pour compiler son travail et lancer l'exécution, la première fois il faut sauvegarder une version des fichiers (icone disquette), 
+puis lancer l'exécution de l'activité (icone fusée).
+Pour vérifier que son travail correspond à la demande, lancer la vérification (icone boite à cocher).
+En cas de problème (fenêtre figée, timeout, ...) :
+  fermer la fenêtre graphique et/ou relancer le terminal
+  recharger la page 
+
+Bon travail.

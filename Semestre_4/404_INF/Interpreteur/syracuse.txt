@@ -1,0 +1,23 @@
+lire(n);
+
+tanque n != 1 faire
+    temp := n;
+
+    tanque temp >= 2 faire
+        temp := temp - 2;
+    fait;
+
+    si temp << 1 alors  
+        compteur := 0;
+        val := n;
+        tanque val >= 2 faire
+            val := val - 2;
+            compteur := compteur + 1;
+        fait;
+        n := compteur;
+    sinon
+        n := (3 * n) + 1;
+    fsi;
+
+    ecrire(n);
+fait;

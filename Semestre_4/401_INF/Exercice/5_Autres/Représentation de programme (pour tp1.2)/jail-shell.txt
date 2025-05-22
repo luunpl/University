@@ -1,0 +1,9 @@
+sauver (icone de disquette) puis lancer l'activité (icone de fusée) vous donne 
+64 min de shell avec le programme du TP1.2.
+
+Rem. : le programme est (éditable) dans l'onglet suivant.
+
+Attention, par rapport au tp1.2, il y a qlq différences :
+* nedit n'est pas disponible
+* les commandes arm (arm-eabi-...) sont arm-linux-gnueabi-...
+* certains solutions de compilation (par ex. pour 333) sont différentes 

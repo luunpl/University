@@ -1,0 +1,26 @@
+Exercice : Longueur
+
+Un programme est donné qui fait la saisie d'un texte et quelques affichages, 
+compléter le programme pour calculer la longueur du texte (avant affichage).
+
+Notion en jeu : Boucle "Tant que ... faire ..."
+
+Programme visé :
+  texte <- Entree
+  longueur <- 0
+  tant que texte[longueur] <> 0 faire
+    |  longueur <- longueur +1
+  Afficher longueur
+
+Le travail est à faire dans le fichier prog.s (onglet suivant).
+Pour compiler son travail et lancer l'exécution, la première fois il faut sauvegarder une version des fichiers (icone disquette),
+puis lancer l'exécution de l'activité (icone fusée).
+Pour vérifier que son travail correspond à la demande, lancer la vérification (icone boite à cocher)
+
+En cas de problème (fenêtre figée, timeout, ...) :
+* fermer la fenêtre graphique et/ou relancer le terminal
+* recharger la page web
+
+Bon travail.
+
+

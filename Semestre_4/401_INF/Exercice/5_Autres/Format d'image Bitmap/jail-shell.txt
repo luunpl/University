@@ -1,0 +1,9 @@
+Dans le second onglet vous avez un fichier d'image bitmap. 
+Si vous lancez l'exécution (sauver les fichiers, puis faites décoller la fusée !)
+vous verrez cette image (blanche au départ ! désolé, c'est à vous de la modifier.)
+
+
+Objectit de l'exercice : 
+* modifier "à la main" le fichier pour obtenir différents dessins (voir sujet dans le poly). 
+* Pour chaque dessin, vous pouvez faire une sauvegarde en ajoutant un fichier à la liste des onglets. 
+* A la fin, si vous avez encore du temps, vous pouvez dessiner une maison, ou une bouteille de lait !

@@ -1,0 +1,23 @@
+Exercice ARM : Acces à une matrice
+
+Un début de programme est donné pour saisir deux indices (i, j) et afficher un nombre
+Il reste à compléter ce programme pour que le nombre affiché soit celui d'une 
+matrice donnée à l'emplacement (i,j) indiqué. 
+
+Programme visé :
+  i <- Entree
+  j <- Entree
+  v <- Pascal[i,j]
+  Afficher v
+
+Le travail est à faire dans le fichier prog.s (onglet suivant).
+Pour compiler son travail et lancer l'exécution, la première fois il faut sauvegarder une version des fichiers (icone disquette), 
+puis lancer l'exécution de l'activité (icone fusée)
+
+Pour vérifier que son travail correspond à la demande, lancer la vérification (icone boite à cocher)
+
+En cas de problème (fenêtre figée, timeout, ...) :
+* fermer la fenêtre graphique et/ou relancer le terminal
+* recharger la page web
+
+Bon travail.

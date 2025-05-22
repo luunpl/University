@@ -1,0 +1,21 @@
+Un début de programme (lecture d'un entier au clavier, calcul, affichage) est donné, 
+il vous reste à appeler une fonction C simple pour finir le calcul : la fonction modulo
+(définie dans le fichier aux.c) 
+Ses arguments doivent être dans R0 et R1, le résultat sera dans R0.
+(convention C pour les fonctions avec peu de paramètres)
+
+
+Pour compiler son travail et lancer l'exécution,
+la première fois il faut sauvegarder une version des fichiers (icone disquette), 
+puis lancer le shell de l'activité (icone fusée)
+
+Pour vérifier que son travail corespond à la demande,
+lancer la vérification (icone boite à cocher)
+
+
+En cas de problème (fenêtre figée, timeout, ...) : 
+* fermer la fenêtre graphique et/ou relancer le terminal
+* recharger la page web
+
+Bon travail.
+

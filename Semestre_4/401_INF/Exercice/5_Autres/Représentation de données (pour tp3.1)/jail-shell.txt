@@ -1,0 +1,7 @@
+sauver (icone de disquette) puis lancer l'activité (icone de fusée) vous donne 
+64 min de shell avec les données du TP3.1.
+
+Rem. : le programme est (éditable) dans l'onglet suivant.
+
+Attention, par rapport au tp3.1, il y a qlq différences :
+* les commandes arm (arm-eabi-...) sont arm-linux-gnueabi-...

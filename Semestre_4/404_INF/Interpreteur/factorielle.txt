@@ -1,0 +1,6 @@
+lire(n);
+x := n;
+tanque x != 1 faire
+    x := x - 1;
+    n := n * x;
+fait;

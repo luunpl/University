@@ -1,0 +1,27 @@
+Case = Exemple de test par defaut vide
+input = -1 -1
+output =Résultat :
+
+Case = Exemple de test par defaut 1
+input = 1 -1 -1
+output =Résultat : 1
+
+Case = Exemple de test par defaut 2
+input = 1 2 -1 -1
+output =Résultat : 1 2
+
+Case = Exemple de test par defaut 3
+input = 1 -1 2 3 -1
+output =Résultat : 1 2 3
+
+Case = Exemple de test par defaut 4
+input = 1 3 -1 2 4  -1
+output =Résultat : 1 2 3 4
+
+Case = Exemple de test par defaut 5
+input = -1 1 2 3 4 5 -1
+output =Résultat : 1 2 3 4 5
+
+Case = Exemple de test par defaut 6
+input =  1 3 6 -1 2 4 5 -1
+output =Résultat : 1 2 3 4 5 6

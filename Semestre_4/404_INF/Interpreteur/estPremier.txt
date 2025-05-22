@@ -1,0 +1,17 @@
+lire(n);
+estPremier := 0;
+
+tanque n << 2 faire
+    estPremier := 1;
+fait;
+
+i := 2;
+tanque i << n faire
+    temp := n;
+    temp := temp - i;  
+    si temp << 1 alors  
+        estPremier := 1;
+    sinon
+    fsi;
+    i := i + 1;
+fait;

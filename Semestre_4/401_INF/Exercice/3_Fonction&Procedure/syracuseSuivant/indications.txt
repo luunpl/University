@@ -1,0 +1,26 @@
+Un début de programme (lecture d'un entier au clavier, calcul et affichage) est donné en C, 
+mais il lui manque le code de la fonction appelée, fonction à définir en Assembleur pour optimiser les calculs. 
+Votre travail : ajouter cette fonction dans le fichier aux.s
+
+Spec : syracuseSuivant en entrée R0, en sortie R0
+  Si R0 est pair : retourner R0/2
+  sinon retourner (3*R0+1)/2
+
+
+
+
+
+Pour compiler son travail et lancer l'exécution,
+la première fois il faut sauvegarder une version des fichiers (icone disquette), 
+puis lancer le shell de l'activité (icone fusée)
+
+Pour vérifier que son travail corespond à la demande,
+lancer la vérification (icone boite à cocher)
+
+
+En cas de problème (fenêtre figée, timeout, ...) : 
+* fermer la fenêtre graphique et/ou relancer le terminal
+* recharger la page web
+
+Bon travail.
+

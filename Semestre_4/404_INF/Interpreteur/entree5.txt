@@ -1,0 +1,13 @@
+lire(x);
+r := 0;
+
+tanque x >> 0 faire
+    r := r + 1;
+    si x >> 100 alors
+        x := x + 1;
+    sinon
+        x := x - 1;
+    fsi;
+    ecrire(x);
+    ecrire(r);
+fait;

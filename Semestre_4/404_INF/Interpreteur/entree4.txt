@@ -1,0 +1,15 @@
+r := 1;
+lire(x);
+
+si x != 1 alors
+    x := x + 2;
+    x := x * 5;
+    lire(r);
+    r := r * 2;
+sinon
+    r := r * 2;
+    x := x + 8;
+fsi
+
+ecrire(r);
+ecrire(x);

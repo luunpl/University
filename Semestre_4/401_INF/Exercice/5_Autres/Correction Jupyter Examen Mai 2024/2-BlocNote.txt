@@ -1,0 +1,13 @@
+** Correction Jupyter Examen Mai 2024
+
+sujet : https://im2ag-moodle.univ-grenoble-alpes.fr/pluginfile.php/33928/mod_page/intro/examenArchiL2Mai2024.pdf
+
+Mode d'emploi succinct :
+* lancement du serveur Jupyter : "debug" (icone avec la "coccinelle")
+* éventuellement, copier l'url donnée à la fin du lancement (http://persee3.caseine.ovh/... ) 
+    (utiliser le menu contextuel du navigateur, bouton droit ; 
+     Attention : pas de ^C pour copier l'URL : cela arrête le serveur !)
+    et ouvrir l'url donnée dans une nouvelle fenêtre du navigateur
+    mais cela devrait s'ouvrir tout seul
+* laisser le serveur tourner ici, regarder à côté le fichier 1-eltCorrection.ipynb
+

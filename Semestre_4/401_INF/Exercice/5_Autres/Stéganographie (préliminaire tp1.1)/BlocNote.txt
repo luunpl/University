@@ -1,0 +1,72 @@
+Exercice de stéganographie
+  <<La stéganographie est l'art de la dissimulation : 
+      son objet est de faire passer inaperçu un message 
+      dans un autre message>>. cf. Wikipédia
+
+  le service du renseignement vous a contacté(e) pour vos compétences uniques
+  et vous demande de remplir les 3 questions suivantes (mettre un X pour la bonne réponse) :
+
+Q1 : 42 est la grande réponse au problème de la vie, de l'univers et du reste.
+[ ] Vrai 
+[ ] Faux
+
+Q2 : il y a 10  catégories de personnes, celles qui connaissent le binaire et celles qui ne le connaissent pas.
+[ ] Vrai 
+[ ] Faux
+
+Q3 : Toutes les réponses sont fausses.
+[ ] Vrai 
+[ ] Faux
+
+ 
+(une fois vos réponses données, les sauvegarder avec l'icone de disquette)
+[En cas de problème technique, dans la suite, recharger la fenêtre !]
+
+  pour transmetre votre réponse et garder ces réponses secrètes, 
+le services du renseignement vous demande de confectionner une image
+avec une application fournie (accessible via l'icone "insecte").
+
+  pour coder votre réponse dans l'image vous devrez utiliser 3 pixels spécifiques, 
+un pixel en blanc pour coder une réponse vraie, un pixel en noir pour coder une réponse fausse. 
+La position des pixels est une information secrete, à ne pas diffuser (explication en dessous) :
+
+Schéma du coin haut-droit de l'image pour la position des pixels :
+
+  ---------+
+  .........|
+  ......21.|
+  .......3.|
+  .........|
+
+Explication (si nécessaire) :
+ Q1 : pixel de Q1 (noté "1" dans le schéma ci-dessus) à positionner sur la diagonale 
+      de l'image allant du haut-droit au bas-gauche,  à 1 pixel de l'angle du haut. 
+ Q2 : pixel de Q2 (noté "2" dans le schéma ci-dessus) à positionner à gauche de Q1
+ Q3 : pixel de Q3 (noté "3" dans le schéma ci-dessus) à positionner sous Q1.
+
+
+  le reste de l'image est libre, faites pour le mieux pour que les pixels de vos réponses 
+soient bien intégrés. Une image toute blanche ou avec qlq pixels seulement dans un coin 
+serait suspecte, débrouillez-vous pour faire un dessin qui semble naturel pour le reste de l'image
+(sans oublier de garder les 3 pixels corrects).
+
+  pour construire cette image, le service du renseignement mets à votre disposition
+une application (icone "insecte" pour l'ouvrir dans une mini-fenetre modale). 
+Elle est un peu rudimentaire :
+  [clic gauche pour pixel noir, clic droit pour pixel blanc]
+n'oublier pas de sauvegarder votre travail à la fin, Menu File/Save de l'application :
+  [clic sur le menu File, garder le clic et se déplacer sur Save]
+
+  une fois l'image produite et sauvegardée, fermer la mini-fenetre modale (icone "X" en haut-droit
+de la mini-fenetre modale),
+  accepter les nouveaux fichiers à la fermeture de la mini-fenetre modale,
+  pour vérifier que vos réponses codées dans l'image sont correctes (sans tenir compte 
+de votre réponse textuelle), utiliser l'icone "boite à cocher" (à coté de l'icone "insecte") :
+   vous devez obtenir "Proposed grade 100/100", sinon les commentaires 
+donnent les questions fausses (mais vous ne devriez pas en avoir).
+
+  Bonne chance.
+
+  En cas de problème, recharger la fenêtre !
+
+
