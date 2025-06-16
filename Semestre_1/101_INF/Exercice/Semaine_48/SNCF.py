@@ -151,8 +151,8 @@ def prix_client():
                     prix_total += tarif_billet(
                         depart,
                         arrive,
-                        carte=carte_reduction2,
-                        periode=periode_preciser2,
+                        carte = carte_reduction2,
+                        periode = periode_preciser2,
                     )
                 else:
                     modifiable = input("Billet modifiable ? (oui/non) ")
