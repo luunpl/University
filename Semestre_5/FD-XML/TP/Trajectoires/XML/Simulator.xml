@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<simulator
+        xmlns="http://www.univ-grenoble-alpes.fr/trajSim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.univ-grenoble-alpes.fr/trajSim Simulator.xsd">
+    <simulationInfo>
+        <classname>ParticleSimulation_WithoutCollisions</classname>
+        <path>./XML/</path>
+        <filename>Simulation.xml</filename>
+    </simulationInfo>
+    <recordInfo>
+        <recordType>Trajectories</recordType>
+        <when>EndOfSimulation</when>
+        <path>./XML/Records/</path>
+        <output>SVG</output>
+    </recordInfo>
+    <timeInfo>
+        <simulationTime>100</simulationTime>
+        <recordFrequency>5</recordFrequency>
+        <displayUpdate>20</displayUpdate>
+    </timeInfo>
+</simulator>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:sim="http://www.univ-grenoble-alpes.fr/trajSim"
+           targetNamespace="http://www.univ-grenoble-alpes.fr/trajSim"
+           elementFormDefault="qualified">
+
+    <xs:include schemaLocation="Environment.xsd"/>
+
+    <xs:element name="simulation" type="sim:Simulation"/>
+
+    <xs:complexType name="Simulation">
+        <xs:sequence>
+            <xs:element name="environment" type="sim:Environment"/>
+            <xs:element name="particles" type="sim:ParticleCaracs"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    
+    <xs:complexType name="ParticleCaracs">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="particleDim" type="xs:unsignedInt"/>
+                <xs:attribute name="maxParticleSpeed" type="xs:unsignedInt"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    
+</xs:schema>
