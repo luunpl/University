@@ -58,6 +58,8 @@ def valeur(v1, operateur, v2):
         return v1 * v2
     if operateur == '/':
         return v1 / v2
+    return "0.0"
+
 
 def lireOperateur():
     """
