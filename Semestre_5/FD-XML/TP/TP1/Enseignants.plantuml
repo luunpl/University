@@ -9,6 +9,4 @@ Enseignant "1" *-- "1" filiere
 Enseignant "1" *-- "*" annee
 
 
-
-
 @enduml
