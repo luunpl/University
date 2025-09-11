@@ -8,9 +8,9 @@ class StructureClasse
 class Tables
 class Personne
 
-Jeux "1" *-- "0..*" Niveau
-Niveau "1"  *-- "int" Temps_Limite
-Niveau "1" *-- "0..*" StructureClasse
-StructureClasse "1" *-- "2..20" Tables
-Tables "1" *-- "0..2" Personne
+Jeux "1" -- "0..*" Niveau
+Niveau "1"  -- "int" Temps_Limite
+Niveau "1" -- "0..*" StructureClasse
+StructureClasse "1" -- "2..20" Tables
+Tables "1" -- "0..2" Personne
 @enduml
