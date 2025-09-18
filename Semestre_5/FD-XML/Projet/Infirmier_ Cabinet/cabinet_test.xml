@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cabinet xmlns="http://www.univ-grenoble-alpes.fr/l3miage/medical">
+    <nom>Soins à Grenoble</nom>
+    <adresse>
+        <numero>12</numero>
+        <rue>Rue des Alpes</rue>
+        <codePostal>38000</codePostal>
+        <ville>Grenoble</ville>
+    </adresse>
+
+    <infirmieres>
+        <infirmiere id="inf1">
+            <nom>Martin</nom>
+            <prenom>Claire</prenom>
+        </infirmiere>
+        <infirmiere id="inf2">
+            <nom>Dubois</nom>
+            <prenom>Julie</prenom>
+        </infirmiere>
+        <infirmiere id="inf3">
+            <nom>Lefèvre</nom>
+            <prenom>Anne</prenom>
+        </infirmiere>
+    </infirmieres>
+
+    <patients>
+        <!-- Premier patient -->
+        <patient infirmiereId="inf1">
+            <nom>Orouge</nom>
+            <prenom>Elvire</prenom>
+            <dateNaissance>1982-03-08</dateNaissance>
+            <numSecu>282032352000052</numSecu>
+            <adresse>
+                <rue>Rond-Point de la Croix de Vie</rue>
+                <codePostal>38700</codePostal>
+                <ville>La Tronche</ville>
+            </adresse>
+            <visite>
+                <date>2015-12-08</date>
+                <acte id="201" type="pc" cle="AMI" coef="1.5">Pansement de brûlure étendue</acte>
+            </visite>
+        </patient>
+
+        <!-- Deuxième patient -->
+        <patient infirmiereId="inf2">
+            <nom>Pien</nom>
+            <prenom>Oscare</prenom>
+            <dateNaissance>1975-03-25</dateNaissance>
+            <numSecu>275036569200692</numSecu>
+            <adresse>
+                <rue>Rue Casimir Brenier</rue>
+                <codePostal>38000</codePostal>
+                <ville>Grenoble</ville>
+            </adresse>
+            <visite>
+                <date>2015-12-08</date>
+                <acte id="101" type="pi" cle="AMI" coef="1.5">Ponction veineuse directe</acte>
+                <acte id="104" type="pi" cle="AMI" coef="1.2">Injection intraveineuse directe isolée d’antalgiques</acte>
+            </visite>
+        </patient>
+
+        <!-- Troisième patient -->
+        <patient infirmiereId="inf3">
+            <nom>Kapoëtla</nom>
+            <prenom>Xavier</prenom>
+            <dateNaissance>2011-08-02</dateNaissance>
+            <numSecu>111086363500035</numSecu>
+            <adresse>
+                <numero>25</numero>
+                <rue>Rue des Martyrs</rue>
+                <codePostal>38042</codePostal>
+                <ville>Grenoble</ville>
+            </adresse>
+            <visite>
+                <date>2015-12-08</date>
+                <acte id="110" type="pi" cle="AMI" coef="2.0">Injection de plusieurs allergènes pour désensibilisation</acte>
+            </visite>
+        </patient>
+    </patients>
+</cabinet>
