@@ -1,0 +1,1 @@
+var tns;!function(){"use strict";window.jnews=window.jnews||{},window.jnews.tns=window.jnews.tns||{},"function"==typeof tns&&"function"!=typeof jnews.tns&&(window.jnews.tns=tns),"function"!=typeof tns&&"function"==typeof jnews.tns&&(tns=jnews.tns)}();
