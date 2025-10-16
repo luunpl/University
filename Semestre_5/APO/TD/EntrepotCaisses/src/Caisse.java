@@ -5,7 +5,7 @@ class Caisse {
     /**
      * Creation d'une caisse 
      * @param  id l'id de la caisse
-     * @param poids le poids de la caisse  en 
+     * @param poids le poids de la caisse en kg
      * 
      * @throws IllegalArgumentException si la caisse à un poids négatif ou nul
      */
