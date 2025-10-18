@@ -10,13 +10,11 @@ void run_command(char **argv) {
         case -1:
             perror("fork");
             exit(1);
-            break;
         case 0:
             /* comportement du fils */
             execvp(argv[0], argv);
             perror("execvp");
             exit(1);
-            break;
         default:
             /* comportement du père */
             int status;
