@@ -3,24 +3,21 @@ import itertools
 import random
 import time
 import statistics
-from itertools import permutations
-import matplotlib.pyplot as plt
-
 
 # 1
-def echange(L, i, j):
-    L[i], L[j] = L[j], L[i]
+def echange(l, i, j):
+    l[i], l[j] = l[j], l[i]
 
 
 liste = [1, 2, 3, 4, 5]
 
 
 # 2
-def melange(L):
-    i = random.randint(0, len(L) - 1)
-    j = random.randint(0, len(L) - 1)
-    echange(L, i, j)
-    return L
+def melange(l):
+    i = random.randint(0, len(l) - 1)
+    j = random.randint(0, len(l) - 1)
+    echange(l, i, j)
+    return l
 
 
 # 3
