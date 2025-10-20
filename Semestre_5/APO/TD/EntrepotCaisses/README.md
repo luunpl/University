@@ -12,6 +12,6 @@ javac -d bin src/*.java
 - pour exécuter
 
 ```bash
-java -classpath=./bin TestEntrepot
+java -classpath ./bin TestEntrepot
 ```
 

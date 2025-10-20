@@ -1,6 +1,5 @@
 import time
 
-
 # Tester si un nombre est premier
 def testPremier(n):
     for i in range(2, int(n / 2) + 1):
