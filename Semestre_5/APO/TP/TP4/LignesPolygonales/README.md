@@ -12,7 +12,7 @@ javac -d bin src/apotp4/*.java
 - pour exécuter
 
 ```bash
-java -classpath=./bin apotp4.LignePolygonaleTest
+java -classpath ./bin apotp4.LignePolygonaleTest
 ```
 
 
