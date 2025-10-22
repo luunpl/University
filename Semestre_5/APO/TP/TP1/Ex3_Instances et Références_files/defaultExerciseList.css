@@ -1,0 +1,33 @@
+/*
+Default template for exercise list.
+Originally written by Emmanuel Promayon
+Part of the design is inspired from "The Grid, a free xhtml/css website template by Andreas Viklund.
+http://andreasviklund.com/templates/the-grid/"
+
+Other parts are extracted from other css, see below
+*/
+
+
+body {
+    margin:0px;
+    padding:0px;
+    font:11px/20px verdana, arial, helvetica, sans-serif;
+    background:#fff url(background.jpg) top center no-repeat;
+    color:#303030;
+}
+
+
+.row {width:960px; margin:0 auto; overflow:hidden;}
+
+h1 {
+    margin:0px 0px 15px 0px;
+    padding:0px;
+    font-size:28px;
+    line-height:28px;
+    font-weight:900;
+    color:#888;
+}
+
+h2 {
+    color:#888;
+}
