@@ -1,5 +1,4 @@
 import math 
-import random
 
 # Ex1a
 hypotenuse = float(input("Entrez la longueur de l'hypotenuse : "))
