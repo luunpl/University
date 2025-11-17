@@ -1,8 +1,0 @@
-<rectangleData xmlns="http://www.univ-grenoble-alpes.fr/rectangle"
-               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-               xsi:schemaLocation="http://www.univ-grenoble-alpes.fr/rectangle Rectangle.xsd">
-    <x>6</x>
-    <y>40</y>
-    <width>10</width>
-    <height>20</height>
-</rectangleData>

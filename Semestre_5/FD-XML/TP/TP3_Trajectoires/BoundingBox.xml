@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<boundingBox
-        xmlns="http://www.univ-grenoble-alpes.fr/trajSim"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.univ-grenoble-alpes.fr/trajSim BoundingBox.xsd"
-        centered = "false">
-    <pos><X>0.0</X><Y>0.0</Y></pos>
-    <dimensions><X>150</X><Y>100</Y></dimensions>
-</boundingBox>

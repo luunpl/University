@@ -1,0 +1,12 @@
+@startuml
+class schema
+class Enseignants
+class Enseignant
+
+schema "1" *-- "1" Enseignants
+Enseignants *-- "*" Enseignant
+Enseignant "1" *-- "1" filiere
+Enseignant "1" *-- "*" annee
+
+
+@enduml

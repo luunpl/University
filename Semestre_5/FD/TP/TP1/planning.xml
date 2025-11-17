@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<planning>
+    <week>
+        <date>20 oct</date>
+        <tutorial>Algorithmique : statistiques</tutorial>
+        <lecture>Boucles et conditions en Java
+        </lecture>
+    </week>
+
+    <holidays>
+        <date>27 oct</date>
+    </holidays>
+
+    <week>        
+        <date>3 nov</date>
+        <tutorial>Algorithmique : tableaux</tutorial>
+        <lecture>Les tableaux N dimensions
+        </lecture>
+    </week>
+</planning>
