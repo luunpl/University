@@ -1,0 +1,69 @@
+group: IM2AG_2
+
+LesCages = {
+noCage, fonction, noAllee
+11, 'fauve', 10
+1, 'fosse', 1
+2, 'aquarium', 1
+3, 'petits oiseaux', 2
+4, 'grand aquarium', 1
+12, 'fauve', 10
+8, 'fauve', 9
+13, 'fauve', 10
+}
+
+LesEmployes = {
+nomE, adresse
+
+'Verdier','Noumea'
+'Dupont', 'Sartene'
+'Labbe', 'Calvi'
+'Lachaize', 'Pointe a Pitre'
+'Desmoulins', 'Ushuaia'
+'Jouanot', 'Papeete'
+}
+
+LesGardiens = {
+noCage, nomE
+4, 'Lachaize'
+12, 'Dupont'
+12, 'Labbe'
+11, 'Dupont'
+11, 'Labbe'
+1, 'Lachaize'
+3, 'Lachaize'
+12, 'Lachaize'
+8, 'Dupont'
+13, 'Dupont'
+2,'Jouanot'
+}
+
+LesResponsables = {
+noAllee:number, nomE
+
+10, 'Verdier'
+1, 'Jouanot'
+2, 'Desmoulins'
+}
+		
+LesAnimaux = {
+nomA, sexe, type_an, fonction_cage, pays, anNais, noCage
+'Charly', 'male', 'lion', 'fauve', 'Kenya', 2022, 12
+'Arthur', 'male', 'ours', 'fosse', 'France', 2020, 1
+'Chloe', 'femelle', 'pie', 'petits oiseaux', 'France', 2013, 3
+'Milou', 'male', 'leopard', 'fauve', 'France', 2015, 11
+'Tintin', 'male', 'leopard', 'fauve', 'France', 2015, 11
+'Charlotte', 'femelle', 'lion', 'fauve', 'Kenya', 2016, 12
+'Ronald', 'male', 'leopard', 'fauve', 'France', 2020, 13
+'Chouchou','male','mouton','ferme','France',2022,12
+}
+
+LesMaladies = {
+nomA, nomM
+
+'Charly' , 'rage de dents'
+'Charly' , 'grippe'
+'Charly' , 'angine'
+'Milou' , 'angine'
+'Chloe' , 'grippe'
+}
