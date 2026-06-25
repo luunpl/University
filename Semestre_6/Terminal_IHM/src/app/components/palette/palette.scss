@@ -1,0 +1,20 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  .preview {
+    display: flex;
+    justify-content: center;
+    padding-top: 0.5rem;
+
+    svg {
+      display: block;
+    }
+  }
+}

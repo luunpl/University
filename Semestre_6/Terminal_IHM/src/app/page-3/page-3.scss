@@ -1,0 +1,29 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  section {
+    flex: 1 1 auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "palette canvas"
+      "button  canvas";
+
+    app-palette {
+      grid-area: palette;
+    }
+
+    button {
+      grid-area: button;
+      align-self: start;
+      background-color: #d5d5ff;
+    }
+
+    app-canvas-polygons {
+      grid-area: canvas;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<h1>
+    <span>Page 3 : Palette et polygones</span>
+    <!-- Partie C : Configuration sauvegardées -->
+     
+    <!-- Partie C : Bouton pour supprimer les configurations sauvegardées -->
+
+</h1>
+
+<section>
+    <!-- Partie C : complétez les data-bindings -->
+    <app-palette [config] = "paletteConfig()"></app-palette>
+    <button mat-raised-button color="primary">Ajouter configuration</button>
+    <app-canvas-polygons 
+        [polygons] = "polygons()"
+        ></app-canvas-polygons>
+</section>

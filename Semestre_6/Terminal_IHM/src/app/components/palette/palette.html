@@ -1,0 +1,27 @@
+<form>
+  <mat-form-field appearance="outline">
+    <mat-label>Couleur de remplissage</mat-label>
+    <input matInput type="color" [formControl]="controls.fill" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Couleur du contour</mat-label>
+    <input matInput type="color" [formControl]="controls.stroke" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Épaisseur du trait</mat-label>
+    <input matInput type="number" [formControl]="controls.strokeWidth" />
+  </mat-form-field>
+
+  <div class="preview">
+    <svg width="60" height="40">
+      <rect
+        x="4" y="4" width="52" height="32" rx="4"
+        [attr.fill]="controls.fill.value"
+        [attr.stroke]="controls.stroke.value"
+        [attr.stroke-width]="controls.strokeWidth.value"
+      />
+    </svg>
+  </div>
+</form>

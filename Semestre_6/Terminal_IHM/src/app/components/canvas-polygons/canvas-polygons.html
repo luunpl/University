@@ -1,0 +1,10 @@
+<svg #svgCanvas>
+    @for(p of polygonsForSvg(); track p.id) {
+        <polygon 
+            [attr.points]="p.pointsStr"
+            [attr.fill]="p.fill" 
+            [attr.stroke]="p.stroke" 
+            [attr.stroke-width]="p.strokeWidth"
+            />
+    }
+</svg>
