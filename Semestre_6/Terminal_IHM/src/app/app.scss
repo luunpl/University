@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  mat-toolbar {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+
+    nav {
+      display: flex;
+      gap: 8px;
+    }
+
+    a.active-link {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-thickness: 2px;
+    }
+  }
+
+  main {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+}

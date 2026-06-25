@@ -1,0 +1,10 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  app-canvas-polygons {
+    flex: 1 1 auto;
+    border: solid black 1px;
+  }
+}
