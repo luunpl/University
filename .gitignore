@@ -1,0 +1,10 @@
+# Build outputs (regenerate with make / javac / python)
+*.o
+*.pyc
+__pycache__/
+*.class
+
+# Editor / OS / Jupyter noise
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
