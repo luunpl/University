@@ -30,7 +30,7 @@ Semestre_N/<UE>/              # UE = 101_INF … (S1–S4) or abbreviation (S5�
 | S1 | `101_MAT` | MAT101 – Langage mathématique, algèbre et géométrie élémentaires |
 | S1 | `101_MAP` | MAP101 – Analyse élémentaire et introduction au calcul scientifique |
 | S1 | `103_INF` | INF103 – Science des données |
-| S1 | `105_MAT` | MAT105 |
+| S1 | `105_MAT` | MAT105 – Culture mathématique |
 | S2 | `201_INF` | INF201 – Algorithmique et programmation fonctionnelle |
 | S2 | `201_MAT` | MAT201 – Introduction à l'algèbre linéaire |
 | S2 | `201_MAP` | MAP201 – Découverte des mathématiques appliquées (`IMAGE/`, `EDO/`) |
