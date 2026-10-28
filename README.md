@@ -6,9 +6,23 @@ Passionate about learning and sharing knowledge, I share my academic work here.
 
 ## Organisation
 
-L1 IMA → L2 INM → L3 MIAGE (see `ETC/Maquette_Licence_MIAGE.pdf`).  
-Each course folder uses the same sub-folders when they apply: `Cours/`, `TD/`, `TP/`, `Exercice/`, `Projet/`, `Annales/`.  
-Exams are named `<Type>_<Year>[_Variant][_Correction].pdf` (Type: `Partiel`, `Terminal`, `Seconde_Chance`, `CC`, `DS`, `Examen`, `Quick`).
+L1 IMA → L2 INM → L3 MIAGE (see `ETC/Maquette_Licence_MIAGE.pdf`).
+
+### Structure
+
+```
+Semestre_N/<UE>/              # UE = 101_INF … (S1–S4) or abbreviation (S5–S6)
+├── Cours/      NN_Sujet.pdf  (00_ = presentation), Poly_<UE>.pdf, Livre_*.pdf, Memo_*.pdf
+├── TD/         TDn[_Sujet].pdf, TDn_Correction.pdf, Poly_TD_<UE>.pdf, Memo_*.pdf
+├── TP/         TPn.pdf / TPn/ (code), TPn.ipynb, TPn_Correction.*
+├── Exercice/   extra exercises (Caseine, colles, articles…)
+├── Projet/     <Nom_Projet>/
+└── Annales/    <Type>_<Year>[_Variant][_Correction].pdf
+```
+
+- Only the sub-folders a course needs exist. A course split into independent parts repeats this layout per part (`201_MAP/EDO`, `201_MAP/IMAGE`, `SR/Reseaux`, `SR/Systeme`).
+- Exam types: `Partiel`, `Terminal`, `Seconde_Chance`, `Examen`, `CC`, `DS`, `Quick`, `Quiz`, `Test_Positionnement`. `<Year>` is the calendar year of the exam. An exam done as a code project is a folder `Annales/<Type>_<Year>/`.
+- File names: no spaces or `& ' , ( )` — use `_`; numbers on two digits (`01_`, `10_`) so they sort correctly.
 
 | Semestre | Dossier | UE |
 |---|---|---|
