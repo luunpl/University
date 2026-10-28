@@ -20,7 +20,7 @@ Semestre_N/<UE>/              # UE = 101_INF … (S1–S4) or abbreviation (S5�
 └── Annales/    <Type>_<Year>[_Variant][_Correction].pdf
 ```
 
-- Only the sub-folders a course needs exist. A course split into independent parts repeats this layout per part (`201_MAP/EDO`, `201_MAP/IMAGE`, `SR/Reseaux`, `SR/Systeme`).
+- Only the sub-folders a course needs exist. A course split into independent parts repeats this layout per part (`201_MAP/EDO`, `201_MAP/IMAGE`, `SR/Reseaux`, `SR/Systeme`). A course with only one or two documents keeps them directly in its folder (`105_MAT`).
 - Exam types: `Partiel`, `Terminal`, `Seconde_Chance`, `Examen`, `CC`, `DS`, `Quick`, `Quiz`, `Test_Positionnement`. `<Year>` is the calendar year of the exam. An exam done as a code project is a folder `Annales/<Type>_<Year>/`.
 - File names: no spaces or `& ' , ( )` — use `_`; numbers on two digits (`01_`, `10_`) so they sort correctly.
 
